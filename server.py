@@ -1583,14 +1583,19 @@ def autopilot_thread():
     while True:
         if autopilot_active:
             try:
-                # Ask Tony to generate a task based on workspace state
-                sys_prompt = "You are Tony, the CEO. Review the current state of the business and generate 1 strategic task for the squad. Output ONLY a valid JSON object: {\"task_title\": \"short title\", \"task_description\": \"detailed instructions\"}. Be concise and highly strategic."
+                # Ask Tony to generate a task based on workspace state and current task queue
+                sys_prompt = "You are Tony, the CEO. Review the current state of the business and the existing task lists, then generate 1 NEW strategic task for the squad. Output ONLY a valid JSON object: {\"task_title\": \"short title\", \"task_description\": \"detailed instructions\"}. Be concise and highly strategic. CRITICAL: Do NOT duplicate or re-generate any tasks that are already active, in progress, or recently completed."
                 
-                # We mock context by listing workspace files
+                # List workspace files and fetch task states to prevent repetition
                 workspace_files = []
                 if os.path.exists(WORKSPACE_DIR):
                     workspace_files = os.listdir(WORKSPACE_DIR)
-                context = f"Current workspace files: {workspace_files}"
+                
+                with state_lock:
+                    active_tasks = [t.get("title", "") for t in tasks_db.values() if t.get("status") in ["assigned", "in_progress", "waiting"]]
+                    completed_tasks = [t.get("title", "") for t in tasks_db.values() if t.get("status") == "done"]
+                
+                context = f"Current workspace files: {workspace_files}\nActive tasks in progress: {active_tasks}\nCompleted tasks: {completed_tasks}"
                 
                 reply = query_llm(context, sys_prompt)
                 
