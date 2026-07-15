@@ -124,9 +124,11 @@ WORKSPACE RULES:
             response = query_llm_fn(prompt=None, system_prompt=system_prompt, max_tokens=1500, messages=messages)
             if not response:
                 break
+            if "ERROR: All LLM APIs" in response:
+                return {"status": "blocked", "reason": "LLM APIs are currently failing. Pausing execution."}
         except Exception as e:
             response = f"LLM Error: {e}"
-            break
+            return {"status": "blocked", "reason": f"Exception in query: {e}"}
             
         messages.append({"role": "assistant", "content": response})
         

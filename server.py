@@ -242,7 +242,7 @@ def query_llm(prompt, system_prompt="You are a helpful assistant.", max_tokens=1
         data = {"model": model, "messages": messages if messages else [{"role": "system", "content": system_prompt}, {"role": "user", "content": prompt}], "temperature": 0.7, "max_tokens": max_tokens}
         import urllib.request, json
         req = urllib.request.Request(url, data=json.dumps(data).encode("utf-8"), headers=headers, method="POST")
-        with urllib.request.urlopen(req, timeout=30) as res:
+        with urllib.request.urlopen(req, timeout=180) as res:
             return json.loads(res.read().decode("utf-8"))["choices"][0]["message"]["content"].strip()
             
     # 2. NVIDIA (Primary for Logic/Code)
@@ -253,7 +253,7 @@ def query_llm(prompt, system_prompt="You are a helpful assistant.", max_tokens=1
         data = {"model": model, "messages": messages if messages else [{"role": "system", "content": system_prompt}, {"role": "user", "content": prompt}], "temperature": 0.2, "max_tokens": max_tokens}
         import urllib.request, json
         req = urllib.request.Request(url, data=json.dumps(data).encode("utf-8"), headers=headers, method="POST")
-        with urllib.request.urlopen(req, timeout=30) as res:
+        with urllib.request.urlopen(req, timeout=180) as res:
             return json.loads(res.read().decode("utf-8"))["choices"][0]["message"]["content"].strip()
             
     # 3. OmniRoute (Local Gateway Fallback)
@@ -263,7 +263,7 @@ def query_llm(prompt, system_prompt="You are a helpful assistant.", max_tokens=1
         data = {"model": "claude-3-haiku", "messages": messages if messages else [{"role": "system", "content": system_prompt}, {"role": "user", "content": prompt}], "temperature": 0.7, "max_tokens": max_tokens}
         import urllib.request, json
         req = urllib.request.Request(url, data=json.dumps(data).encode("utf-8"), headers=headers, method="POST")
-        with urllib.request.urlopen(req, timeout=10) as res:
+        with urllib.request.urlopen(req, timeout=180) as res:
             return json.loads(res.read().decode("utf-8"))["choices"][0]["message"]["content"].strip()
 
     if agent_key in logic_agents:
@@ -337,7 +337,8 @@ def run_task(task_id):
             return
 
         # 1. Jarvis routes the task
-        planner_sys = "You are Jarvis. Respond ONLY with the single lowercase key of the best specialist for this task (quill, pepper, loki, fury, groot, rob, shuri, friday, wanda, vision, nexus, quentin) or 'none'."
+        agent_keys_str = ", ".join(list(active_agents.keys()))
+        planner_sys = f"You are Jarvis. Respond ONLY with the single lowercase key of the best specialist for this task ({agent_keys_str}) or 'none'."
         decision_raw = query_llm(f"Task: {message}", planner_sys, max_tokens=10) or "shuri"
         if "ERROR: All LLM" in decision_raw:
             with state_lock:
@@ -1507,20 +1508,16 @@ class MissionControlHandler(SimpleHTTPRequestHandler):
             append_chat("Tony", f"🚀 Received business idea: '{idea}'. Architecting master plan and dispatching tasks...", "tony")
             
             # Ask LLM to generate tasks
-            sys_prompt = """You are Tony, the CEO. The user has provided a business idea. 
+            agent_details = "\n            ".join([f"- {k} ({v.get('title', 'Specialist')}): {v.get('role', '')}" for k, v in active_agents.items()])
+            sys_prompt = f"""You are Tony, the CEO. The user has provided a business idea. 
             Break this idea down into a comprehensive pipeline of EXACTLY 5 execution tasks that build an entire production-ready business.
-            Assign each task to the most appropriate agent based on these keys:
-            - wanda (UX Designer): For specs, UI/UX, or wireframes.
-            - friday (Developer): For building the actual software/app and running servers.
-            - shuri (Product Analyst): For testing or verifying the app.
-            - vision (SEO Lead): For writing marketing copy and landing page content.
-            - quill (Social Media): For writing launch announcements.
+            Assign each task to the most appropriate agent based on these available agents:
+            {agent_details}
             
             Return ONLY a valid JSON array of objects. Example:
             [
-              {"agent_key": "wanda", "title": "Design UI for Idea", "description": "Write specs for..."},
-              {"agent_key": "friday", "title": "Build App", "description": "Use npm create vite..."},
-              ...
+              {{"agent_key": "wanda", "title": "Design UI for Idea", "description": "Write specs for..."}},
+              {{"agent_key": "friday", "title": "Build App", "description": "Use npm create vite..."}}
             ]
             Make the descriptions highly detailed and actionable. No markdown formatting around the JSON array."""
             
