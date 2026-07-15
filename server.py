@@ -1524,10 +1524,12 @@ class MissionControlHandler(SimpleHTTPRequestHandler):
             reply = query_llm(idea, sys_prompt)
             
             try:
-                import re
-                json_match = re.search(r'\[.*\]', reply.replace('\n', ' '), re.DOTALL)
-                if json_match:
-                    tasks_list = json.loads(json_match.group(0))
+                import json
+                start_idx = reply.find('[')
+                end_idx = reply.rfind(']')
+                if start_idx != -1 and end_idx != -1 and end_idx > start_idx:
+                    json_str = reply[start_idx:end_idx+1]
+                    tasks_list = json.loads(json_str)
                     
                     for t in tasks_list:
                         new_id = str(uuid.uuid4())[:8]
