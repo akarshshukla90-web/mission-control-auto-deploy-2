@@ -40,7 +40,7 @@ init_project_crm("general")
 
 PORT = 8000
 NVIDIA_API_KEY = "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"
-NVIDIA_MODEL = "meta/llama-3.1-70b-instruct"  # massive, very smart default
+NVIDIA_MODEL = "meta/llama-3.1-70b-instruct"  # massive, very smart default and resolves instantly
 NVIDIA_FALLBACK = "meta/llama-3.1-8b-instruct"  # ultra-fast fallback
 MAX_AGENTS = 14
 
@@ -308,6 +308,16 @@ def run_task(task_id):
         # Check trivial
         check_sys = "Analyze the prompt. If it is a simple greeting ('hello', 'hi'), reply ONLY with 'TRIVIAL'. If it asks to run continuously, monitor 24/7, or loop infinitely, reply ONLY with '24_7'. Otherwise reply 'TASK'."
         analysis = query_llm(f"Prompt: {message}", check_sys, max_tokens=10) or "TASK"
+        if "ERROR: All LLM" in analysis:
+            with state_lock:
+                tasks_db[task_id]["status"] = "inbox"
+                tasks_db[task_id]["comments"].append({
+                    "id": str(uuid.uuid4())[:8], "agent_key": "jarvis", "sender": "Jarvis",
+                    "text": "⚠️ Task execution deferred: LLM API providers are currently unreachable.",
+                    "ts": int(time.time()), "type": "error"
+                })
+                save_tasks()
+            return
         
         is_continuous = "24_7" in analysis.upper()
         with state_lock:
@@ -329,6 +339,11 @@ def run_task(task_id):
         # 1. Jarvis routes the task
         planner_sys = "You are Jarvis. Respond ONLY with the single lowercase key of the best specialist for this task (quill, pepper, loki, fury, groot, rob, shuri, friday, wanda, vision, nexus, quentin) or 'none'."
         decision_raw = query_llm(f"Task: {message}", planner_sys, max_tokens=10) or "shuri"
+        if "ERROR: All LLM" in decision_raw:
+            with state_lock:
+                tasks_db[task_id]["status"] = "inbox"
+                save_tasks()
+            return
         target_key = decision_raw.strip().lower().split()[0]
         if target_key not in active_agents and target_key in SPECIALIST_TEMPLATES:
             with state_lock:
@@ -338,6 +353,11 @@ def run_task(task_id):
 
         # Jarvis delegation msg
         jarvis_msg = query_llm(f"Write a 1-sentence delegation message assigning '{message}' to {target_agent['name']} ({target_agent['title']}).", "You are Jarvis.")
+        if "ERROR: All LLM" in jarvis_msg:
+            with state_lock:
+                tasks_db[task_id]["status"] = "inbox"
+                save_tasks()
+            return
         with state_lock:
             tasks_db[task_id]["status"] = "in_progress"
             tasks_db[task_id]["assignee"] = target_key
@@ -1471,6 +1491,9 @@ class MissionControlHandler(SimpleHTTPRequestHandler):
                 append_chat("Tony", "Autopilot engaged. I am now analyzing the business and will dispatch tasks to Jarvis automatically.", "tony")
             else:
                 append_chat("Tony", "Autopilot disengaged. Returning control to you.", "tony")
+                with queue_lock:
+                    sim_queue.clear()
+                append_chat("System", "🧹 Pending task queues cleared successfully.", "system")
                 
             self.send_json({"success": True, "active": autopilot_active})
 
