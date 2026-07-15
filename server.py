@@ -406,6 +406,19 @@ def run_task(task_id):
 
         agent_result = result_obj.get("summary", "Finished.")
         
+        # Check if the agent result is actually an error
+        if agent_result and "ERROR: All LLM" in agent_result:
+            with state_lock:
+                tasks_db[task_id]["status"] = "error"
+                tasks_db[task_id]["error"] = "LLM API failure during agent execution"
+                tasks_db[task_id]["comments"].append({
+                    "id": str(uuid.uuid4())[:8], "agent_key": target_key, "sender": target_agent["name"],
+                    "text": "⚠️ Task failed: LLM APIs were unreachable during execution.",
+                    "ts": int(time.time()), "type": "error"
+                })
+                save_tasks()
+            return
+        
         # Save to business_data
         os.makedirs(os.path.join(WORKSPACE_DIR, "business_data"), exist_ok=True)
         filename = f"{target_key}_result_{task_id}.md"
@@ -415,6 +428,8 @@ def run_task(task_id):
 
         # Agent success msg
         summary_msg = query_llm(f"Summarize what you did in 2 sentences based on this output: {agent_result[:500]}", "You are " + target_agent["name"])
+        if summary_msg and "ERROR:" in summary_msg:
+            summary_msg = agent_result[:300]  # Use raw result if summary LLM fails
         with state_lock:
             tasks_db[task_id]["deliverable"] = f"business_data/{filename}"
             tasks_db[task_id]["comments"].append({
@@ -428,6 +443,7 @@ def run_task(task_id):
                 save_tasks()
             else:
                 tasks_db[task_id]["status"] = "done"
+                tasks_db[task_id]["completed_at"] = int(time.time())
                 save_tasks()
         append_chat(target_agent["name"], summary_msg, target_key)
         
