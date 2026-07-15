@@ -110,7 +110,7 @@ WORKSPACE RULES:
             {"role": "user", "content": f"Task: {message}"}
     ]
     
-    max_loops = 10
+    max_loops = 20
     loops = 0
     final_summary = "Task completed, but agent did not provide a summary."
 
@@ -121,7 +121,7 @@ WORKSPACE RULES:
         # Since server.py's query_llm only takes prompt/sysprompt, we will construct a full prompt log.
         try:
             # We now pass the native messages array directly instead of stringifying!
-            response = query_llm_fn(prompt=None, system_prompt=system_prompt, max_tokens=1500, messages=messages)
+            response = query_llm_fn(prompt=None, system_prompt=system_prompt, max_tokens=1500, messages=messages, agent_key=target_agent.get("name", "").lower())
             if not response:
                 break
             if "ERROR: All LLM APIs" in response:
@@ -145,7 +145,7 @@ WORKSPACE RULES:
                 # Chat UI update
                 append_chat_fn(target_agent["name"], f"🔧 Running tool: {name}", "dev")
                 save_comment_fn(task_id, target_agent["name"], f"Executing tool: {name}\\nArguments: {json.dumps(args)[:100]}...", "dev")
-
+ 
                 obs = ""
                 if name == "finish":
                     final_summary = args.get("summary", "Finished.")
@@ -154,7 +154,7 @@ WORKSPACE RULES:
                 elif name == "request_unblock":
                     reason = args.get("reason", "Awaiting human verification.")
                     return {"status": "blocked", "reason": reason, "memory": messages}
-
+ 
                 elif name == "run_command":
                     cmd = args.get("command", "")
                     try:
@@ -183,7 +183,7 @@ WORKSPACE RULES:
                         obs = f"Failed to read file: {e}"
                 else:
                     obs = f"Unknown tool: {name}"
-
+ 
                 messages.append({"role": "user", "content": f"<tool_response>\n{obs}\n</tool_response>"})
                 
             except Exception as e:
@@ -192,5 +192,16 @@ WORKSPACE RULES:
             # If no tool call, assume finished
             final_summary = response
             break
+ 
+    if final_summary == "Task completed, but agent did not provide a summary.":
+        thoughts = []
+        for m in messages:
+            if m["role"] == "assistant":
+                content = m["content"]
+                thought = content.split("<tool_call>")[0].strip()
+                if thought:
+                    thoughts.append(thought)
+        if thoughts:
+            final_summary = "Agent thoughts and actions:\n" + "\n".join(thoughts)
 
     return {"status": "finished", "summary": final_summary}

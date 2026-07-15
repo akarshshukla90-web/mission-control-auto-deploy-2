@@ -375,7 +375,7 @@ def run_task(task_id):
     try:
         # Check trivial
         check_sys = "Analyze the prompt. If it is a simple greeting ('hello', 'hi'), reply ONLY with 'TRIVIAL'. If it asks to run continuously, monitor 24/7, or loop infinitely, reply ONLY with '24_7'. Otherwise reply 'TASK'."
-        analysis = query_llm(f"Prompt: {message}", check_sys, max_tokens=10) or "TASK"
+        analysis = query_llm(f"Prompt: {message}", check_sys, max_tokens=10, agent_key="jarvis") or "TASK"
         if "ERROR: All LLM" in analysis:
             with state_lock:
                 tasks_db[task_id]["status"] = "inbox"
@@ -407,7 +407,7 @@ def run_task(task_id):
         # 1. Jarvis routes the task
         agent_keys_str = ", ".join(list(active_agents.keys()))
         planner_sys = f"You are Jarvis. Respond ONLY with the single lowercase key of the best specialist for this task ({agent_keys_str}) or 'none'."
-        decision_raw = query_llm(f"Task: {message}", planner_sys, max_tokens=10) or "shuri"
+        decision_raw = query_llm(f"Task: {message}", planner_sys, max_tokens=10, agent_key="jarvis") or "shuri"
         if "ERROR: All LLM" in decision_raw:
             with state_lock:
                 tasks_db[task_id]["status"] = "inbox"
@@ -421,7 +421,7 @@ def run_task(task_id):
         target_agent = active_agents.get(target_key, CORE_AGENTS.get(target_key, CORE_AGENTS["shuri"]))
 
         # Jarvis delegation msg
-        jarvis_msg = query_llm(f"Write a 1-sentence delegation message assigning '{message}' to {target_agent['name']} ({target_agent['title']}).", "You are Jarvis.")
+        jarvis_msg = query_llm(f"Write a 1-sentence delegation message assigning '{message}' to {target_agent['name']} ({target_agent['title']}).", "You are Jarvis.", agent_key="jarvis")
         if "ERROR: All LLM" in jarvis_msg:
             with state_lock:
                 tasks_db[task_id]["status"] = "inbox"
@@ -494,7 +494,7 @@ def run_task(task_id):
             f.write(agent_result)
 
         # Agent success msg
-        summary_msg = query_llm(f"Summarize what you did in 2 sentences based on this output: {agent_result[:500]}", "You are " + target_agent["name"])
+        summary_msg = query_llm(f"Summarize what you did in 2 sentences based on this output: {agent_result[:500]}", "You are " + target_agent["name"], agent_key=target_key)
         if summary_msg and "ERROR:" in summary_msg:
             summary_msg = agent_result[:300]  # Use raw result if summary LLM fails
         with state_lock:
