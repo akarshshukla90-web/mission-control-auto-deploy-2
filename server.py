@@ -237,7 +237,7 @@ def query_llm(prompt, system_prompt="You are a helpful assistant.", max_tokens=1
     def try_openrouter(model="openai/gpt-3.5-turbo"):
         import os
         url = "https://openrouter.ai/api/v1/chat/completions"
-        api_key = os.environ.get("OPENROUTER_API_KEY")
+        api_key = os.getenv("OPENROUTER_API_KEY") or os.getenv("FALLBACK_AI_API_KEY")
         headers = {"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"}
         data = {"model": model, "messages": messages if messages else [{"role": "system", "content": system_prompt}, {"role": "user", "content": prompt}], "temperature": 0.7, "max_tokens": max_tokens}
         import urllib.request, json
