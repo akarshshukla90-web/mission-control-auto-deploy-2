@@ -281,7 +281,7 @@ def query_llm(prompt, system_prompt="You are a helpful assistant.", max_tokens=1
         return try_omniroute()
     except Exception as e:
         print(f"ALL APIs FAILED! {e}", flush=True)
-        return "ERROR: All LLM APIs are currently failing. I cannot process tasks right now."
+        return f"ERROR: All LLM APIs are currently failing. Last error: {e}"
 
 
 def append_chat(sender, text, agent_key=None):
@@ -958,6 +958,18 @@ class MissionControlHandler(SimpleHTTPRequestHandler):
                 else:
                     self.send_json({"error": "not found"})
 
+        # ── /api/tasks/clear ─────────────────────────────────────────────────
+        elif path == "/api/tasks/clear" and method == "POST":
+            with state_lock:
+                keys_to_delete = [k for k, v in tasks_db.items() if v.get("status") != "done"]
+                for k in keys_to_delete:
+                    del tasks_db[k]
+                save_tasks()
+                with queue_lock:
+                    sim_queue.clear()
+            append_chat("System", "🧹 All pending and duplicate tasks have been cleared.", "system")
+            self.send_json({"success": True})
+
         # ── /api/unblock ─────────────────────────────────────────────────────
         elif path == "/api/unblock" and method == "POST":
             task_id = body.get("task_id")
@@ -1591,7 +1603,7 @@ def autopilot_thread():
                     workspace_files = os.listdir(WORKSPACE_DIR)
                 
                 with state_lock:
-                    active_tasks = [t.get("title", "") for t in tasks_db.values() if t.get("status") in ["assigned", "in_progress", "waiting"]]
+                    active_tasks = [t.get("title", "") for t in tasks_db.values() if t.get("status") in ["assigned", "in_progress", "waiting", "inbox", "error"]]
                     completed_tasks = [t.get("title", "") for t in tasks_db.values() if t.get("status") == "done"]
                 
                 context = f"Current workspace files: {workspace_files}\nActive tasks in progress: {active_tasks}\nCompleted tasks: {completed_tasks}"

@@ -1000,6 +1000,11 @@
         <span>Autopilot</span>
         <span class="stat-value" id="autopilot-status" style="color: var(--text-muted)">OFF</span>
       </div>
+      <!-- CLEAR QUEUE -->
+      <div class="stat-item" style="cursor: pointer; background: rgba(239, 68, 68, 0.1); padding: 4px 12px; border-radius: 20px; border: 1px solid rgba(239, 68, 68, 0.3);" onclick="clearTasks()">
+        <i class="fa-solid fa-trash" style="color: var(--red)"></i>
+        <span style="color: var(--red)">Clear Queue</span>
+      </div>
       <div class="stat-item">
         <div class="stat-dot" style="background:var(--accent)"></div>
         <span>Tasks</span>
@@ -1822,6 +1827,18 @@ async function toggleAutopilot() {
     }
   } else {
     toast('❌ Error toggling autopilot: ' + (res.error || 'Unknown'));
+  }
+}
+
+async function clearTasks() {
+  if (confirm("Are you sure you want to clear all pending and duplicate tasks?")) {
+    const res = await api('/api/tasks/clear', 'POST');
+    if (res.success) {
+      toast('🧹 All pending tasks cleared.');
+      await pollBoard();
+    } else {
+      toast('❌ Error clearing tasks: ' + (res.error || 'Unknown'));
+    }
   }
 }
 
