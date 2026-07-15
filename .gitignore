@@ -9,3 +9,4 @@ venv/
 *.vbs
 *.bat
 .git/
+test_*.py

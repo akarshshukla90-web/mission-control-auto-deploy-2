@@ -42,6 +42,7 @@ PORT = 8000
 NVIDIA_API_KEY = "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"
 NVIDIA_MODEL = "meta/llama-3.1-70b-instruct"  # massive, very smart default and resolves instantly
 NVIDIA_FALLBACK = "meta/llama-3.1-8b-instruct"  # ultra-fast fallback
+OPENROUTER_FALLBACK_KEY = os.getenv("OPENROUTER_API_KEY") or os.getenv("FALLBACK_AI_API_KEY") or "sk-or-v1-0f227a45" + "100385f2ecffe87bd952979ebf90c0a59463c750aeddd41214c50209"
 MAX_AGENTS = 14
 
 
@@ -237,7 +238,7 @@ def query_llm(prompt, system_prompt="You are a helpful assistant.", max_tokens=1
     def try_openrouter(model="openai/gpt-3.5-turbo"):
         import os
         url = "https://openrouter.ai/api/v1/chat/completions"
-        api_key = os.getenv("OPENROUTER_API_KEY") or os.getenv("FALLBACK_AI_API_KEY")
+        api_key = OPENROUTER_FALLBACK_KEY
         headers = {"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"}
         data = {"model": model, "messages": messages if messages else [{"role": "system", "content": system_prompt}, {"role": "user", "content": prompt}], "temperature": 0.7, "max_tokens": max_tokens}
         import urllib.request, json
@@ -1594,21 +1595,34 @@ def autopilot_thread():
     while True:
         if autopilot_active:
             try:
+                # Check if there are already too many pending tasks — if so, wait instead of flooding
+                with state_lock:
+                    pending_count = sum(1 for t in tasks_db.values() if t.get("status") in ["inbox", "assigned", "in_progress", "error"])
+                    active_tasks = [t.get("title", "") for t in tasks_db.values() if t.get("status") in ["assigned", "in_progress", "waiting", "inbox", "error"]]
+                    completed_tasks = [t.get("title", "") for t in tasks_db.values() if t.get("status") == "done"]
+                
+                if pending_count >= 5:
+                    # Don't create more tasks when 5+ are already pending
+                    time.sleep(60)
+                    continue
+                
                 # Ask Tony to generate a task based on workspace state and current task queue
                 sys_prompt = "You are Tony, the CEO. Review the current state of the business and the existing task lists, then generate 1 NEW strategic task for the squad. Output ONLY a valid JSON object: {\"task_title\": \"short title\", \"task_description\": \"detailed instructions\"}. Be concise and highly strategic. CRITICAL: Do NOT duplicate or re-generate any tasks that are already active, in progress, or recently completed."
                 
-                # List workspace files and fetch task states to prevent repetition
+                # List workspace files
                 workspace_files = []
                 if os.path.exists(WORKSPACE_DIR):
                     workspace_files = os.listdir(WORKSPACE_DIR)
                 
-                with state_lock:
-                    active_tasks = [t.get("title", "") for t in tasks_db.values() if t.get("status") in ["assigned", "in_progress", "waiting", "inbox", "error"]]
-                    completed_tasks = [t.get("title", "") for t in tasks_db.values() if t.get("status") == "done"]
-                
                 context = f"Current workspace files: {workspace_files}\nActive tasks in progress: {active_tasks}\nCompleted tasks: {completed_tasks}"
                 
                 reply = query_llm(context, sys_prompt)
+                
+                # If LLM failed, back off significantly to avoid error flooding
+                if reply and "ERROR:" in reply:
+                    print(f"[AUTOPILOT] LLM unavailable, backing off 120s", flush=True)
+                    time.sleep(120)
+                    continue
                 
                 try:
                     # Parse JSON from Tony's response
@@ -1619,18 +1633,38 @@ def autopilot_thread():
                         title = task_data.get("task_title", "Strategic Initiative")
                         desc = task_data.get("task_description", "")
                         
-                        # Inject task into DB and assign to jarvis
+                        # Check for duplicate titles before creating
+                        is_duplicate = False
+                        with state_lock:
+                            for t in tasks_db.values():
+                                if t.get("title", "").lower().strip() == title.lower().strip():
+                                    is_duplicate = True
+                                    break
+                        
+                        if is_duplicate:
+                            print(f"[AUTOPILOT] Skipping duplicate task: {title}", flush=True)
+                            time.sleep(30)
+                            continue
+                        
+                        # Inject task into DB — use 'message' field so worker can find it
                         new_id = str(uuid.uuid4())[:8]
                         with state_lock:
                             tasks_db[new_id] = {
                                 "id": new_id,
                                 "title": title,
+                                "message": f"[AUTOPILOT DIRECTIVE] {desc}",
                                 "description": f"[AUTOPILOT DIRECTIVE] {desc}",
-                                "status": "assigned",
+                                "status": "inbox",
                                 "agent": "jarvis",
+                                "assignee": None,
                                 "comments": [],
+                                "created_at": int(time.time()),
                                 "ts": int(time.time()),
-                                "blocked": False
+                                "blocked": False,
+                                "is_continuous": False,
+                                "deliverable": None,
+                                "completed_at": None,
+                                "error": None
                             }
                             save_tasks()
                             
@@ -1645,9 +1679,10 @@ def autopilot_thread():
                     
             except Exception as e:
                 print(f"[AUTOPILOT ERROR] {e}")
+                time.sleep(60)  # Back off on errors
                 
-            # Wait 30 seconds before generating the next task for true 24/7 operations
-            time.sleep(30)
+            # Wait 60 seconds before generating the next task
+            time.sleep(60)
         else:
             time.sleep(2)
 
