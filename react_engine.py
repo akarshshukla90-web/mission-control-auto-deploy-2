@@ -63,7 +63,7 @@ def execute_agent_loop(task, target_agent, query_llm_fn, append_chat_fn, save_co
     import os, json
     
     task_id = task["id"]
-    message = task["message"]
+    message = task.get("message") or task.get("description") or ""
     
     settings_path = os.path.expanduser("~/.openclaw/mc_settings.json")
     try:
