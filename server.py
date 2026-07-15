@@ -243,7 +243,7 @@ def query_llm(prompt, system_prompt="You are a helpful assistant.", max_tokens=1
         data = {"model": model, "messages": messages if messages else [{"role": "system", "content": system_prompt}, {"role": "user", "content": prompt}], "temperature": 0.7, "max_tokens": max_tokens}
         import urllib.request, json
         req = urllib.request.Request(url, data=json.dumps(data).encode("utf-8"), headers=headers, method="POST")
-        with urllib.request.urlopen(req, timeout=180) as res:
+        with urllib.request.urlopen(req, timeout=60) as res:
             return json.loads(res.read().decode("utf-8"))["choices"][0]["message"]["content"].strip()
             
     # 2. NVIDIA (Primary for Logic/Code)
@@ -254,7 +254,7 @@ def query_llm(prompt, system_prompt="You are a helpful assistant.", max_tokens=1
         data = {"model": model, "messages": messages if messages else [{"role": "system", "content": system_prompt}, {"role": "user", "content": prompt}], "temperature": 0.2, "max_tokens": max_tokens}
         import urllib.request, json
         req = urllib.request.Request(url, data=json.dumps(data).encode("utf-8"), headers=headers, method="POST")
-        with urllib.request.urlopen(req, timeout=180) as res:
+        with urllib.request.urlopen(req, timeout=60) as res:
             return json.loads(res.read().decode("utf-8"))["choices"][0]["message"]["content"].strip()
             
     # 3. OmniRoute (Local Gateway Fallback)
@@ -264,7 +264,7 @@ def query_llm(prompt, system_prompt="You are a helpful assistant.", max_tokens=1
         data = {"model": "claude-3-haiku", "messages": messages if messages else [{"role": "system", "content": system_prompt}, {"role": "user", "content": prompt}], "temperature": 0.7, "max_tokens": max_tokens}
         import urllib.request, json
         req = urllib.request.Request(url, data=json.dumps(data).encode("utf-8"), headers=headers, method="POST")
-        with urllib.request.urlopen(req, timeout=180) as res:
+        with urllib.request.urlopen(req, timeout=10) as res:
             return json.loads(res.read().decode("utf-8"))["choices"][0]["message"]["content"].strip()
 
     if agent_key in logic_agents:
@@ -676,20 +676,22 @@ def telegram_polling_worker():
 
 threading.Thread(target=telegram_polling_worker, daemon=True).start()
 
-def agent_simulation_worker():
+def agent_simulation_worker(worker_id=0):
     while True:
         task_id = None
         with queue_lock:
             if sim_queue:
                 task_id = sim_queue.pop(0)
         if task_id:
+            print(f"[WORKER-{worker_id}] Picking up task {task_id}", flush=True)
             run_task(task_id)
+            print(f"[WORKER-{worker_id}] Finished task {task_id}", flush=True)
         else:
             time.sleep(1)
 
-# Start worker thread
-worker_thread = threading.Thread(target=agent_simulation_worker, daemon=True)
-worker_thread.start()
+# Start 3 concurrent worker threads so tasks don't block each other
+for _wid in range(3):
+    threading.Thread(target=agent_simulation_worker, args=(_wid,), daemon=True).start()
 
 def autonomous_execution_worker():
     import random
@@ -1593,18 +1595,8 @@ class MissionControlHandler(SimpleHTTPRequestHandler):
         else:
             self.send_json({"error": "not found"}, 404)
 
-def worker_thread():
-    while True:
-        task_id = None
-        with queue_lock:
-            if sim_queue:
-                task_id = sim_queue.pop(0)
-        if task_id:
-            try:
-                run_task(task_id)
-            except Exception as e:
-                print(f"[WORKER ERROR] {e}")
-        time.sleep(1)
+
+
 
 def autopilot_thread():
     global autopilot_active
@@ -1702,7 +1694,7 @@ def autopilot_thread():
         else:
             time.sleep(2)
 
-threading.Thread(target=worker_thread, daemon=True).start()
+# Workers already started above (agent_simulation_worker x3)
 threading.Thread(target=autopilot_thread, daemon=True).start()
 
 # ─── MAIN ─────────────────────────────────────────────────────────────────────
