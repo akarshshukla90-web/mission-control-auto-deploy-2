@@ -227,16 +227,81 @@ def save_settings(data):
 
 load_state()
 
-# ─── NVIDIA NIM ───────────────────────────────────────────────────────────────
+# ─── NVIDIA NIM — PRIMARY LLM ENGINE ─────────────────────────────────────────
+# Model Routing Strategy:
+#   TIER 1 (Heavy Reasoning/Agentic): nvidia/nemotron-3-ultra-550b-a55b  — 550B MoE, best for complex planning, strategy, multi-step reasoning
+#   TIER 2 (Code & Analysis):         deepseek-ai/deepseek-v4-flash      — Fast MoE, excellent for code generation, data analysis, structured output
+#   TIER 3 (General/Fast):            meta/llama-3.1-70b-instruct        — Reliable workhorse for delegation, routing, summaries
+#   TIER 4 (Ultra-Fast/Cheap):        meta/llama-3.1-8b-instruct         — Quick classifications, trivial checks
+#   FALLBACK:                         OpenRouter (gpt-4o-mini)            — Only when NVIDIA is down
+
+NVIDIA_MODELS = {
+    "ultra":   "nvidia/nemotron-3-ultra-550b-a55b",   # Complex strategy, business planning, agentic reasoning
+    "code":    "deepseek-ai/deepseek-v4-flash",        # Code generation, data analysis, structured JSON output
+    "general": "meta/llama-3.1-70b-instruct",          # Task routing, delegation, summaries
+    "fast":    "meta/llama-3.1-8b-instruct",           # Trivial checks, classifications
+}
+
+# Agents that need heavy reasoning (use Ultra or Code tier)
+HEAVY_AGENTS = [
+    "jarvis", "tony", "friday", "shuri", "backend-architect", "ai-engineer",
+    "data-engineer", "statistician", "ai-data-remediation-engineer",
+    "security-architect", "systems-architect", "ml-engineer",
+    "devops-engineer", "full-stack-developer", "database-architect",
+]
+
+# Agents that do creative/content work (still use NVIDIA but general tier)
+CREATIVE_AGENTS = [
+    "wanda", "vision", "quill", "pepper", "loki", "quentin",
+    "groot", "fury", "nexus",
+]
+
 def query_llm(prompt, system_prompt="You are a helpful assistant.", max_tokens=1500, model_override=None, messages=None, agent_key=None):
-    print(f"[DEBUG] query_llm called. agent={agent_key}", flush=True)
+    print(f"[LLM] query_llm called. agent={agent_key}", flush=True)
     settings = load_settings()
     
-    logic_agents = ["jarvis", "friday", "shuri", "tony", "backend-architect", "ai-engineer"]
+    # ── Select the best NVIDIA model based on agent and task type ──
+    def pick_nvidia_model():
+        if model_override:
+            return model_override
+        # Check if this is a trivial/short task (classification, routing)
+        if max_tokens <= 20:
+            return NVIDIA_MODELS["fast"]
+        # Heavy reasoning agents get the best models
+        if agent_key in HEAVY_AGENTS:
+            return NVIDIA_MODELS["code"]  # DeepSeek V4 — fast + smart for code/analysis
+        # Tony (CEO strategist) and Jarvis (orchestrator) get Ultra for planning
+        if agent_key in ["tony", "jarvis"] and max_tokens > 500:
+            return NVIDIA_MODELS["ultra"]
+        # Creative agents use general tier
+        if agent_key in CREATIVE_AGENTS:
+            return NVIDIA_MODELS["general"]
+        # Default to general
+        return NVIDIA_MODELS["general"]
     
-    # 1. OpenRouter (Primary for Creative/General)
-    def try_openrouter(model="openai/gpt-3.5-turbo"):
-        import os
+    # ── 1. NVIDIA NIM (PRIMARY for everything except image gen) ──
+    def try_nvidia(model=None):
+        if model is None:
+            model = pick_nvidia_model()
+        api_key = settings.get("api_key", NVIDIA_API_KEY)
+        url = "https://integrate.api.nvidia.com/v1/chat/completions"
+        headers = {"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"}
+        temp = 0.2 if agent_key in HEAVY_AGENTS else 0.5
+        data = {
+            "model": model,
+            "messages": messages if messages else [{"role": "system", "content": system_prompt}, {"role": "user", "content": prompt}],
+            "temperature": temp,
+            "max_tokens": max_tokens
+        }
+        import urllib.request, json
+        req = urllib.request.Request(url, data=json.dumps(data).encode("utf-8"), headers=headers, method="POST")
+        with urllib.request.urlopen(req, timeout=60) as res:
+            result = json.loads(res.read().decode("utf-8"))["choices"][0]["message"]["content"].strip()
+            print(f"[LLM] NVIDIA {model} succeeded", flush=True)
+            return result
+    
+    # ── 2. OpenRouter (FALLBACK only) ──
+    def try_openrouter(model="openai/gpt-4o-mini"):
         url = "https://openrouter.ai/api/v1/chat/completions"
         api_key = OPENROUTER_FALLBACK_KEY
         headers = {"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"}
@@ -244,20 +309,11 @@ def query_llm(prompt, system_prompt="You are a helpful assistant.", max_tokens=1
         import urllib.request, json
         req = urllib.request.Request(url, data=json.dumps(data).encode("utf-8"), headers=headers, method="POST")
         with urllib.request.urlopen(req, timeout=60) as res:
-            return json.loads(res.read().decode("utf-8"))["choices"][0]["message"]["content"].strip()
-            
-    # 2. NVIDIA (Primary for Logic/Code)
-    def try_nvidia(model=NVIDIA_MODEL):
-        api_key = settings.get("api_key", NVIDIA_API_KEY)
-        url = "https://integrate.api.nvidia.com/v1/chat/completions"
-        headers = {"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"}
-        data = {"model": model, "messages": messages if messages else [{"role": "system", "content": system_prompt}, {"role": "user", "content": prompt}], "temperature": 0.2, "max_tokens": max_tokens}
-        import urllib.request, json
-        req = urllib.request.Request(url, data=json.dumps(data).encode("utf-8"), headers=headers, method="POST")
-        with urllib.request.urlopen(req, timeout=60) as res:
-            return json.loads(res.read().decode("utf-8"))["choices"][0]["message"]["content"].strip()
-            
-    # 3. OmniRoute (Local Gateway Fallback)
+            result = json.loads(res.read().decode("utf-8"))["choices"][0]["message"]["content"].strip()
+            print(f"[LLM] OpenRouter {model} succeeded (fallback)", flush=True)
+            return result
+    
+    # ── 3. OmniRoute (Local Gateway — last resort) ──
     def try_omniroute():
         url = settings.get("gateway_url", "http://localhost:20128/v1/chat/completions")
         headers = {"Content-Type": "application/json", "Authorization": "Bearer any_token"}
@@ -267,21 +323,32 @@ def query_llm(prompt, system_prompt="You are a helpful assistant.", max_tokens=1
         with urllib.request.urlopen(req, timeout=10) as res:
             return json.loads(res.read().decode("utf-8"))["choices"][0]["message"]["content"].strip()
 
-    if agent_key in logic_agents:
-        try: return try_nvidia()
-        except Exception as e: print(f"NVIDIA logic failed: {e}", flush=True)
-        try: return try_openrouter("openai/gpt-4o-mini")
-        except: pass
-    else:
-        try: return try_openrouter("openai/gpt-3.5-turbo")
-        except Exception as e: print(f"OpenRouter creative failed: {e}", flush=True)
-        try: return try_nvidia()
-        except: pass
-        
+    # ── ROUTING: NVIDIA first → NVIDIA fallback model → OpenRouter → OmniRoute ──
+    primary_model = pick_nvidia_model()
+    
+    # Try primary NVIDIA model
+    try:
+        return try_nvidia(primary_model)
+    except Exception as e:
+        print(f"[LLM] NVIDIA {primary_model} failed: {e}", flush=True)
+    
+    # Try NVIDIA fallback (Llama 8B — always fast)
+    try:
+        return try_nvidia(NVIDIA_MODELS["fast"])
+    except Exception as e:
+        print(f"[LLM] NVIDIA fast fallback failed: {e}", flush=True)
+    
+    # Try OpenRouter as last cloud fallback
+    try:
+        return try_openrouter("openai/gpt-4o-mini")
+    except Exception as e:
+        print(f"[LLM] OpenRouter fallback failed: {e}", flush=True)
+    
+    # Final local fallback
     try:
         return try_omniroute()
     except Exception as e:
-        print(f"ALL APIs FAILED! {e}", flush=True)
+        print(f"[LLM] ALL APIs FAILED! {e}", flush=True)
         return f"ERROR: All LLM APIs are currently failing. Last error: {e}"
 
 
