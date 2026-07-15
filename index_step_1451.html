@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission Control - Collaborative AI Squad</title>
+    <!-- Outfit and Inter Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-base: #f8fafc;
+            --bg-surface: #ffffff;
+            --bg-card: #ffffff;
+            --border-color: #e2e8f0;
+            --color-primary: #d97706; /* Premium Amber */
+            --color-success: #16a34a;
+            --color-warning: #ea580c;
+            --color-danger: #dc2626;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+        }
+
+        /* Sidebar Styling */
+        aside {
+            width: 290px;
+            background: var(--bg-surface);
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .brand-header {
+            padding: 20px 24px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .brand-header h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .brand-header i {
+            color: var(--color-primary);
+            font-size: 1.25rem;
+        }
+
+        .sidebar-scroll {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px 20px;
+        }
+
+        .section-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .agent-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .agent-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 12px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            border: 1px solid transparent;
+        }
+
+        .agent-item:hover, .agent-item.active {
+            background: #f1f5f9;
+            border-color: var(--border-color);
+        }
+
+        .agent-avatar-box {
+            width: 38px;
+            height: 38px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            position: relative;
+        }
+
+        .agent-status-dot {
+            position: absolute;
+            bottom: -2px;
+            right: -2px;
+            width: 9px;
+            height: 9px;
+            background: var(--color-success);
+            border: 2px solid var(--bg-surface);
+            border-radius: 50%;
+        }
+
+        .agent-meta {
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .agent-meta-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4px;
+        }
+
+        .agent-name {
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .agent-role-tag {
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 2px 6px;
+            background: #fef3c7;
+            color: #d97706;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .agent-title {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-top: 2px;
+        }
+
+        /* Main Section */
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* Navbar Header */
+        nav {
+            height: 68px;
+            background: var(--bg-surface);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .nav-stats {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        .stat-value {
+            color: var(--text-main);
+            font-weight: 700;
+            margin-right: 4px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .active-pill {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            background: #e0f2fe;
+            color: #0284c7;
+            font-size: 0.78rem;
+            font-weight: 700;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
+
+        .active-pill i {
+            font-size: 0.5rem;
+            animation: pulse-dot 1.5s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0% { transform: scale(0.9); opacity: 0.6; }
+            50% { transform: scale(1.3); opacity: 1; }
+            100% { transform: scale(0.9); opacity: 0.6; }
+        }
+
+        .btn-action {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-action:hover {
+            background: #f8fafc;
+            border-color: #cbd5e1;
+        }
+
+        .btn-primary {
+            background: var(--color-primary);
+            color: #ffffff;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: #b45309;
+        }
+
+        /* Dashboard Container */
+        .dashboard-container {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .board-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 24px 28px;
+            overflow: hidden;
+            gap: 20px;
+        }
+
+        /* Filter Tabs */
+        .filter-bar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            overflow-x: auto;
+            padding-bottom: 4px;
+        }
+
+        .filter-tab {
+            padding: 6px 12px;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--text-muted);
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+
+        .filter-tab:hover, .filter-tab.active {
+            background: var(--text-main);
+            color: #ffffff;
+            border-color: var(--text-main);
+        }
+
+        .filter-tab span {
+            margin-left: 6px;
+            opacity: 0.7;
+        }
+
+        /* Kanban Layout */
+        .kanban-board {
+            display: flex;
+            flex: 1;
+            gap: 16px;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding-bottom: 8px;
+        }
+
+        .kanban-column {
+            width: 250px;
+            min-width: 250px;
+            background: #f1f5f9;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .column-header {
+            padding: 14px 16px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .column-cards {
+            flex: 1;
+            overflow-y: auto;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .column-cards::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        /* Task Cards */
+        .task-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 14px;
+            cursor: pointer;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .task-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-color: #cbd5e1;
+        }
+
+        .card-tag-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .card-assignee-tag {
+            font-size: 0.68rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .card-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* Squad Chat Sidebar (Collapsible) */
+        .chat-sidebar {
+            width: 320px;
+            background: var(--bg-surface);
+            border-left: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            padding: 20px 24px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .chat-header h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .chat-feed {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .chat-bubble {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            max-width: 90%;
+        }
+
+        .bubble-meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.75rem;
+        }
+
+        .bubble-sender {
+            font-weight: 700;
+        }
+
+        .bubble-time {
+            color: var(--text-muted);
+        }
+
+        .bubble-text {
+            background: #f1f5f9;
+            padding: 8px 12px;
+            border-radius: 12px;
+            font-size: 0.82rem;
+            line-height: 1.4;
+        }
+
+        /* Broadcast Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(4px);
+            z-index: 100;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: var(--bg-surface);
+            width: 500px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            position: relative;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .modal-header h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.25rem;
+            cursor: pointer;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .form-group label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+        }
+
+        .input-text, .input-textarea {
+            width: 100%;
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-family: inherit;
+            font-size: 0.85rem;
+            color: var(--text-main);
+            outline: none;
+        }
+
+        .input-textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        .priority-toggle-group {
+            display: flex;
+            gap: 8px;
+        }
+
+        .priority-btn {
+            flex: 1;
+            padding: 10px;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .priority-btn.active {
+            background: #fef3c7;
+            color: #d97706;
+            border-color: #f59e0b;
+        }
+
+        .modal-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        /* Detail/Drawer Sidebar */
+        .drawer-overlay {
+            display: none;
+            position: fixed;
+            top: 0; right: 0;
+            width: 420px;
+            height: 100vh;
+            background: var(--bg-surface);
+            border-left: 1px solid var(--border-color);
+            box-shadow: -10px 0 30px rgba(0,0,0,0.05);
+            z-index: 90;
+            flex-direction: column;
+            overflow: hidden;
+            animation: slideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
+        }
+
+        .drawer-header {
+            padding: 24px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .drawer-close {
+            background: none; border: none;
+            color: var(--text-muted);
+            font-size: 1.25rem;
+            cursor: pointer;
+        }
+
+        .drawer-scroll {
+            flex: 1;
+            overflow-y: auto;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .profile-card {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .profile-avatar {
+            width: 54px;
+            height: 54px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .profile-info h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .profile-info p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .drawer-section-title {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 0.8px;
+            margin-bottom: 8px;
+        }
+
+        .about-text {
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: #334155;
+        }
+
+        .skills-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .skill-tag {
+            font-size: 0.72rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            background: #f1f5f9;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+
+        .unblock-alert {
+            background: #fee2e2;
+            border: 1px solid #fecaca;
+            border-radius: 10px;
+            padding: 14px;
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .unblock-alert p {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--color-danger);
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar Left: Agents Directory -->
+    <aside>
+        <div class="brand-header">
+            <i class="fa-solid fa-circle-nodes"></i>
+            <h1>Mission Control</h1>
+        </div>
+        <div class="sidebar-scroll">
+            <div class="section-label">
+                <span>Agents</span>
+                <span style="opacity: 0.7;" id="activeAgentCount">11</span>
+            </div>
+            <div class="agent-list" id="agentList">
+                <!-- Javascript populates -->
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content Panel -->
+    <main>
+        <!-- Nav Header -->
+        <nav>
+            <div class="nav-left">
+                <div class="nav-stats">
+                    <div><span class="stat-value" id="statsActive">1</span>AGENTS ACTIVE</div>
+                    <div><span class="stat-value" id="statsQueue">0</span>TASKS IN QUEUE</div>
+                </div>
+            </div>
+            <div class="nav-right">
+                <div class="active-pill">
+                    <i class="fa-solid fa-circle"></i>Active
+                </div>
+                <button class="btn-action" onclick="toggleChat()"><i class="fa-solid fa-comments"></i>Chat</button>
+                <button class="btn-action btn-primary" onclick="openBroadcastModal()"><i class="fa-solid fa-bullhorn"></i>Broadcast</button>
+            </div>
+        </nav>
+
+        <!-- Dashboard Wrapper -->
+        <div class="dashboard-container">
+            <div class="board-wrapper">
+                <!-- Filter tabs bar -->
+                <div class="filter-bar">
+                    <button class="filter-tab active" onclick="filterColumn('All')">All</button>
+                    <button class="filter-tab" onclick="filterColumn('Inbox')">Inbox <span id="f-inbox">0</span></button>
+                    <button class="filter-tab" onclick="filterColumn('Assigned')">Assigned <span id="f-assigned">0</span></button>
+                    <button class="filter-tab" onclick="filterColumn('In Progress')">Active <span id="f-progress">0</span></button>
+                    <button class="filter-tab" onclick="filterColumn('Review')">Review <span id="f-review">0</span></button>
+                    <button class="filter-tab" onclick="filterColumn('Done')">Done <span id="f-done">0</span></button>
+                    <button class="filter-tab" onclick="filterColumn('Waiting')">Waiting <span id="f-waiting">0</span></button>
+                </div>
+
+                <!-- Kanban columns wrapper -->
+                <div class="kanban-board">
+                    <div class="kanban-column">
+                        <div class="column-header">Inbox <span id="c-inbox">0</span></div>
+                        <div class="column-cards" id="col-inbox"></div>
+                    </div>
+                    <div class="kanban-column">
+                        <div class="column-header">Assigned <span id="c-assigned">0</span></div>
+                        <div class="column-cards" id="col-assigned"></div>
+                    </div>
+                    <div class="kanban-column">
+                        <div class="column-header">In Progress <span id="c-progress">0</span></div>
+                        <div class="column-cards" id="col-progress-cards"></div>
+                    </div>
+                    <div class="kanban-column">
+                        <div class="column-header">Review <span id="c-review">0</span></div>
+                        <div class="column-cards" id="col-review"></div>
+                    </div>
+                    <div class="kanban-column">
+                        <div class="column-header">Done <span id="c-done">0</span></div>
+                        <div class="column-cards" id="col-done"></div>
+                    </div>
+                    <div class="kanban-column">
+                        <div class="column-header">Waiting <span id="c-waiting">0</span></div>
+                        <div class="column-cards" id="col-waiting"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Unified Squad Chat Sidebar -->
+            <div class="chat-sidebar" id="chatSidebar">
+                <div class="chat-header">
+                    <h3>Squad Chat</h3>
+                    <i class="fa-solid fa-user-group" style="color: var(--text-muted);"></i>
+                </div>
+                <div class="chat-feed" id="chatFeed">
+                    <!-- Message items -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Broadcast Modal -->
+    <div class="modal" id="broadcastModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Squad Announcement</h3>
+                <button class="close-btn" onclick="closeBroadcastModal()">&times;</button>
+            </div>
+            <form id="broadcastForm">
+                <div class="form-group">
+                    <label>Title (Optional)</label>
+                    <input type="text" id="taskTitle" class="input-text" placeholder="New Task">
+                </div>
+                <div class="form-group">
+                    <label>Message *</label>
+                    <textarea id="taskMessage" class="input-textarea" placeholder="Write your announcement to the squad..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Priority</label>
+                    <div class="priority-toggle-group">
+                        <button type="button" class="priority-btn active" id="btn-normal" onclick="setPriority('NORMAL')">Normal</button>
+                        <button type="button" class="priority-btn" id="btn-urgent" onclick="setPriority('URGENT')"><i class="fa-solid fa-triangle-exclamation"></i> Urgent</button>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-action" onclick="closeBroadcastModal()">Cancel</button>
+                    <button type="submit" class="btn-action btn-primary">Broadcast to Squad</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Agent Detail / Task Drawer -->
+    <div class="drawer-overlay" id="detailDrawer">
+        <div class="drawer-header">
+            <h3 id="drawerHeaderType">Agent Profile</h3>
+            <button class="drawer-close" onclick="closeDrawer()">&times;</button>
+        </div>
+        <div class="drawer-scroll" id="drawerContent">
+            <!-- Dynamic profile or task details -->
+        </div>
+    </div>
+
+    <script>
+        const API_URL = '/api';
+        let currentTasks = [];
+        let activeFilter = 'All';
+        let currentPriority = 'NORMAL';
+
+        // Static profiles representing the premium visual list
+        const agentProfiles = {
+            "jarvis": { name: "Jarvis", role: "LEAD", title: "Squad Lead", icon: "fa-robot", bg: "#dbeafe", color: "#1e40af", about: "Chief orchestrator of the marketing squad. Coordinates work across all agents, maintains quality standards, and makes sure nothing falls through the cracks. Calm under pressure, detail-oriented.", skills: ["coordination", "quality-control", "communication", "automation"] },
+            "shuri": { name: "Shuri", role: "SPC", title: "Product Analyst", icon: "fa-microscope", bg: "#f3e8ff", color: "#6b21a8", about: "Explores product onboarding leaks, analyzes user dropoff sequences, and compiles granular features research summaries.", skills: ["analytics", "product-research", "conversion-optimization"] },
+            "friday": { name: "Friday", role: "INT", title: "Developer Agent", icon: "fa-hammer", bg: "#dcfce7", color: "#166534", about: "Technical and reliable. Ships frontend visual components, rotating testimonial widgets, custom calculators, and Bento grids.", skills: ["TypeScript", "Node.js", "API-integrations", "webhooks", "git"] },
+            "wanda": { name: "Wanda", role: "SPC", title: "UX Designer", icon: "fa-palette", bg: "#fce7f3", color: "#9d174d", about: "Transforms research briefs into modern interactive designs, custom layout cards, and beautiful dark mode assets.", skills: ["design-spec", "wireframing", "mockup-layouts"] },
+            "vision": { name: "Vision", role: "SPC", title: "SEO / Growth Lead", icon: "fa-bullseye", bg: "#ffedd5", color: "#9a3412", about: "Growth specialist. Focuses on keyword discovery, organic search query optimizations, and traffic metrics audits.", skills: ["SEO", "analytics", "traffic-generation", "growths"] }
+        };
+
+        // Render Sidebar Agents
+        function renderSidebar() {
+            const listEl = document.getElementById("agentList");
+            listEl.innerHTML = "";
+            Object.entries(agentProfiles).forEach(([key, details]) => {
+                const div = document.createElement("div");
+                div.className = "agent-item";
+                div.onclick = () => openAgentDrawer(key);
+                div.innerHTML = `
+                    <div class="agent-avatar-box" style="background: ${details.bg}; color: ${details.color}">
+                        <i class="fa-solid ${details.icon}"></i>
+                        <div class="agent-status-dot"></div>
+                    </div>
+                    <div class="agent-meta">
+                        <div class="agent-meta-header">
+                            <span class="agent-name">${details.name}</span>
+                            <span class="agent-role-tag">${details.role}</span>
+                        </div>
+                        <div class="agent-title">${details.title}</div>
+                    </div>
+                `;
+                listEl.appendChild(div);
+            });
+            document.getElementById("activeAgentCount").innerText = Object.keys(agentProfiles).length;
+        }
+
+        async function fetchDashboardData() {
+            try {
+                const boardRes = await fetch(`${API_URL}/board`);
+                const boardData = await boardRes.json();
+                if (boardData.status === 'success') {
+                    currentTasks = boardData.tasks;
+                    renderKanban(boardData.tasks);
+                }
+
+                const chatRes = await fetch(`${API_URL}/chat`);
+                const chatData = await chatRes.json();
+                if (chatData.status === 'success') {
+                    renderChat(chatData.chat);
+                }
+            } catch (err) {
+                console.error("Dashboard offline / reset ongoing:", err);
+            }
+        }
+
+        function renderKanban(tasks) {
+            const cols = {
+                'Queue': document.getElementById('col-inbox'),
+                'Assigned': document.getElementById('col-assigned'),
+                'In Progress': document.getElementById('col-progress-cards'),
+                'Review': document.getElementById('col-review'),
+                'Done': document.getElementById('col-done'),
+                'Blocked': document.getElementById('col-waiting')
+            };
+
+            // Clear previous
+            Object.values(cols).forEach(el => el.innerHTML = "");
+
+            const counts = { 'Queue': 0, 'Assigned': 0, 'In Progress': 0, 'Review': 0, 'Done': 0, 'Blocked': 0 };
+
+            tasks.forEach(task => {
+                const status = task.status || 'Queue';
+                if (!cols[status]) return;
+
+                counts[status]++;
+
+                const card = document.createElement("div");
+                card.className = "task-card";
+                card.onclick = () => openTaskDrawer(task.id);
+
+                // Format card assignee style
+                let name = "Jarvis";
+                if (task.agent.includes("Shuri")) name = "shuri";
+                else if (task.agent.includes("Friday")) name = "friday";
+                else if (task.agent.includes("Wanda")) name = "wanda";
+                else if (task.agent.includes("Vision")) name = "vision";
+
+                const prof = agentProfiles[name] || agentProfiles["jarvis"];
+
+                card.innerHTML = `
+                    <div class="card-tag-wrapper">
+                        <span class="card-assignee-tag" style="background: ${prof.bg}; color: ${prof.color}">${prof.name}</span>
+                        <span style="font-size: 0.7rem; color: var(--text-muted); font-weight: 500;">about 1 min ago</span>
+                    </div>
+                    <div class="card-title">${task.title}</div>
+                    <div class="card-footer">
+                        <span>#${task.id}</span>
+                        ${task.deliverable ? `<span style="color: var(--color-success); font-weight: 600;"><i class="fa-solid fa-file-arrow-down"></i> spec</span>` : ''}
+                    </div>
+                `;
+                cols[status].appendChild(card);
+            });
+
+            // Update column counts
+            document.getElementById("c-inbox").innerText = counts['Queue'];
+            document.getElementById("c-assigned").innerText = counts['Assigned'];
+            document.getElementById("c-progress-cards").innerText = counts['In Progress'];
+            document.getElementById("c-review").innerText = counts['Review'];
+            document.getElementById("c-done").innerText = counts['Done'];
+            document.getElementById("c-waiting").innerText = counts['Blocked'];
+
+            // Update filter bar stats
+            document.getElementById("f-inbox").innerText = counts['Queue'];
+            document.getElementById("f-assigned").innerText = counts['Assigned'];
+            document.getElementById("f-progress").innerText = counts['In Progress'];
+            document.getElementById("f-review").innerText = counts['Review'];
+            document.getElementById("f-done").innerText = counts['Done'];
+            document.getElementById("f-waiting").innerText = counts['Blocked'];
+
+            document.getElementById("statsActive").innerText = tasks.length > 0 ? 4 : 1;
+            document.getElementById("statsQueue").innerText = counts['Queue'] + counts['Assigned'];
+        }
+
+        function renderChat(chatList) {
+            const feed = document.getElementById("chatFeed");
+            feed.innerHTML = "";
+            chatList.forEach(msg => {
+                const bubble = document.createElement("div");
+                bubble.className = "chat-bubble";
+                let color = "var(--color-primary)";
+                if (msg.sender === "Shuri") color = "#6b21a8";
+                else if (msg.sender === "Friday") color = "#166534";
+                else if (msg.sender === "Wanda") color = "#9d174d";
+                else if (msg.sender === "Vision") color = "#9a3412";
+                else if (msg.sender === "Max") color = "#ef4444";
+
+                bubble.innerHTML = `
+                    <div class="bubble-meta">
+                        <span class="bubble-sender" style="color: ${color}">${msg.sender}</span>
+                        <span class="bubble-time">${new Date(msg.timestamp * 1000).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</span>
+                    </div>
+                    <div class="bubble-text">${msg.text}</div>
+                `;
+                feed.appendChild(bubble);
+            });
+            feed.scrollTop = feed.scrollHeight;
+        }
+
+        // Broadcast Form
+        document.getElementById("broadcastForm").onsubmit = async (e) => {
+            e.preventDefault();
+            const text = document.getElementById("taskMessage").value;
+            const title = document.getElementById("taskTitle").value || "New Task";
+            if (!text) return;
+
+            try {
+                const res = await fetch(`${API_URL}/broadcast`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({ message: `${title}: ${text}` })
+                });
+                if ((await res.json()).status === 'success') {
+                    closeBroadcastModal();
+                    document.getElementById("taskMessage").value = "";
+                    document.getElementById("taskTitle").value = "";
+                    fetchDashboardData();
+                }
+            } catch (err) {
+                alert("Failed to broadcast.");
+            }
+        };
+
+        // UI Drawer Actions
+        function openAgentDrawer(key) {
+            const p = agentProfiles[key];
+            if (!p) return;
+
+            document.getElementById("drawerHeaderType").innerText = "Agent Profile";
+            const content = document.getElementById("drawerContent");
+            content.innerHTML = `
+                <div class="profile-card">
+                    <div class="profile-avatar" style="background: ${p.bg}; color: ${p.color}">
+                        <i class="fa-solid ${p.icon}"></i>
+                    </div>
+                    <div class="profile-info">
+                        <h3>${p.name}</h3>
+                        <p>${p.title} • <span class="agent-role-tag">${p.role}</span></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="drawer-section-title">Status</div>
+                    <div class="active-pill" style="width: fit-content;"><i class="fa-solid fa-circle"></i> WORKING</div>
+                </div>
+                <div class="form-group">
+                    <div class="drawer-section-title">About</div>
+                    <p class="about-text">${p.about}</p>
+                </div>
+                <div class="form-group">
+                    <div class="drawer-section-title">Skills</div>
+                    <div class="skills-wrap">
+                        ${p.skills.map(s => `<span class="skill-tag">${s}</span>`).join('')}
+                    </div>
+                </div>
+            `;
+            document.getElementById("detailDrawer").style.display = "flex";
+        }
+
+        function openTaskDrawer(taskId) {
+            const task = currentTasks.find(t => t.id === taskId);
+            if (!task) return;
+
+            document.getElementById("drawerHeaderType").innerText = "Task Details";
+            const content = document.getElementById("drawerContent");
+
+            // Format card assignee style
+            let name = "Jarvis";
+            if (task.agent.includes("Shuri")) name = "shuri";
+            else if (task.agent.includes("Friday")) name = "friday";
+            else if (task.agent.includes("Wanda")) name = "wanda";
+            else if (task.agent.includes("Vision")) name = "vision";
+
+            const p = agentProfiles[name] || agentProfiles["jarvis"];
+
+            content.innerHTML = `
+                <div class="profile-card">
+                    <div class="profile-avatar" style="background: ${p.bg}; color: ${p.color}">
+                        <i class="fa-solid ${p.icon}"></i>
+                    </div>
+                    <div class="profile-info">
+                        <h3>${task.title}</h3>
+                        <p>Assigned to: ${p.name} (${p.title})</p>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="drawer-section-title">Dialogue Thread</div>
+                    <div style="background: #f8fafc; padding: 12px; border-radius: 8px; max-height: 200px; overflow-y: auto; font-size: 0.8rem; display: flex; flex-direction: column; gap: 8px;">
+                        ${task.comments.map(c => `
+                            <div><strong style="color: var(--color-primary)">${c.sender}:</strong> ${c.text}</div>
+                        `).join('')}
+                    </div>
+                </div>
+
+                ${task.status === 'Blocked' ? `
+                <div class="unblock-alert">
+                    <p><i class="fa-solid fa-triangle-exclamation"></i> Awaiting Whitelist / Session Verification:</p>
+                    <input type="text" id="unblockMessage" class="input-text" placeholder="Paste session cookie or type 'unblocked'">
+                    <button onclick="unblockTask('${task.id}')" class="btn-action btn-primary" style="justify-content: center;">Send Unblock Override</button>
+                </div>
+                ` : ''}
+
+                ${task.deliverable ? `
+                <div class="form-group" style="background: #f0fdf4; border: 1px solid #bbf7d0; padding: 14px; border-radius: 8px;">
+                    <div class="drawer-section-title" style="color: var(--color-success);">💾 Workspace Deliverable File</div>
+                    <p style="font-family: monospace; font-size: 0.78rem; font-weight: 600; color: #166534;">${task.deliverable}</p>
+                    <a href="/api/workspace/${task.deliverable}" target="_blank" class="btn-action" style="margin-top: 10px; font-size: 0.72rem; justify-content: center;"><i class="fa-solid fa-download"></i> View Spec Output</a>
+                </div>
+                ` : ''}
+            `;
+            document.getElementById("detailDrawer").style.display = "flex";
+        }
+
+        async function unblockTask(taskId) {
+            const input = document.getElementById('unblockMessage');
+            if (!input || !input.value) return;
+
+            try {
+                const res = await fetch(`${API_URL}/unblock`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({ id: taskId, comment: input.value })
+                });
+                if ((await res.json()).status === 'success') {
+                    closeDrawer();
+                    fetchDashboardData();
+                }
+            } catch (err) {
+                alert("Failed to unblock.");
+            }
+        }
+
+        function closeDrawer() {
+            document.getElementById("detailDrawer").style.display = "none";
+        }
+
+        function toggleChat() {
+            const sidebar = document.getElementById("chatSidebar");
+            sidebar.style.display = sidebar.style.display === "none" ? "flex" : "none";
+        }
+
+        function openBroadcastModal() {
+            document.getElementById("broadcastModal").style.display = "flex";
+        }
+
+        function closeBroadcastModal() {
+            document.getElementById("broadcastModal").style.display = "none";
+        }
+
+        function setPriority(pri) {
+            currentPriority = pri;
+            document.getElementById("btn-normal").className = `priority-btn ${pri === 'NORMAL' ? 'active' : ''}`;
+            document.getElementById("btn-urgent").className = `priority-btn ${pri === 'URGENT' ? 'active' : ''}`;
+        }
+
+        // Initial setup
+        renderSidebar();
+        fetchDashboardData();
+        setInterval(fetchDashboardData, 3000);
+    </script>
+</body>
+</html>

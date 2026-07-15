@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoShorts Studio - Premium Dashboard</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="glow-bg"></div>
+    <div class="app-container">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fa-solid fa-wand-magic-sparkles logo-icon"></i>
+                <span class="logo-text">AutoShorts <span class="accent-text">Studio</span></span>
+            </div>
+            
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active" id="btn-nav-dashboard">
+                    <i class="fa-solid fa-chart-pie"></i> Dashboard
+                </a>
+                <a href="#" class="nav-item" id="btn-nav-videos">
+                    <i class="fa-solid fa-video"></i> Channel Videos
+                </a>
+                <a href="#" class="nav-item" id="btn-nav-settings">
+                    <i class="fa-solid fa-sliders"></i> Settings
+                </a>
+            </nav>
+            
+            <div class="system-status">
+                <div class="status-header">SYSTEM STATE</div>
+                <div class="status-item">
+                    <span>Ollama Status</span>
+                    <span class="badge badge-success"><i class="fa-solid fa-circle-check"></i> Connected</span>
+                </div>
+                <div class="status-item">
+                    <span>Active Channel</span>
+                    <span class="active-channel-lbl">@MrBeast</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Dashboard Area -->
+        <main class="main-content" id="dashboard-view">
+            <header class="content-header">
+                <div>
+                    <h1>AI Shorts Dashboard</h1>
+                    <p class="subtitle">Monitor new uploads and review generated viral clips</p>
+                </div>
+                <button class="btn btn-primary" id="btn-force-check">
+                    <i class="fa-solid fa-arrows-rotate"></i> Check for New Videos
+                </button>
+            </header>
+
+            <!-- Stats Grid -->
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon bg-blue"><i class="fa-solid fa-youtube"></i></div>
+                    <div class="stat-details">
+                        <span class="stat-title">Videos Tracked</span>
+                        <h2 class="stat-value" id="stat-videos-tracked">0</h2>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon bg-orange"><i class="fa-solid fa-clapperboard"></i></div>
+                    <div class="stat-details">
+                        <span class="stat-title">Clips Generated</span>
+                        <h2 class="stat-value" id="stat-total-shorts">0</h2>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon bg-green"><i class="fa-solid fa-circle-check"></i></div>
+                    <div class="stat-details">
+                        <span class="stat-title">Approved to Upload</span>
+                        <h2 class="stat-value" id="stat-approved-shorts">0</h2>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon bg-purple"><i class="fa-solid fa-share-nodes"></i></div>
+                    <div class="stat-details">
+                        <span class="stat-title">Shorts Published</span>
+                        <h2 class="stat-value" id="stat-uploaded-shorts">0</h2>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Video Grid & Shorts View Split -->
+            <section class="split-view">
+                <!-- Left: Recent Videos List -->
+                <div class="glass-panel video-list-container">
+                    <h3 class="panel-title"><i class="fa-solid fa-list"></i> Recent Video Uploads</h3>
+                    <div class="video-list" id="video-list-ul">
+                        <!-- Loaded dynamically -->
+                        <div class="empty-state">
+                            <i class="fa-solid fa-circle-notch fa-spin"></i>
+                            <p>Loading channel uploads...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Generated Shorts Grid for Selected Video -->
+                <div class="glass-panel shorts-viewer-container">
+                    <div class="panel-header-actions">
+                        <h3 class="panel-title"><i class="fa-solid fa-scissors"></i> Shorts Editor</h3>
+                        <div class="batch-actions" id="batch-actions-panel" style="display: none;">
+                            <button class="btn btn-sm btn-success" id="btn-batch-publish">
+                                <i class="fa-solid fa-cloud-arrow-up"></i> Upload Approved
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="selected-video-banner" id="selected-video-banner" style="display: none;">
+                        <h4 id="selected-video-title">No Video Selected</h4>
+                        <div class="banner-meta">
+                            <span id="selected-video-meta">Select a video from the left to view and edit its viral shorts.</span>
+                        </div>
+                    </div>
+
+                    <div class="shorts-grid" id="shorts-grid-div">
+                        <div class="empty-state">
+                            <i class="fa-solid fa-arrow-left"></i>
+                            <p>Select a video to view generated shorts</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Modal: Short Reviewer / Video Player -->
+        <div class="modal" id="review-modal">
+            <div class="modal-content glass-panel">
+                <button class="modal-close" id="btn-close-modal"><i class="fa-solid fa-xmark"></i></button>
+                <div class="modal-body">
+                    <div class="modal-video-pane">
+                        <video id="modal-video-player" controls>
+                            <source src="" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="modal-form-pane">
+                        <h2>Edit Short Details</h2>
+                        <p class="modal-subtitle">Configure titles, descriptions, and publish status</p>
+                        
+                        <div class="form-group">
+                            <label for="edit-short-title">Short Title (Viral Hook)</label>
+                            <input type="text" id="edit-short-title" class="form-control" placeholder="Enter short title...">
+                            <span class="char-count" id="title-char-count">0/50 characters</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="edit-short-desc">Description (Caption & Hashtags)</label>
+                            <textarea id="edit-short-desc" class="form-control" rows="5" placeholder="Enter description..."></textarea>
+                            <span class="char-count" id="desc-char-count">0/120 characters</span>
+                        </div>
+                        
+                        <div class="modal-actions">
+                            <button class="btn btn-danger-outline" id="btn-modal-reject">
+                                <i class="fa-solid fa-ban"></i> Reject Clip
+                            </button>
+                            <button class="btn btn-success" id="btn-modal-approve">
+                                <i class="fa-solid fa-circle-check"></i> Approve & Save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <!-- Custom JS -->
+    <script src="/app.js"></script>
+</body>
+</html>

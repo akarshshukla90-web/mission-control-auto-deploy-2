@@ -1,0 +1,7 @@
+{
+  "api_key": "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",
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "max_agents": 14,
+  "telegram_token": "8664773354:AAFZV_spQnZcfmoUseElVYewwG_oBg5qFHI",
+  "telegram_chat_id": ""
+}

@@ -1,0 +1,5 @@
+Export Order for JK Forge and Fittings:
+Product: Steel Forgings
+Quantity: 100 units
+Destination: International Market
+Logistics: Sea Freight

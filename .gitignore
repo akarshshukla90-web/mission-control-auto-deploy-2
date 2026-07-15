@@ -1,0 +1,11 @@
+__pycache__/
+dist/
+build/
+remotion/
+workspace/business_data/
+venv/
+.env
+*.spec
+*.vbs
+*.bat
+.git/

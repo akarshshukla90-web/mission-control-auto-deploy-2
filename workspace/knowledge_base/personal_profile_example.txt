@@ -1,0 +1,5 @@
+Introduction: Brief overview of who you are and your professional background.
+Summary: Professional summary highlighting key skills and experience.
+Skills: List of relevant skills, including technical, language, and soft skills.
+Experience: Work experience in reverse chronological order, including job titles, company names, and achievements.
+Education: Relevant education and certifications.
