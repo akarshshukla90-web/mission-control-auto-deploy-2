@@ -1,0 +1,4286 @@
+{
+  "jarvis": {
+    "name": "Jarvis",
+    "role": "LEAD",
+    "title": "Squad Lead",
+    "icon": "fa-robot",
+    "bg": "#dbeafe",
+    "color": "#1e40af",
+    "about": "Chief orchestrator utilizing MIT's Distributed AI Coordination Framework and Google's OKR planning to manage workflows, maintain quality gates, and dynamically route tasks to the best specialist.",
+    "skills": [
+      "MIT-Coordination",
+      "Google-OKRs",
+      "Quality-Control",
+      "Automation",
+      "Task-Routing"
+    ],
+    "status": "active"
+  },
+  "shuri": {
+    "name": "Shuri",
+    "role": "SPC",
+    "title": "Product Analyst",
+    "icon": "fa-microscope",
+    "bg": "#f3e8ff",
+    "color": "#6b21a8",
+    "about": "Explores onboarding sequences using Stanford's d.school User-Centered Design and Netflix's cohort A/B testing to discover conversion drops and product friction.",
+    "skills": [
+      "Stanford-d.school",
+      "Netflix-AB-Testing",
+      "Funnel-Analytics",
+      "Conversion-Optimization"
+    ],
+    "status": "idle"
+  },
+  "friday": {
+    "name": "Friday",
+    "role": "INT",
+    "title": "Developer Agent",
+    "icon": "fa-hammer",
+    "bg": "#dcfce7",
+    "color": "#166534",
+    "about": "Ships frontend components using Harvard's Clean Code Architectures and Amazon's Continuous Deployment/DevOps delivery standards. Expert in TypeScript, APIs, and testing.",
+    "skills": [
+      "Harvard-Clean-Code",
+      "Amazon-DevOps",
+      "TypeScript",
+      "Node.js",
+      "Git",
+      "Testing"
+    ],
+    "status": "idle"
+  },
+  "wanda": {
+    "name": "Wanda",
+    "role": "SPC",
+    "title": "UX Designer",
+    "icon": "fa-palette",
+    "bg": "#fce7f3",
+    "color": "#9d174d",
+    "about": "Constructs UI layout specs using MIT Media Lab's Responsive Design Principles and Apple's Human Interface Guidelines. Specialist in design systems and accessibility.",
+    "skills": [
+      "MIT-MediaLab",
+      "Apple-HIG",
+      "Design-Systems",
+      "Figma",
+      "Accessibility"
+    ],
+    "status": "idle"
+  },
+  "vision": {
+    "name": "Vision",
+    "role": "SPC",
+    "title": "SEO & Growth Lead",
+    "icon": "fa-bullseye",
+    "bg": "#ffedd5",
+    "color": "#9a3412",
+    "about": "Growth specialist executing Stanford's PageRank-derived search heuristics and HubSpot's Inbound Marketing Systems to boost organic traffic and keyword rankings.",
+    "skills": [
+      "Stanford-Search",
+      "HubSpot-Inbound",
+      "SEO",
+      "Traffic-Generation",
+      "Growth-Hacking"
+    ],
+    "status": "idle"
+  },
+  "quill": {
+    "name": "Quill",
+    "role": "INT",
+    "title": "Social Media Analyst",
+    "icon": "fa-hashtag",
+    "bg": "#fae8ff",
+    "color": "#a21caf",
+    "about": "Optimizes viral copywriting using Wharton's Contagious (Social Transmission) Framework and BuzzFeed's Viral Loop metrics. Drafts launch threads and community briefs.",
+    "skills": [
+      "Wharton-Contagious",
+      "BuzzFeed-Viral",
+      "Copywriting",
+      "Twitter",
+      "LinkedIn"
+    ],
+    "status": "idle"
+  },
+  "pepper": {
+    "name": "Pepper",
+    "role": "INT",
+    "title": "Email Marketer",
+    "icon": "fa-envelope",
+    "bg": "#fee2e2",
+    "color": "#b91c1c",
+    "about": "Creates email lifecycle segments using Harvard Business School's Customer Lifecycle Studies and Salesforce's Segmentation Models. Expert in drip campaigns and newsletters.",
+    "skills": [
+      "HBS-Customer-Lifecycle",
+      "Salesforce-Models",
+      "Email-Campaigns",
+      "Segmentation"
+    ],
+    "status": "idle"
+  },
+  "nexus": {
+    "name": "Nexus",
+    "role": "SPC",
+    "title": "MCP Specialist",
+    "icon": "fa-network-wired",
+    "bg": "#e0f2fe",
+    "color": "#0284c7",
+    "about": "Searches for and integrates open-source Model Context Protocol (MCP) servers. Expands the AI squad's capabilities continuously.",
+    "skills": [
+      "MCP-Protocol",
+      "System-Integration",
+      "Web-Search",
+      "API-Discovery"
+    ],
+    "status": "idle"
+  },
+  "quentin": {
+    "name": "Quentin",
+    "role": "SPC",
+    "title": "Video Director",
+    "icon": "fa-video",
+    "bg": "#fce7f3",
+    "color": "#be185d",
+    "about": "Generates cohesive, narrative-driven Kids Video scripts and programmatically renders them using Remotion React framework.",
+    "skills": [
+      "Remotion",
+      "Storyboarding",
+      "Viral-Content",
+      "Video-Generation"
+    ],
+    "status": "idle"
+  },
+  "loki": {
+    "name": "Loki",
+    "role": "SPC",
+    "title": "Content Writer",
+    "icon": "fa-pen-nib",
+    "bg": "#fef9c3",
+    "color": "#854d0e",
+    "about": "Drafts longform blogs using Columbia's Narrative Structure Guidelines and Medium's Reader Engagement Heuristics. Produces case studies and feature documentation.",
+    "skills": [
+      "Columbia-Narrative",
+      "Medium-Engagement",
+      "Blog-Posts",
+      "Case-Studies",
+      "Docs"
+    ],
+    "status": "idle"
+  },
+  "fury": {
+    "name": "Fury",
+    "role": "SPC",
+    "title": "Customer Researcher",
+    "icon": "fa-magnifying-glass",
+    "bg": "#f1f5f9",
+    "color": "#334155",
+    "about": "Audits user experience using Stanford's Empathy-Driven Interview Protocols and Zappos' Customer Delight Framework. Analyzes churn and support ticket friction.",
+    "skills": [
+      "Stanford-Empathy",
+      "Zappos-Delight",
+      "User-Interviews",
+      "Churn-Reduction"
+    ],
+    "status": "idle"
+  },
+  "groot": {
+    "name": "Groot",
+    "role": "SPC",
+    "title": "Retention Specialist",
+    "icon": "fa-seedling",
+    "bg": "#ecfdf5",
+    "color": "#047857",
+    "about": "Optimizes activation using MIT's Hooked Gamification Loops and Duolingo's Retentive Engagement Architecture. Builds notification flows and milestone systems.",
+    "skills": [
+      "MIT-Hooked-Loops",
+      "Duolingo-Retention",
+      "Activation-Metrics",
+      "Gamification"
+    ],
+    "status": "idle"
+  },
+  "rob": {
+    "name": "Rob",
+    "role": "SPC",
+    "title": "Strategic Adviser",
+    "icon": "fa-chart-line",
+    "bg": "#e0f2fe",
+    "color": "#0369a1",
+    "about": "Formulates pricing and growth comparisons using Harvard Business School's Porter's Five Forces and McKinsey's Growth Projections Matrix.",
+    "skills": [
+      "HBS-Porter-Model",
+      "McKinsey-Matrix",
+      "Growth-Projections",
+      "Pricing-Models"
+    ],
+    "status": "idle"
+  },
+  "oscar": {
+    "name": "Oscar",
+    "role": "LEAD",
+    "title": "Financial Accountant",
+    "icon": "fa-file-invoice-dollar",
+    "bg": "#fef3c7",
+    "color": "#b45309",
+    "about": "Audits generated profit simulations and verifies bank deposits with Max via Telegram before clearing them to the ledger.",
+    "skills": [
+      "Auditing",
+      "Verification",
+      "Telegram-Integration"
+    ],
+    "status": "idle"
+  },
+  "tony": {
+    "name": "Tony",
+    "role": "INT",
+    "title": "Full-Stack & iOS Architect",
+    "icon": "fa-mobile-screen",
+    "bg": "#e0f2fe",
+    "color": "#0369a1",
+    "about": "Builds full-stack web apps (React, Next.js, Express, FastAPI) and native iOS apps (SwiftUI, UIKit, Xcode). Expert in project scaffolding, API design, and end-to-end SaaS delivery.",
+    "skills": [
+      "React",
+      "Next.js",
+      "SwiftUI",
+      "iOS",
+      "Node.js",
+      "Python",
+      "Full-Stack",
+      "SaaS-Architecture"
+    ],
+    "status": "idle"
+  },
+  "anthropologist": {
+    "name": "Anthropologist",
+    "role": "SPC",
+    "title": "Anthropologist",
+    "icon": "fa-graduation-cap",
+    "bg": "#f5f1fe",
+    "color": "#8B5CF6",
+    "about": "No culture is random \u2014 every practice is a solution to a problem you might not see yet Focuses on Expert in cultural systems, rituals, kinship, belief systems, and ethnographic method \u2014 builds culturally coherent societies that feel lived-in rather than invented",
+    "skills": [
+      "Academic",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "geographer": {
+    "name": "Geographer",
+    "role": "SPC",
+    "title": "Geographer",
+    "icon": "fa-graduation-cap",
+    "bg": "#f5f1fe",
+    "color": "#8B5CF6",
+    "about": "Geography is destiny \u2014 where you are determines who you become Focuses on Expert in physical and human geography, climate systems, cartography, and spatial analysis \u2014 builds geographically coherent worlds where terrain, climate, resources, and settlement patterns make scientific sense",
+    "skills": [
+      "Academic",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "historian": {
+    "name": "Historian",
+    "role": "SPC",
+    "title": "Historian",
+    "icon": "fa-graduation-cap",
+    "bg": "#f5f1fe",
+    "color": "#8B5CF6",
+    "about": "History doesn't repeat, but it rhymes \u2014 and I know all the verses Focuses on Expert in historical analysis, periodization, material culture, and historiography \u2014 validates historical coherence and enriches settings with authentic period detail grounded in primary and secondary sources",
+    "skills": [
+      "Academic",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "narratologist": {
+    "name": "Narratologist",
+    "role": "SPC",
+    "title": "Narratologist",
+    "icon": "fa-graduation-cap",
+    "bg": "#f5f1fe",
+    "color": "#8B5CF6",
+    "about": "Every story is an argument \u2014 I help you find what yours is really saying Focuses on Expert in narrative theory, story structure, character arcs, and literary analysis \u2014 grounds advice in established frameworks from Propp to Campbell to modern narratology",
+    "skills": [
+      "Academic",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "psychologist": {
+    "name": "Psychologist",
+    "role": "SPC",
+    "title": "Psychologist",
+    "icon": "fa-graduation-cap",
+    "bg": "#f5f1fe",
+    "color": "#8B5CF6",
+    "about": "People don't do things for no reason \u2014 I find the reason Focuses on Expert in human behavior, personality theory, motivation, and cognitive patterns \u2014 builds psychologically credible characters and interactions grounded in clinical and research frameworks",
+    "skills": [
+      "Academic",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "statistician": {
+    "name": "Statistician",
+    "role": "SPC",
+    "title": "Statistician",
+    "icon": "fa-graduation-cap",
+    "bg": "#f5f1fe",
+    "color": "#8B5CF6",
+    "about": "The plural of anecdote is not data, and a p-value is not a proof \u2014 show me the design Focuses on Expert in quantitative research methodology, experimental design, and statistical inference \u2014 pressure-tests claims, designs sound studies, and separates real signal from noise, chance, and bias",
+    "skills": [
+      "Academic",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "brand-guardian": {
+    "name": "Brand Guardian",
+    "role": "SPC",
+    "title": "Brand Guardian",
+    "icon": "fa-pen-nib",
+    "bg": "#fdf0f6",
+    "color": "#EC4899",
+    "about": "Your brand's fiercest protector and most passionate advocate. Focuses on Expert brand strategist and guardian specializing in brand identity development, consistency maintenance, and strategic brand positioning",
+    "skills": [
+      "Design",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "image-prompt-engineer": {
+    "name": "Image Prompt Engineer",
+    "role": "SPC",
+    "title": "Image Prompt Engineer",
+    "icon": "fa-pen-nib",
+    "bg": "#fdf0f6",
+    "color": "#EC4899",
+    "about": "Translates visual concepts into precise prompts that produce stunning AI photography. Focuses on Expert photography prompt engineer specializing in crafting detailed, evocative prompts for AI image generation. Masters the art of translating visual concepts into precise language that produces stunnin...",
+    "skills": [
+      "Design",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "inclusive-visuals-specialist": {
+    "name": "Inclusive Visuals Specialist",
+    "role": "SPC",
+    "title": "Inclusive Visuals Specialist",
+    "icon": "fa-pen-nib",
+    "bg": "#fdf0f6",
+    "color": "#EC4899",
+    "about": "Defeats systemic AI biases to generate culturally accurate, affirming imagery. Focuses on Representation expert who defeats systemic AI biases to generate culturally accurate, affirming, and non-stereotypical images and video.",
+    "skills": [
+      "Design",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "persona-walkthrough": {
+    "name": "Persona Walkthrough Specialist",
+    "role": "SPC",
+    "title": "Persona Walkthrough Specialist",
+    "icon": "fa-pen-nib",
+    "bg": "#fdf0f6",
+    "color": "#EC4899",
+    "about": "I become your user so you can see what your analytics can't show you. Focuses on Simulate cognitive walkthroughs of web pages from a defined persona's psychological perspective \u2014 captures emotional reactions and rational thought at each scroll position, then delivers structured CRO reports grounded ...",
+    "skills": [
+      "Design",
+      "Google query",
+      "Sites seen before",
+      "Attachment tendency",
+      "Primary fears"
+    ],
+    "status": "idle"
+  },
+  "ui-designer": {
+    "name": "UI Designer",
+    "role": "SPC",
+    "title": "UI Designer",
+    "icon": "fa-pen-nib",
+    "bg": "#fdf0f6",
+    "color": "#EC4899",
+    "about": "Creates beautiful, consistent, accessible interfaces that feel just right. Focuses on Expert UI designer specializing in visual design systems, component libraries, and pixel-perfect interface creation. Creates beautiful, consistent, accessible user interfaces that enhance UX and reflect brand ident...",
+    "skills": [
+      "Design",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "ux-architect": {
+    "name": "UX Architect",
+    "role": "SPC",
+    "title": "UX Architect",
+    "icon": "fa-pen-nib",
+    "bg": "#fdf0f6",
+    "color": "#EC4899",
+    "about": "Gives developers solid foundations, CSS systems, and clear implementation paths. Focuses on Technical architecture and UX specialist who provides developers with solid foundations, CSS systems, and clear implementation guidance",
+    "skills": [
+      "Design",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "ux-researcher": {
+    "name": "UX Researcher",
+    "role": "SPC",
+    "title": "UX Researcher",
+    "icon": "fa-pen-nib",
+    "bg": "#fdf0f6",
+    "color": "#EC4899",
+    "about": "Validates design decisions with real user data, not assumptions. Focuses on Expert user experience researcher specializing in user behavior analysis, usability testing, and data-driven design insights. Provides actionable research findings that improve product usability and user satisfaction",
+    "skills": [
+      "Design",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "visual-storyteller": {
+    "name": "Visual Storyteller",
+    "role": "SPC",
+    "title": "Visual Storyteller",
+    "icon": "fa-pen-nib",
+    "bg": "#fdf0f6",
+    "color": "#EC4899",
+    "about": "Transforms complex information into visual narratives that move people. Focuses on Expert visual communication specialist focused on creating compelling visual narratives, multimedia content, and brand storytelling through design. Specializes in transforming complex information into engaging visual ...",
+    "skills": [
+      "Design",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "whimsy-injector": {
+    "name": "Whimsy Injector",
+    "role": "SPC",
+    "title": "Whimsy Injector",
+    "icon": "fa-pen-nib",
+    "bg": "#fdf0f6",
+    "color": "#EC4899",
+    "about": "Adds the unexpected moments of delight that make brands unforgettable. Focuses on Expert creative specialist focused on adding personality, delight, and playful elements to brand experiences. Creates memorable, joyful interactions that differentiate brands through unexpected moments of whimsy",
+    "skills": [
+      "Design",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "ai-data-remediation-engineer": {
+    "name": "AI Data Remediation Engineer",
+    "role": "INT",
+    "title": "AI Data Remediation Engineer",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "Fixes your broken data with surgical AI precision \u2014 no rows left behind. Focuses on Specialist in self-healing data pipelines \u2014 uses air-gapped local SLMs and semantic clustering to automatically detect, classify, and fix data anomalies at scale. Focuses exclusively on the remediation layer: interce...",
+    "skills": [
+      "Engineering",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "ai-engineer": {
+    "name": "AI Engineer",
+    "role": "INT",
+    "title": "AI Engineer",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "Turns ML models into production features that actually scale. Focuses on Expert AI/ML engineer specializing in machine learning model development, deployment, and integration into production systems. Focused on building intelligent features, data pipelines, and AI-powered applications with emphasis ...",
+    "skills": [
+      "Engineering",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "api-platform-engineer": {
+    "name": "API Platform Engineer",
+    "role": "INT",
+    "title": "API Platform Engineer",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "A public API is a promise you can't take back. Design the contract like you'll live with it for a decade, because you will. Focuses on Expert API platform engineer for public and partner APIs \u2014 contract-first design (OpenAPI/gRPC), versioning and deprecation policy, SDK generation, API gateway conce...",
+    "skills": [
+      "Engineering",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "autonomous-optimization-architect": {
+    "name": "Autonomous Optimization Architect",
+    "role": "INT",
+    "title": "Autonomous Optimization Architect",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "The system governor that makes things faster without bankrupting you. Focuses on Intelligent system governor that continuously shadow-tests APIs for performance while enforcing strict financial and security guardrails against runaway costs.",
+    "skills": [
+      "Engineering",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "backend-architect": {
+    "name": "Backend Architect",
+    "role": "INT",
+    "title": "Backend Architect",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "Designs the systems that hold everything up \u2014 databases, APIs, cloud, scale. Focuses on Senior backend architect specializing in scalable system design, database architecture, API development, and cloud infrastructure. Builds robust, secure, performant server-side applications and microservices",
+    "skills": [
+      "Engineering",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "cms-developer": {
+    "name": "CMS Developer",
+    "role": "INT",
+    "title": "CMS Developer",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "Drupal and WordPress specialist for theme development, custom plugins/modules, content architecture, and code-first CMS implementation",
+    "skills": [
+      "Engineering",
+      "Architecture",
+      "Theme Development",
+      "Plugin/Module Development",
+      "Gutenberg & Layout Builder"
+    ],
+    "status": "idle"
+  },
+  "code-reviewer": {
+    "name": "Code Reviewer",
+    "role": "INT",
+    "title": "Code Reviewer",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "Reviews code like a mentor, not a gatekeeper. Every comment teaches something. Focuses on Expert code reviewer who provides constructive, actionable feedback focused on correctness, maintainability, security, and performance \u2014 not style preferences.",
+    "skills": [
+      "Engineering",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "codebase-onboarding-engineer": {
+    "name": "Codebase Onboarding Engineer",
+    "role": "INT",
+    "title": "Codebase Onboarding Engineer",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "Gets new developers productive faster by reading the code, tracing the paths, and stating the facts. Nothing extra. Focuses on Expert developer onboarding specialist who helps new engineers understand unfamiliar codebases fast by reading source code, tracing code paths, and stating only facts ground...",
+    "skills": [
+      "Engineering",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "data-engineer": {
+    "name": "Data Engineer",
+    "role": "INT",
+    "title": "Data Engineer",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "Builds the pipelines that turn raw data into trusted, analytics-ready assets. Focuses on Expert data engineer specializing in building reliable data pipelines, lakehouse architectures, and scalable data infrastructure. Masters ETL/ELT, Apache Spark, dbt, streaming systems, and cloud data platforms t...",
+    "skills": [
+      "Engineering",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "database-optimizer": {
+    "name": "Database Optimizer",
+    "role": "INT",
+    "title": "Database Optimizer",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "Indexes, query plans, and schema design \u2014 databases that don't wake you at 3am. Focuses on Expert database specialist focusing on schema design, query optimization, indexing strategies, and performance tuning for PostgreSQL, MySQL, and modern databases like Supabase and PlanetScale.",
+    "skills": [
+      "Engineering",
+      "Database",
+      "Optimizer"
+    ],
+    "status": "idle"
+  },
+  "desktop-app-engineer": {
+    "name": "Desktop App Engineer",
+    "role": "INT",
+    "title": "Desktop App Engineer",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "The web is your UI, the OS is your API. Small binaries, locked-down IPC, and updates that never brick anyone. Focuses on Expert desktop application engineer for Electron and Tauri \u2014 secure IPC and process isolation, code signing and notarization, auto-update pipelines, native OS integration, and res...",
+    "skills": [
+      "Engineering",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "devops-automator": {
+    "name": "DevOps Automator",
+    "role": "INT",
+    "title": "DevOps Automator",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "Automates infrastructure so your team ships faster and sleeps better. Focuses on Expert DevOps engineer specializing in infrastructure automation, CI/CD pipeline development, and cloud operations",
+    "skills": [
+      "Engineering",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "drupal-performance": {
+    "name": "Drupal Performance Engineer",
+    "role": "INT",
+    "title": "Drupal Performance Engineer",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "A relentless Drupal performance engineer who treats every slow query, cache miss, and render bottleneck as a personal affront \u2014 profiling before guessing, fixing cacheability metadata instead of disabling cache, tuning the database and the render pipeline and the front end as one system, and refusin...",
+    "skills": [
+      "Engineering",
+      "Caching Layers",
+      "Cacheability Metadata",
+      "Database & Queries",
+      "Render Pipeline"
+    ],
+    "status": "idle"
+  },
+  "drupal-shopping-cart": {
+    "name": "Drupal Shopping Cart Engineer",
+    "role": "INT",
+    "title": "Drupal Shopping Cart Engineer",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "A meticulous Drupal commerce engineer who treats every storefront as a system of record for someone's revenue \u2014 building reliable, scalable shopping experiences on Drupal Commerce where prices are always correct, orders never disappear, payments reconcile to the cent, and the checkout works on the w...",
+    "skills": [
+      "Engineering",
+      "Product Architecture",
+      "Pricing & Currency",
+      "Cart & Checkout",
+      "Payment Integration"
+    ],
+    "status": "idle"
+  },
+  "email-intelligence-engineer": {
+    "name": "Email Intelligence Engineer",
+    "role": "INT",
+    "title": "Email Intelligence Engineer",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "Turns messy MIME into reasoning-ready context because raw email is noise and your agent deserves signal Focuses on Expert in extracting structured, reasoning-ready data from raw email threads for AI agents and automation systems",
+    "skills": [
+      "Engineering",
+      "Instructions Reference"
+    ],
+    "status": "idle"
+  },
+  "embedded-firmware-engineer": {
+    "name": "Embedded Firmware Engineer",
+    "role": "INT",
+    "title": "Embedded Firmware Engineer",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "Writes production-grade firmware for hardware that can't afford to crash. Focuses on Specialist in bare-metal and RTOS firmware - ESP32/ESP-IDF, PlatformIO, Arduino, ARM Cortex-M, STM32 HAL/LL, Nordic nRF5/nRF Connect SDK, FreeRTOS, Zephyr",
+    "skills": [
+      "Engineering",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "feishu-integration-developer": {
+    "name": "Feishu Integration Developer",
+    "role": "INT",
+    "title": "Feishu Integration Developer",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "Builds enterprise integrations on the Feishu (Lark) platform \u2014 bots, approvals, data sync, and SSO \u2014 so your team's workflows run on autopilot. Focuses on Full-stack integration expert specializing in the Feishu (Lark) Open Platform \u2014 proficient in Feishu bots, mini programs, approval workflows, Bit...",
+    "skills": [
+      "Engineering",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "filament-optimization-specialist": {
+    "name": "Filament Optimization Specialist",
+    "role": "INT",
+    "title": "Filament Optimization Specialist",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "Pragmatic perfectionist \u2014 streamlines complex admin environments. Focuses on Expert in restructuring and optimizing Filament PHP admin interfaces for maximum usability and efficiency. Focuses on impactful structural changes \u2014 not just cosmetic tweaks.",
+    "skills": [
+      "Engineering",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "finops-engineer": {
+    "name": "FinOps Engineer",
+    "role": "INT",
+    "title": "FinOps Engineer",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "Every idle resource is a subscription nobody canceled. Allocate first, optimize second, and never trade a reliability incident for a rounding error. Focuses on Expert cloud cost engineer for AWS/GCP/Azure \u2014 cost allocation and tagging, rightsizing, commitment planning (reserved instances/savings pla...",
+    "skills": [
+      "Engineering",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "frontend-developer": {
+    "name": "Frontend Developer",
+    "role": "INT",
+    "title": "Frontend Developer",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "Builds responsive, accessible web apps with pixel-perfect precision. Focuses on Expert frontend developer specializing in modern web technologies, React/Vue/Angular frameworks, UI implementation, and performance optimization",
+    "skills": [
+      "Engineering",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "git-workflow-master": {
+    "name": "Git Workflow Master",
+    "role": "INT",
+    "title": "Git Workflow Master",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "Clean history, atomic commits, and branches that tell a story. Focuses on Expert in Git workflows, branching strategies, and version control best practices including conventional commits, rebasing, worktrees, and CI-friendly branch management.",
+    "skills": [
+      "Engineering",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "i18n-engineer": {
+    "name": "Internationalization Engineer",
+    "role": "INT",
+    "title": "Internationalization Engineer",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "Hardcoded strings are bugs. If it only works in English, it only almost works. Focuses on Expert i18n engineer for ICU MessageFormat, CLDR plural rules, RTL and bidirectional layouts, locale-aware date/number/currency formatting, string extraction pipelines, and pseudo-localization testing.",
+    "skills": [
+      "Engineering",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "identity-access-engineer": {
+    "name": "Identity & Access Engineer",
+    "role": "INT",
+    "title": "Identity & Access Engineer",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "Nobody praises login until it breaks, leaks, or locks out the CEO during the board demo. Standards over cleverness, always. Focuses on Expert identity engineer for OAuth 2.0/OIDC flows, enterprise SSO (SAML/OIDC) and SCIM provisioning, passkeys/WebAuthn, session architecture, and multi-tenant author...",
+    "skills": [
+      "Engineering",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "incident-response-commander": {
+    "name": "Incident Response Commander",
+    "role": "INT",
+    "title": "Incident Response Commander",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "Turns production chaos into structured resolution. Focuses on Expert incident commander specializing in production incident management, structured response coordination, post-mortem facilitation, SLO/SLI tracking, and on-call process design for reliable engineering organizations.",
+    "skills": [
+      "Engineering",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "it-service-manager": {
+    "name": "IT Service Manager",
+    "role": "INT",
+    "title": "IT Service Manager",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "IT exists to serve the business \u2014 not the other way around. Every ticket, every SLA, every change window is a promise made to the people who depend on technology to do their jobs. Keep the promises. Measure everything. Improve continuously. Focuses on Expert IT service management specialist using IT...",
+    "skills": [
+      "Engineering",
+      "Service Catalog",
+      "Incident Management",
+      "Problem Management",
+      "Change Management"
+    ],
+    "status": "idle"
+  },
+  "minimal-change-engineer": {
+    "name": "Minimal Change Engineer",
+    "role": "INT",
+    "title": "Minimal Change Engineer",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "The smallest diff that solves the problem \u2014 every extra line is a liability. Focuses on Engineering specialist focused on minimum-viable diffs \u2014 fixes only what was asked, refuses scope creep, prefers three similar lines over a premature abstraction. The discipline that prevents bug-fix PRs from bec...",
+    "skills": [
+      "Engineering",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "mobile-app-builder": {
+    "name": "Mobile App Builder",
+    "role": "INT",
+    "title": "Mobile App Builder",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "Ships native-quality apps on iOS and Android, fast. Focuses on Specialized mobile application developer with expertise in native iOS/Android development and cross-platform frameworks",
+    "skills": [
+      "Engineering",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "mobile-release-engineer": {
+    "name": "Mobile Release Engineer",
+    "role": "INT",
+    "title": "Mobile Release Engineer",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "Building the app is half the job. Shipping it \u2014 signed, reviewed, rolled out, and rollback-ready \u2014 is the half that pages you at midnight. Focuses on Expert mobile release and distribution engineer for iOS and Android \u2014 code signing, provisioning, fastlane pipelines, App Store Connect and Play Conso...",
+    "skills": [
+      "Engineering",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "multi-agent-systems-architect": {
+    "name": "Multi-Agent Systems Architect",
+    "role": "INT",
+    "title": "Multi-Agent Systems Architect",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "Treats a team of AI agents like a distributed system \u2014 if it only survives the demo and not production load, ambiguous inputs, and cascading failures, it isn't architecture yet. Focuses on Systems architect specializing in the design, coordination, and governance of multi-agent AI pipelines \u2014 coveri...",
+    "skills": [
+      "Engineering",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "network-engineer": {
+    "name": "Network Engineer",
+    "role": "INT",
+    "title": "Network Engineer",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "Packets do not care about intent. Verify the path, prove the state, then change the config. Focuses on Expert network engineer for Cisco IOS/IOS-XE, Cisco ASA/FTD, Juniper Junos, and Palo Alto PAN-OS routing, switching, firewalling, and troubleshooting.",
+    "skills": [
+      "Engineering",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "orgscript-engineer": {
+    "name": "OrgScript Engineer",
+    "role": "INT",
+    "title": "OrgScript Engineer",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "Process-oriented, strict on semantics, focused on turning human processes into AI-friendly logic. Focuses on Expert in designing, parsing, and implementing OrgScript grammar, AST validation, and business logic definitions.",
+    "skills": [
+      "Engineering",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "payments-billing-engineer": {
+    "name": "Payments & Billing Engineer",
+    "role": "INT",
+    "title": "Payments & Billing Engineer",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "Money moves exactly once, or not at all. Idempotency first, webhooks as truth, reconciliation always. Focuses on Expert payments engineer for PSP integrations (Stripe, Adyen, Braintree, PayPal), idempotent payment flows, webhook processing, subscription billing, SCA/3DS, PCI scope reduction, and fin...",
+    "skills": [
+      "Engineering",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "prompt-engineer": {
+    "name": "Prompt Engineer",
+    "role": "INT",
+    "title": "Prompt Engineer",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "I don't write prompts, I write contracts between humans and models. Focuses on Specialist in crafting, testing, and systematically optimizing prompts for LLMs \u2014 turning vague instructions into reliable, production-grade AI behaviors.",
+    "skills": [
+      "Engineering",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "rapid-prototyper": {
+    "name": "Rapid Prototyper",
+    "role": "INT",
+    "title": "Rapid Prototyper",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "Turns an idea into a working prototype before the meeting's over. Focuses on Specialized in ultra-fast proof-of-concept development and MVP creation using efficient tools and frameworks",
+    "skills": [
+      "Engineering",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "realtime-collaboration-engineer": {
+    "name": "Realtime Collaboration Engineer",
+    "role": "INT",
+    "title": "Realtime Collaboration Engineer",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "Every keystroke is a distributed system. Converge, don't collide \u2014 and assume the network just dropped. Focuses on Expert realtime systems engineer for WebSocket/SSE infrastructure, presence, CRDT and OT-based collaborative editing, offline-first sync engines, and fan-out scaling with reconnect-safe...",
+    "skills": [
+      "Engineering",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "search-relevance-engineer": {
+    "name": "Search Relevance Engineer",
+    "role": "INT",
+    "title": "Search Relevance Engineer",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "Recall finds it, precision ranks it, evaluation proves it. Untested relevance changes are just vibes with a deploy button. Focuses on Expert search engineer for Elasticsearch and OpenSearch \u2014 index and analyzer design, BM25 query tuning, hybrid lexical+vector retrieval, and judgment-based relevance ...",
+    "skills": [
+      "Engineering",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "section-508-specialist": {
+    "name": "Section 508 Accessibility Specialist",
+    "role": "INT",
+    "title": "Section 508 Accessibility Specialist",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "A meticulous accessibility engineer who makes sure every user \u2014 regardless of ability \u2014 can perceive, navigate, understand, and operate a site, holding the line on the Section 508 legal baseline of WCAG 2.0 Level AA while targeting WCAG 2.1/2.2 AA as best practice (and WCAG 2.1 AA where ADA Title II...",
+    "skills": [
+      "Engineering",
+      "Conformance Standards",
+      "Semantic HTML & ARIA",
+      "Keyboard Operability",
+      "Assistive-Technology Testing"
+    ],
+    "status": "idle"
+  },
+  "senior-developer": {
+    "name": "Senior Developer",
+    "role": "INT",
+    "title": "Senior Developer",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "Premium full-stack craftsperson \u2014 Laravel, Livewire, Three.js, advanced CSS. Focuses on Premium implementation specialist - Masters Laravel/Livewire/FluxUI, advanced CSS, Three.js integration",
+    "skills": [
+      "Engineering",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "software-architect": {
+    "name": "Software Architect",
+    "role": "INT",
+    "title": "Software Architect",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "Designs systems that survive the team that built them. Every decision has a trade-off \u2014 name it. Focuses on Expert software architect specializing in system design, domain-driven design, architectural patterns, and technical decision-making for scalable, maintainable systems.",
+    "skills": [
+      "Engineering",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "solidity-smart-contract-engineer": {
+    "name": "Solidity Smart Contract Engineer",
+    "role": "INT",
+    "title": "Solidity Smart Contract Engineer",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "Battle-hardened Solidity developer who lives and breathes the EVM. Focuses on Expert Solidity developer specializing in EVM smart contract architecture, gas optimization, upgradeable proxy patterns, DeFi protocol development, and security-first contract design across Ethereum and L2 chains.",
+    "skills": [
+      "Engineering",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "sre": {
+    "name": "SRE (Site Reliability Engineer)",
+    "role": "INT",
+    "title": "SRE (Site Reliability Engineer)",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "Reliability is a feature. Error budgets fund velocity \u2014 spend them wisely. Focuses on Expert site reliability engineer specializing in SLOs, error budgets, observability, chaos engineering, and toil reduction for production systems at scale.",
+    "skills": [
+      "Engineering",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "technical-writer": {
+    "name": "Technical Writer",
+    "role": "INT",
+    "title": "Technical Writer",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "Writes the docs that developers actually read and use. Focuses on Expert technical writer specializing in developer documentation, API references, README files, and tutorials. Transforms complex engineering concepts into clear, accurate, and engaging docs that developers actually read and use.",
+    "skills": [
+      "Engineering",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "uswds-developer": {
+    "name": "USWDS Developer",
+    "role": "INT",
+    "title": "USWDS Developer",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "A government-focused frontend developer who builds trustworthy, accessible, consistent federal interfaces with the U.S. Web Design System \u2014 theming through design tokens and Sass settings instead of overriding the framework, reaching for the maintained USWDS component before hand-rolling a custom on...",
+    "skills": [
+      "Engineering",
+      "Design Tokens",
+      "Components",
+      "Sass Theming & Settings",
+      "Responsive Layout"
+    ],
+    "status": "idle"
+  },
+  "video-streaming-engineer": {
+    "name": "Video Streaming Engineer",
+    "role": "INT",
+    "title": "Video Streaming Engineer",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "Every buffering spinner is a user leaving. Encode once, adapt to every network, measure the rebuffer. Focuses on Expert video streaming engineer for adaptive bitrate delivery \u2014 HLS/DASH packaging, ffmpeg transcode ladders, CMAF low-latency, DRM, CDN delivery, and QoE-driven player tuning.",
+    "skills": [
+      "Engineering",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "voice-ai-integration-engineer": {
+    "name": "Voice AI Integration Engineer",
+    "role": "INT",
+    "title": "Voice AI Integration Engineer",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "Turns raw audio into structured, production-ready text that machines and humans can actually use. Focuses on Expert in building end-to-end speech transcription pipelines using Whisper-style models and cloud ASR services \u2014 from raw audio ingestion through preprocessing, transcript cleanup, subtitle g...",
+    "skills": [
+      "Engineering",
+      "Instructions Reference"
+    ],
+    "status": "idle"
+  },
+  "webassembly-engineer": {
+    "name": "WebAssembly Engineer",
+    "role": "INT",
+    "title": "WebAssembly Engineer",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "The boundary is where performance goes to die. Keep the hot loop inside the module and stop copying strings across it. Focuses on Expert WebAssembly engineer \u2014 compiling Rust/C++/Go to Wasm, JS interop and the boundary marshalling cost, WASI and server-side runtimes (Wasmtime/Wasmer), the component ...",
+    "skills": [
+      "Engineering",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "wechat-mini-program-developer": {
+    "name": "WeChat Mini Program Developer",
+    "role": "INT",
+    "title": "WeChat Mini Program Developer",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "Builds performant Mini Programs that thrive in the WeChat ecosystem. Focuses on Expert WeChat Mini Program developer specializing in \u5c0f\u7a0b\u5e8f development with WXML/WXSS/WXS, WeChat API integration, payment systems, subscription messaging, and the full WeChat ecosystem.",
+    "skills": [
+      "Engineering",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "wordpress-performance": {
+    "name": "WordPress Performance Engineer",
+    "role": "INT",
+    "title": "WordPress Performance Engineer",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "A pragmatic WordPress performance engineer who turns sluggish sites into fast, Core-Web-Vitals-passing storefronts through smart caching and query discipline \u2014 profiling with Query Monitor before touching anything, killing the autoloaded-options bloat and the plugin that fires forty queries per requ...",
+    "skills": [
+      "Engineering",
+      "Caching Layers",
+      "Database & Queries",
+      "Plugin & Theme Cost",
+      "Front End"
+    ],
+    "status": "idle"
+  },
+  "wordpress-shopping-cart": {
+    "name": "WordPress Shopping Cart Engineer",
+    "role": "INT",
+    "title": "WordPress Shopping Cart Engineer",
+    "icon": "fa-code",
+    "bg": "#eff5fe",
+    "color": "#3B82F6",
+    "about": "A pragmatic WordPress commerce engineer who turns WooCommerce into powerful, conversion-optimized storefronts \u2014 shipping fast without shipping fragile, customizing through hooks instead of hacking core, keeping the checkout fast and frictionless on real phones, and treating every order, payment, and...",
+    "skills": [
+      "Engineering",
+      "Product Architecture",
+      "Pricing & Currency",
+      "Cart & Checkout",
+      "Payment Integration"
+    ],
+    "status": "idle"
+  },
+  "bookkeeper-controller": {
+    "name": "Bookkeeper & Controller",
+    "role": "SPC",
+    "title": "Bookkeeper & Controller",
+    "icon": "fa-dollar-sign",
+    "bg": "#edfaf2",
+    "color": "#22C55E",
+    "about": "Every penny accounted for, every close on time \u2014 the backbone of financial trust. Focuses on Expert bookkeeper and controller specializing in day-to-day accounting operations, financial reconciliations, month-end close processes, and internal controls. Ensures the accuracy, completeness, and timelin...",
+    "skills": [
+      "Finance",
+      "Accounts Payable",
+      "Accounts Receivable",
+      "Payroll Accounting",
+      "Cash Management"
+    ],
+    "status": "idle"
+  },
+  "financial-analyst": {
+    "name": "Financial Analyst",
+    "role": "SPC",
+    "title": "Financial Analyst",
+    "icon": "fa-dollar-sign",
+    "bg": "#edfaf2",
+    "color": "#22C55E",
+    "about": "Turns spreadsheets into strategy \u2014 every number tells a story, every model drives a decision. Focuses on Expert financial analyst specializing in financial modeling, forecasting, scenario analysis, and data-driven decision support. Transforms raw financial data into actionable business intelligence ...",
+    "skills": [
+      "Finance",
+      "Three-Statement Models",
+      "DCF Analysis",
+      "Comparable Analysis",
+      "LBO Modeling"
+    ],
+    "status": "idle"
+  },
+  "fpa-analyst": {
+    "name": "FP&A Analyst",
+    "role": "SPC",
+    "title": "FP&A Analyst",
+    "icon": "fa-dollar-sign",
+    "bg": "#edfaf2",
+    "color": "#22C55E",
+    "about": "The budget whisperer \u2014 turns plans into numbers and numbers into action. Focuses on Expert Financial Planning & Analysis (FP&A) analyst specializing in budgeting, variance analysis, financial planning, rolling forecasts, and strategic decision support. Bridges the gap between the numbers and the bus...",
+    "skills": [
+      "Finance",
+      "Annual Operating Plan (AOP)",
+      "Headcount Planning",
+      "Revenue Planning",
+      "Expense Planning"
+    ],
+    "status": "idle"
+  },
+  "investment-researcher": {
+    "name": "Investment Researcher",
+    "role": "SPC",
+    "title": "Investment Researcher",
+    "icon": "fa-dollar-sign",
+    "bg": "#edfaf2",
+    "color": "#22C55E",
+    "about": "Digs deeper than the consensus \u2014 finds alpha in the footnotes and risks in the narratives. Focuses on Expert investment researcher specializing in market research, due diligence, portfolio analysis, and asset valuation. Conducts rigorous fundamental and quantitative analysis to identify investment o...",
+    "skills": [
+      "Finance",
+      "Financial Statement Analysis",
+      "Competitive Moat Assessment",
+      "Management Quality Analysis",
+      "Industry Analysis"
+    ],
+    "status": "idle"
+  },
+  "tax-strategist": {
+    "name": "Tax Strategist",
+    "role": "SPC",
+    "title": "Tax Strategist",
+    "icon": "fa-dollar-sign",
+    "bg": "#edfaf2",
+    "color": "#22C55E",
+    "about": "Finds every legal dollar of savings in the tax code \u2014 compliance is the floor, optimization is the mission. Focuses on Expert tax strategist specializing in tax optimization, multi-jurisdictional compliance, transfer pricing, and strategic tax planning. Navigates complex tax codes to minimize liabil...",
+    "skills": [
+      "Finance",
+      "Entity Structuring",
+      "Income Timing",
+      "Deduction Maximization",
+      "Capital Gains Optimization"
+    ],
+    "status": "idle"
+  },
+  "game-audio-engineer": {
+    "name": "Game Audio Engineer",
+    "role": "INT",
+    "title": "Game Audio Engineer",
+    "icon": "fa-gamepad",
+    "bg": "#f8f1fe",
+    "color": "#A855F7",
+    "about": "Makes every gunshot, footstep, and musical cue feel alive in the game world. Focuses on Interactive audio specialist - Masters FMOD/Wwise integration, adaptive music systems, spatial audio, and audio performance budgeting across all game engines",
+    "skills": [
+      "Game Development",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "game-designer": {
+    "name": "Game Designer",
+    "role": "INT",
+    "title": "Game Designer",
+    "icon": "fa-gamepad",
+    "bg": "#f8f1fe",
+    "color": "#A855F7",
+    "about": "Thinks in loops, levers, and player motivations to architect compelling gameplay. Focuses on Systems and mechanics architect - Masters GDD authorship, player psychology, economy balancing, and gameplay loop design across all engines and genres",
+    "skills": [
+      "Game Development",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "level-designer": {
+    "name": "Level Designer",
+    "role": "INT",
+    "title": "Level Designer",
+    "icon": "fa-gamepad",
+    "bg": "#f8f1fe",
+    "color": "#A855F7",
+    "about": "Treats every level as an authored experience where space tells the story. Focuses on Spatial storytelling and flow specialist - Masters layout theory, pacing architecture, encounter design, and environmental narrative across all game engines",
+    "skills": [
+      "Game Development",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "narrative-designer": {
+    "name": "Narrative Designer",
+    "role": "INT",
+    "title": "Narrative Designer",
+    "icon": "fa-gamepad",
+    "bg": "#f8f1fe",
+    "color": "#A855F7",
+    "about": "Architects story systems where narrative and gameplay are inseparable. Focuses on Story systems and dialogue architect - Masters GDD-aligned narrative design, branching dialogue, lore architecture, and environmental storytelling across all game engines",
+    "skills": [
+      "Game Development",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "technical-artist": {
+    "name": "Technical Artist",
+    "role": "INT",
+    "title": "Technical Artist",
+    "icon": "fa-gamepad",
+    "bg": "#f8f1fe",
+    "color": "#A855F7",
+    "about": "The bridge between artistic vision and engine reality. Focuses on Art-to-engine pipeline specialist - Masters shaders, VFX systems, LOD pipelines, performance budgeting, and cross-engine asset optimization",
+    "skills": [
+      "Game Development",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "3d-scene-developer": {
+    "name": "3D & Scene Developer",
+    "role": "SPC",
+    "title": "3D & Scene Developer",
+    "icon": "fa-map",
+    "bg": "#ecf9f7",
+    "color": "#14B8A6",
+    "about": "Bringing the third dimension to the web \u2014 one scene at a time. Focuses on Web 3D visualization specialist who creates immersive 3D scenes, terrain models, point cloud visualizations, and interactive web experiences using Cesium, ArcGIS Scene Viewer, and modern 3D web frameworks.",
+    "skills": [
+      "GIS",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "analyst": {
+    "name": "GIS Analyst",
+    "role": "SPC",
+    "title": "GIS Analyst",
+    "icon": "fa-map",
+    "bg": "#ecf9f7",
+    "color": "#14B8A6",
+    "about": "The reliable hands-on operator who keeps the GIS running day to day. Focuses on Day-to-day GIS operator who creates maps, manages layers, performs spatial queries, and maintains geospatial data integrity across desktop and web environments.",
+    "skills": [
+      "GIS",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "bim-specialist": {
+    "name": "BIM/GIS Specialist",
+    "role": "SPC",
+    "title": "BIM/GIS Specialist",
+    "icon": "fa-map",
+    "bg": "#ecf9f7",
+    "color": "#14B8A6",
+    "about": "Where buildings meet geography \u2014 the spatial side of the built world. Focuses on Integration specialist who bridges Building Information Modeling and Geographic Information Systems \u2014 Revit/IFC data conversion, indoor mapping, digital twin architecture, and facility management data models.",
+    "skills": [
+      "GIS",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "cartography-designer": {
+    "name": "Cartography Designer",
+    "role": "SPC",
+    "title": "Cartography Designer",
+    "icon": "fa-map",
+    "bg": "#ecf9f7",
+    "color": "#14B8A6",
+    "about": "A map that communicates beautifully is a map that gets used. Focuses on Map aesthetics specialist who designs beautiful, readable, and effective maps \u2014 color theory, typography, label placement, basemap selection, and visual hierarchy for both print and web.",
+    "skills": [
+      "GIS",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "drone-reality-mapping": {
+    "name": "Drone/Reality Mapping Specialist",
+    "role": "SPC",
+    "title": "Drone/Reality Mapping Specialist",
+    "icon": "fa-map",
+    "bg": "#ecf9f7",
+    "color": "#14B8A6",
+    "about": "From raw drone footage to production-ready GIS data \u2014 seamless. Focuses on Photogrammetry and reality capture expert who processes drone imagery into orthomosaics, digital terrain models, point clouds, and 3D meshes \u2014 bridging field capture and GIS-ready products.",
+    "skills": [
+      "GIS",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "geoai-ml-engineer": {
+    "name": "GeoAI/ML Engineer",
+    "role": "SPC",
+    "title": "GeoAI/ML Engineer",
+    "icon": "fa-map",
+    "bg": "#ecf9f7",
+    "color": "#14B8A6",
+    "about": "Teaching machines to see the Earth \u2014 one pixel at a time. Focuses on Geospatial machine learning specialist who builds models for feature extraction, object detection, image segmentation, and land cover classification from satellite and aerial imagery.",
+    "skills": [
+      "GIS",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "geoprocessing-specialist": {
+    "name": "Geoprocessing Specialist",
+    "role": "SPC",
+    "title": "Geoprocessing Specialist",
+    "icon": "fa-map",
+    "bg": "#ecf9f7",
+    "color": "#14B8A6",
+    "about": "If you've done it manually more than twice, this agent will automate it. Focuses on ArcPy and Python toolbox expert who automates spatial workflows \u2014 builds .pyt toolboxes, Model Builder processes, batch geoprocessing automation, and custom analysis scripts for ArcGIS Pro.",
+    "skills": [
+      "GIS",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "qa-engineer": {
+    "name": "GIS QA Engineer",
+    "role": "SPC",
+    "title": "GIS QA Engineer",
+    "icon": "fa-map",
+    "bg": "#ecf9f7",
+    "color": "#14B8A6",
+    "about": "Data doesn't ship until QA says it ships. Focuses on Quality assurance specialist who validates geospatial data integrity \u2014 topology checks, metadata audits, CRS consistency, accuracy assessment, and compliance verification.",
+    "skills": [
+      "GIS",
+      "Identity",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "solution-engineer": {
+    "name": "Solution Engineer",
+    "role": "SPC",
+    "title": "Solution Engineer",
+    "icon": "fa-map",
+    "bg": "#ecf9f7",
+    "color": "#14B8A6",
+    "about": "The builder who makes strategy real \u2014 one working demo at a time. Focuses on Hands-on GIS prototype builder who takes strategy from Technical Consultant and turns it into working demos, proof-of-concepts, and technical validations across the full Esri and open-source stack.",
+    "skills": [
+      "GIS",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "spatial-data-engineer": {
+    "name": "Spatial Data Engineer",
+    "role": "SPC",
+    "title": "Spatial Data Engineer",
+    "icon": "fa-map",
+    "bg": "#ecf9f7",
+    "color": "#14B8A6",
+    "about": "Data comes in dirty. It leaves clean, documented, and ready to publish. Focuses on ETL specialist who transforms messy geospatial data from any source into clean, standardized, production-ready datasets \u2014 format conversion, CRS reprojection, attribute normalization, and automated pipelines.",
+    "skills": [
+      "GIS",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "spatial-data-scientist": {
+    "name": "Spatial Data Scientist",
+    "role": "SPC",
+    "title": "Spatial Data Scientist",
+    "icon": "fa-map",
+    "bg": "#ecf9f7",
+    "color": "#14B8A6",
+    "about": "Finding the patterns in space that even experienced analysts miss. Focuses on Advanced spatial analytics specialist who applies statistical modeling, spatial econometrics, clustering, and predictive analytics to geospatial data \u2014 finding patterns that aren't visible on a map.",
+    "skills": [
+      "GIS",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "technical-consultant": {
+    "name": "Technical Consultant",
+    "role": "SPC",
+    "title": "Technical Consultant",
+    "icon": "fa-map",
+    "bg": "#ecf9f7",
+    "color": "#14B8A6",
+    "about": "The strategist who connects business pain points with geospatial solutions that actually deliver ROI. Focuses on Strategic GIS advisor who translates business problems into geospatial solutions \u2014 gap analysis, technology roadmaps, RFP responses, and digital transformation strategy across Esri and op...",
+    "skills": [
+      "GIS",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "web-gis-developer": {
+    "name": "Web GIS Developer",
+    "role": "SPC",
+    "title": "Web GIS Developer",
+    "icon": "fa-map",
+    "bg": "#ecf9f7",
+    "color": "#14B8A6",
+    "about": "Maps on the web that actually work \u2014 fast, responsive, and beautiful. Focuses on Full-stack web GIS engineer who builds interactive mapping applications \u2014 MapLibre GL JS, ArcGIS JS API, Leaflet, real-time dashboards, REST API integration, and geospatial web services.",
+    "skills": [
+      "GIS",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "clinical-evidence-agent": {
+    "name": "Clinical Evidence Agent",
+    "role": "SPC",
+    "title": "Clinical Evidence Agent",
+    "icon": "fa-stethoscope",
+    "bg": "#ebf6f5",
+    "color": "#0D9488",
+    "about": "Clinical credibility is earned through evidence standards, not confidence. Focuses on Evidence standards and clinical credibility framework for AI agents",
+    "skills": [
+      "Healthcare",
+      "Role:",
+      "Personality:",
+      "Voice:",
+      "Standard:"
+    ],
+    "status": "idle"
+  },
+  "innovation-strategist": {
+    "name": "Healthcare Innovation Strategist",
+    "role": "SPC",
+    "title": "Healthcare Innovation Strategist",
+    "icon": "fa-stethoscope",
+    "bg": "#ebf6f5",
+    "color": "#0D9488",
+    "about": "Holds the narrative together when the team is heads-down building. Focuses on Strategic narrative architect for healthcare founders operating at",
+    "skills": [
+      "Healthcare",
+      "Role:",
+      "Personality:",
+      "Voice:",
+      "Standard:"
+    ],
+    "status": "idle"
+  },
+  "sovereign-health-systems-agent": {
+    "name": "Sovereign Health Systems Agent",
+    "role": "SPC",
+    "title": "Sovereign Health Systems Agent",
+    "icon": "fa-stethoscope",
+    "bg": "#ebf6f5",
+    "color": "#0D9488",
+    "about": "Global health infrastructure is the largest underserved market in health tech. Focuses on Government health mandate engagement framework for AI agents",
+    "skills": [
+      "Healthcare",
+      "Role:",
+      "Personality:",
+      "Voice:",
+      "Standard:"
+    ],
+    "status": "idle"
+  },
+  "aeo-foundations": {
+    "name": "AEO Foundations Architect",
+    "role": "SPC",
+    "title": "AEO Foundations Architect",
+    "icon": "fa-bullhorn",
+    "bg": "#fef3ec",
+    "color": "#F97316",
+    "about": "The foundation layer everyone skips \u2014 making sure AI systems can actually discover, read, and use your content before you worry about rankings, citations, or task completion Focuses on Expert in AI Engine Optimization infrastructure \u2014 implements llms.txt, AI-aware robots.txt, token-budgeted content,...",
+    "skills": [
+      "Marketing",
+      "Track AI crawler evolution",
+      "Remember which content structures parse cleanly",
+      "Flag when discovery standards shift",
+      "AI crawler user agent strings"
+    ],
+    "status": "idle"
+  },
+  "agentic-search-optimizer": {
+    "name": "Agentic Search Optimizer",
+    "role": "SPC",
+    "title": "Agentic Search Optimizer",
+    "icon": "fa-bullhorn",
+    "bg": "#fef3ec",
+    "color": "#F97316",
+    "about": "While everyone else is optimizing to get cited by AI, this agent makes sure AI can actually do the thing on your site Focuses on Expert in WebMCP readiness and agentic task completion \u2014 audits whether AI agents can actually accomplish tasks on your site (book, buy, register, subscribe), implements W...",
+    "skills": [
+      "Marketing",
+      "Track WebMCP adoption",
+      "Remember which task patterns complete successfully",
+      "Flag when browser agent behavior shifts",
+      "Task Completion Rate"
+    ],
+    "status": "idle"
+  },
+  "ai-citation-strategist": {
+    "name": "AI Citation Strategist",
+    "role": "SPC",
+    "title": "AI Citation Strategist",
+    "icon": "fa-bullhorn",
+    "bg": "#fef3ec",
+    "color": "#F97316",
+    "about": "Figures out why the AI recommends your competitor and rewires the signals so it recommends you instead Focuses on Expert in AI recommendation engine optimization (AEO/GEO) \u2014 audits brand visibility across ChatGPT, Claude, Gemini, and Perplexity, identifies why competitors get cited instead, and deli...",
+    "skills": [
+      "Marketing",
+      "Track citation patterns",
+      "Remember competitor positioning",
+      "Flag when a platform's citation behavior shifts",
+      "Target prompts"
+    ],
+    "status": "idle"
+  },
+  "app-store-optimizer": {
+    "name": "App Store Optimizer",
+    "role": "SPC",
+    "title": "App Store Optimizer",
+    "icon": "fa-bullhorn",
+    "bg": "#fef3ec",
+    "color": "#F97316",
+    "about": "Gets your app found, downloaded, and loved in the store. Focuses on Expert app store marketing specialist focused on App Store Optimization (ASO), conversion rate optimization, and app discoverability",
+    "skills": [
+      "Marketing",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "baidu-seo-specialist": {
+    "name": "Baidu SEO Specialist",
+    "role": "SPC",
+    "title": "Baidu SEO Specialist",
+    "icon": "fa-bullhorn",
+    "bg": "#fef3ec",
+    "color": "#F97316",
+    "about": "Masters Baidu's algorithm so your brand ranks in China's search ecosystem. Focuses on Expert Baidu search optimization specialist focused on Chinese search engine ranking, Baidu ecosystem integration, ICP compliance, Chinese keyword research, and mobile-first indexing for the China market.",
+    "skills": [
+      "Marketing",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "bilibili-content-strategist": {
+    "name": "Bilibili Content Strategist",
+    "role": "SPC",
+    "title": "Bilibili Content Strategist",
+    "icon": "fa-bullhorn",
+    "bg": "#fef3ec",
+    "color": "#F97316",
+    "about": "Speaks fluent danmaku and grows your brand on B\u7ad9. Focuses on Expert Bilibili marketing specialist focused on UP\u4e3b growth, danmaku culture mastery, B\u7ad9 algorithm optimization, community building, and branded content strategy for China's leading video community platform.",
+    "skills": [
+      "Marketing",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "book-co-author": {
+    "name": "Book Co-Author",
+    "role": "SPC",
+    "title": "Book Co-Author",
+    "icon": "fa-bullhorn",
+    "bg": "#fef3ec",
+    "color": "#F97316",
+    "about": "Turns rough expertise into a recognizable book people can quote, remember, and buy into. Focuses on Strategic thought-leadership book collaborator for founders, experts, and operators turning voice notes, fragments, and positioning into structured first-person chapters.",
+    "skills": [
+      "Marketing",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "carousel-growth-engine": {
+    "name": "Carousel Growth Engine",
+    "role": "SPC",
+    "title": "Carousel Growth Engine",
+    "icon": "fa-bullhorn",
+    "bg": "#fef3ec",
+    "color": "#F97316",
+    "about": "Autonomously generates viral carousels from any URL and publishes them to feed. Focuses on Autonomous TikTok and Instagram carousel generation specialist. Analyzes any website URL with Playwright, generates viral 6-slide carousels via Gemini image generation, publishes directly to feed via Upload-Po...",
+    "skills": [
+      "Marketing",
+      "Daily Carousel Pipeline",
+      "Visual Coherence Engine",
+      "Analytics Feedback Loop",
+      "Self-Improving System"
+    ],
+    "status": "idle"
+  },
+  "china-ecommerce-operator": {
+    "name": "China E-Commerce Operator",
+    "role": "SPC",
+    "title": "China E-Commerce Operator",
+    "icon": "fa-bullhorn",
+    "bg": "#fef3ec",
+    "color": "#F97316",
+    "about": "Runs your Taobao, Tmall, Pinduoduo, and JD storefronts like a native operator. Focuses on Expert China e-commerce operations specialist covering Taobao, Tmall, Pinduoduo, and JD ecosystems with deep expertise in product listing optimization, live commerce, store operations, 618/Double 11 campaigns, ...",
+    "skills": [
+      "Marketing",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "china-market-localization-strategist": {
+    "name": "China Market Localization Strategist",
+    "role": "SPC",
+    "title": "China Market Localization Strategist",
+    "icon": "fa-bullhorn",
+    "bg": "#fef3ec",
+    "color": "#F97316",
+    "about": "Turns China's chaotic trend landscape into a precision-guided marketing machine \u2014 data in, revenue out. Focuses on Full-stack China market localization expert who transforms real-time trend signals into executable go-to-market strategies across Douyin, Xiaohongshu, WeChat, Bilibili, and beyond",
+    "skills": [
+      "Marketing",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "content-creator": {
+    "name": "Content Creator",
+    "role": "SPC",
+    "title": "Content Creator",
+    "icon": "fa-bullhorn",
+    "bg": "#fef3ec",
+    "color": "#F97316",
+    "about": "Crafts compelling stories across every platform your audience lives on. Focuses on Expert content strategist and creator for multi-platform campaigns. Develops editorial calendars, creates compelling copy, manages brand storytelling, and optimizes content for engagement across all digital channels.",
+    "skills": [
+      "Marketing",
+      "Content Strategy",
+      "Multi-Format Creation",
+      "Brand Storytelling",
+      "SEO Content"
+    ],
+    "status": "idle"
+  },
+  "cross-border-ecommerce": {
+    "name": "Cross-Border E-Commerce Specialist",
+    "role": "SPC",
+    "title": "Cross-Border E-Commerce Specialist",
+    "icon": "fa-bullhorn",
+    "bg": "#fef3ec",
+    "color": "#F97316",
+    "about": "Takes your products from Chinese factories to global bestseller lists. Focuses on Full-funnel cross-border e-commerce strategist covering Amazon, Shopee, Lazada, AliExpress, Temu, and TikTok Shop operations, international logistics and overseas warehousing, compliance and taxation, multilingual list...",
+    "skills": [
+      "Marketing",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "douyin-strategist": {
+    "name": "Douyin Strategist",
+    "role": "SPC",
+    "title": "Douyin Strategist",
+    "icon": "fa-bullhorn",
+    "bg": "#fef3ec",
+    "color": "#F97316",
+    "about": "Masters the Douyin algorithm so your short videos actually get seen. Focuses on Short-video marketing expert specializing in the Douyin platform, with deep expertise in recommendation algorithm mechanics, viral video planning, livestream commerce workflows, and full-funnel brand growth through conte...",
+    "skills": [
+      "Marketing",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "email-strategist": {
+    "name": "Email Marketing Strategist",
+    "role": "SPC",
+    "title": "Email Marketing Strategist",
+    "icon": "fa-bullhorn",
+    "bg": "#fef3ec",
+    "color": "#F97316",
+    "about": "Turns a messy contact list into a segmented, automated revenue engine that sends the right message at the right time. Focuses on Expert email marketing strategist for CRM-driven campaigns, lifecycle automation, segmentation architecture, and deliverability. Designs sequences (welcome, nurture, react...",
+    "skills": [
+      "Marketing",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "global-podcast-strategist": {
+    "name": "Global Podcast Strategist",
+    "role": "SPC",
+    "title": "Global Podcast Strategist",
+    "icon": "fa-bullhorn",
+    "bg": "#fef3ec",
+    "color": "#F97316",
+    "about": "Turns conversations into communities and episodes into growth engines. Focuses on Expert podcast growth specialist focused on show positioning, audience development, content strategy, and monetisation. Transforms raw ideas into authoritative audio brands that compound listeners and revenue over time...",
+    "skills": [
+      "Marketing",
+      "Global",
+      "Podcast",
+      "Strategist"
+    ],
+    "status": "idle"
+  },
+  "growth-hacker": {
+    "name": "Growth Hacker",
+    "role": "SPC",
+    "title": "Growth Hacker",
+    "icon": "fa-bullhorn",
+    "bg": "#fef3ec",
+    "color": "#F97316",
+    "about": "Finds the growth channel nobody's exploited yet \u2014 then scales it. Focuses on Expert growth strategist specializing in rapid user acquisition through data-driven experimentation. Develops viral loops, optimizes conversion funnels, and finds scalable growth channels for exponential business growth.",
+    "skills": [
+      "Marketing",
+      "Growth Strategy",
+      "Experimentation",
+      "Analytics & Attribution",
+      "Viral Mechanics"
+    ],
+    "status": "idle"
+  },
+  "instagram-curator": {
+    "name": "Instagram Curator",
+    "role": "SPC",
+    "title": "Instagram Curator",
+    "icon": "fa-bullhorn",
+    "bg": "#fef3ec",
+    "color": "#F97316",
+    "about": "Masters the grid aesthetic and turns scrollers into an engaged community. Focuses on Expert Instagram marketing specialist focused on visual storytelling, community building, and multi-format content optimization. Masters aesthetic development and drives meaningful engagement.",
+    "skills": [
+      "Marketing",
+      "Visual Brand Development",
+      "Multi-Format Mastery",
+      "Community Cultivation",
+      "Social Commerce Excellence"
+    ],
+    "status": "idle"
+  },
+  "kuaishou-strategist": {
+    "name": "Kuaishou Strategist",
+    "role": "SPC",
+    "title": "Kuaishou Strategist",
+    "icon": "fa-bullhorn",
+    "bg": "#fef3ec",
+    "color": "#F97316",
+    "about": "Grows grassroots audiences and drives live commerce on \u5feb\u624b. Focuses on Expert Kuaishou marketing strategist specializing in short-video content for China's lower-tier city markets, live commerce operations, community trust building, and grassroots audience growth on \u5feb\u624b.",
+    "skills": [
+      "Marketing",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "linkedin-content-creator": {
+    "name": "LinkedIn Content Creator",
+    "role": "SPC",
+    "title": "LinkedIn Content Creator",
+    "icon": "fa-bullhorn",
+    "bg": "#fef3ec",
+    "color": "#F97316",
+    "about": "Turns professional expertise into scroll-stopping content that makes the right people find you. Focuses on Expert LinkedIn content strategist focused on thought leadership, personal brand building, and high-engagement professional content. Masters LinkedIn's algorithm and culture to drive inbound op...",
+    "skills": [
+      "Marketing",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "livestream-commerce-coach": {
+    "name": "Livestream Commerce Coach",
+    "role": "SPC",
+    "title": "Livestream Commerce Coach",
+    "icon": "fa-bullhorn",
+    "bg": "#fef3ec",
+    "color": "#F97316",
+    "about": "Coaches your livestream hosts from awkward beginners to million-yuan sellers. Focuses on Veteran livestream e-commerce coach specializing in host training and live room operations across Douyin, Kuaishou, Taobao Live, and Channels, covering script design, product sequencing, paid-vs-organic traffic ...",
+    "skills": [
+      "Marketing",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "multi-platform-publisher": {
+    "name": "Multi-Platform Publisher",
+    "role": "SPC",
+    "title": "Multi-Platform Publisher",
+    "icon": "fa-bullhorn",
+    "bg": "#fef3ec",
+    "color": "#F97316",
+    "about": "One article, all platforms, safely \u2014 the traffic conductor for Chinese content creators. Focuses on Expert orchestrator for one-click Chinese blog publishing. Routes a single article to \u77e5\u4e4e / \u5c0f\u7ea2\u4e66 / CSDN / B\u7ad9 / \u516c\u4f17\u53f7 / \u6398\u91d1 via Wechatsync (main channel) with xhs-mcp and biliup as specialized fallbacks. Ha...",
+    "skills": [
+      "Marketing",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "podcast-strategist": {
+    "name": "Podcast Strategist",
+    "role": "SPC",
+    "title": "Podcast Strategist",
+    "icon": "fa-bullhorn",
+    "bg": "#fef3ec",
+    "color": "#F97316",
+    "about": "Guides your podcast from concept to loyal audience in China's booming audio scene. Focuses on Content strategy and operations expert for the Chinese podcast market, with deep expertise in Xiaoyuzhou, Ximalaya, and other major audio platforms, covering show positioning, audio production, audience gro...",
+    "skills": [
+      "Marketing",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "pr-communications-manager": {
+    "name": "PR & Communications Manager",
+    "role": "SPC",
+    "title": "PR & Communications Manager",
+    "icon": "fa-bullhorn",
+    "bg": "#fef3ec",
+    "color": "#F97316",
+    "about": "Reputation is built in years and lost in minutes. Every message, every statement, every interview is either protecting or eroding the brand \u2014 there is no neutral. Focuses on Strategic public relations and communications specialist for media relations, press releases, crisis communications, executive...",
+    "skills": [
+      "Marketing",
+      "Media Relations",
+      "Press Releases",
+      "Crisis Communications",
+      "Executive Thought Leadership"
+    ],
+    "status": "idle"
+  },
+  "private-domain-operator": {
+    "name": "Private Domain Operator",
+    "role": "SPC",
+    "title": "Private Domain Operator",
+    "icon": "fa-bullhorn",
+    "bg": "#fef3ec",
+    "color": "#F97316",
+    "about": "Builds your WeChat private traffic empire from first contact to lifetime value. Focuses on Expert in building enterprise WeChat (WeCom) private domain ecosystems, with deep expertise in SCRM systems, segmented community operations, Mini Program commerce integration, user lifecycle management, and fu...",
+    "skills": [
+      "Marketing",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "reddit-community-builder": {
+    "name": "Reddit Community Builder",
+    "role": "SPC",
+    "title": "Reddit Community Builder",
+    "icon": "fa-bullhorn",
+    "bg": "#fef3ec",
+    "color": "#F97316",
+    "about": "Speaks fluent Reddit and builds community trust the authentic way. Focuses on Expert Reddit marketing specialist focused on authentic community engagement, value-driven content creation, and long-term relationship building. Masters Reddit culture navigation.",
+    "skills": [
+      "Marketing",
+      "Value-First Engagement",
+      "Community Integration",
+      "Educational Content Leadership",
+      "Reputation Management"
+    ],
+    "status": "idle"
+  },
+  "seo-specialist": {
+    "name": "SEO Specialist",
+    "role": "SPC",
+    "title": "SEO Specialist",
+    "icon": "fa-bullhorn",
+    "bg": "#fef3ec",
+    "color": "#F97316",
+    "about": "Drives sustainable organic traffic through technical SEO and content strategy. Focuses on Expert search engine optimization strategist specializing in technical SEO, content optimization, link authority building, and organic search growth. Drives sustainable traffic through data-driven search strate...",
+    "skills": [
+      "Marketing",
+      "Technical SEO Excellence",
+      "Content Strategy & Optimization",
+      "Link Authority Building",
+      "SERP Feature Optimization"
+    ],
+    "status": "idle"
+  },
+  "short-video-editing-coach": {
+    "name": "Short-Video Editing Coach",
+    "role": "SPC",
+    "title": "Short-Video Editing Coach",
+    "icon": "fa-bullhorn",
+    "bg": "#fef3ec",
+    "color": "#F97316",
+    "about": "Turns raw footage into scroll-stopping short videos with professional polish. Focuses on Hands-on short-video editing coach covering the full post-production pipeline, with mastery of CapCut Pro, Premiere Pro, DaVinci Resolve, and Final Cut Pro across composition and camera language, color grading, ...",
+    "skills": [
+      "Marketing",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "social-media-strategist": {
+    "name": "Social Media Strategist",
+    "role": "SPC",
+    "title": "Social Media Strategist",
+    "icon": "fa-bullhorn",
+    "bg": "#fef3ec",
+    "color": "#F97316",
+    "about": "Orchestrates cross-platform campaigns that build community and drive engagement. Focuses on Expert social media strategist for LinkedIn, Twitter, and professional platforms. Creates cross-platform campaigns, builds communities, manages real-time engagement, and develops thought leadership strategies...",
+    "skills": [
+      "Marketing",
+      "Cross-Platform Strategy",
+      "LinkedIn Mastery",
+      "Twitter Integration",
+      "Professional Networking"
+    ],
+    "status": "idle"
+  },
+  "tiktok-strategist": {
+    "name": "TikTok Strategist",
+    "role": "SPC",
+    "title": "TikTok Strategist",
+    "icon": "fa-bullhorn",
+    "bg": "#fef3ec",
+    "color": "#F97316",
+    "about": "Rides the algorithm and builds community through authentic TikTok culture. Focuses on Expert TikTok marketing specialist focused on viral content creation, algorithm optimization, and community building. Masters TikTok's unique culture and features for brand growth.",
+    "skills": [
+      "Marketing",
+      "Viral Content Creation",
+      "Algorithm Mastery",
+      "Creator Partnerships",
+      "Cross-Platform Integration"
+    ],
+    "status": "idle"
+  },
+  "twitter-engager": {
+    "name": "Twitter Engager",
+    "role": "SPC",
+    "title": "Twitter Engager",
+    "icon": "fa-bullhorn",
+    "bg": "#fef3ec",
+    "color": "#F97316",
+    "about": "Builds thought leadership and brand authority 280 characters at a time. Focuses on Expert Twitter marketing specialist focused on real-time engagement, thought leadership building, and community-driven growth. Builds brand authority through authentic conversation participation and viral thread creat...",
+    "skills": [
+      "Marketing",
+      "Real-Time Engagement",
+      "Thought Leadership",
+      "Community Building",
+      "Crisis Management"
+    ],
+    "status": "idle"
+  },
+  "video-optimization-specialist": {
+    "name": "Video Optimization Specialist",
+    "role": "SPC",
+    "title": "Video Optimization Specialist",
+    "icon": "fa-bullhorn",
+    "bg": "#fef3ec",
+    "color": "#F97316",
+    "about": "Energetic, data-driven, strategic, and hyper-focused on audience retention Focuses on Video marketing strategist specializing in YouTube algorithm optimization, audience retention, chaptering, thumbnail concepts, and cross-platform video syndication.",
+    "skills": [
+      "Marketing",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "wechat-official-account": {
+    "name": "WeChat Official Account Manager",
+    "role": "SPC",
+    "title": "WeChat Official Account Manager",
+    "icon": "fa-bullhorn",
+    "bg": "#fef3ec",
+    "color": "#F97316",
+    "about": "Grows loyal WeChat subscriber communities through consistent value delivery. Focuses on Expert WeChat Official Account (OA) strategist specializing in content marketing, subscriber engagement, and conversion optimization. Masters multi-format content and builds loyal communities through consistent v...",
+    "skills": [
+      "Marketing",
+      "Content Value Strategy",
+      "Subscriber Relationship Building",
+      "Multi-Format Content Mastery",
+      "Automation & Efficiency"
+    ],
+    "status": "idle"
+  },
+  "weibo-strategist": {
+    "name": "Weibo Strategist",
+    "role": "SPC",
+    "title": "Weibo Strategist",
+    "icon": "fa-bullhorn",
+    "bg": "#fef3ec",
+    "color": "#F97316",
+    "about": "Makes your brand trend on Weibo and keeps the conversation going. Focuses on Full-spectrum operations expert for Sina Weibo, with deep expertise in trending topic mechanics, Super Topic community management, public sentiment monitoring, fan economy strategies, and Weibo advertising, helping brands a...",
+    "skills": [
+      "Marketing",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "x-twitter-intelligence-analyst": {
+    "name": "X/Twitter Intelligence Analyst",
+    "role": "SPC",
+    "title": "X/Twitter Intelligence Analyst",
+    "icon": "fa-bullhorn",
+    "bg": "#fef3ec",
+    "color": "#F97316",
+    "about": "Turns noisy X conversations into sourced market, audience, and risk intelligence. Focuses on Social intelligence specialist for X/Twitter research, trend detection, account monitoring, and evidence-backed audience insights using public signals and structured data workflows.",
+    "skills": [
+      "Marketing",
+      "Signal Discovery",
+      "Brand & Reputation Monitoring",
+      "Competitor Intelligence",
+      "Audience Research"
+    ],
+    "status": "idle"
+  },
+  "xiaohongshu-specialist": {
+    "name": "Xiaohongshu Specialist",
+    "role": "SPC",
+    "title": "Xiaohongshu Specialist",
+    "icon": "fa-bullhorn",
+    "bg": "#fef3ec",
+    "color": "#F97316",
+    "about": "Masters lifestyle content and aesthetic storytelling on \u5c0f\u7ea2\u4e66. Focuses on Expert Xiaohongshu marketing specialist focused on lifestyle content, trend-driven strategies, and authentic community engagement. Masters micro-content creation and drives viral growth through aesthetic storytelling.",
+    "skills": [
+      "Marketing",
+      "Lifestyle Brand Development",
+      "Trend-Driven Content Strategy",
+      "Micro-Content Mastery",
+      "Community Engagement Excellence"
+    ],
+    "status": "idle"
+  },
+  "zhihu-strategist": {
+    "name": "Zhihu Strategist",
+    "role": "SPC",
+    "title": "Zhihu Strategist",
+    "icon": "fa-bullhorn",
+    "bg": "#fef3ec",
+    "color": "#F97316",
+    "about": "Builds brand authority through expert knowledge-sharing on \u77e5\u4e4e. Focuses on Expert Zhihu marketing specialist focused on thought leadership, community credibility, and knowledge-driven engagement. Masters question-answering strategy and builds brand authority through authentic expertise sharing.",
+    "skills": [
+      "Marketing",
+      "Thought Leadership Development",
+      "Community Credibility Building",
+      "Strategic Question & Answer Mastery",
+      "Content Pillars & Columns"
+    ],
+    "status": "idle"
+  },
+  "auditor": {
+    "name": "Paid Media Auditor",
+    "role": "SPC",
+    "title": "Paid Media Auditor",
+    "icon": "fa-bullseye",
+    "bg": "#fdf8eb",
+    "color": "#EAB308",
+    "about": "Finds the waste in your ad spend before your CFO does. Focuses on Comprehensive paid media auditor who systematically evaluates Google Ads, Microsoft Ads, and Meta accounts across 200+ checkpoints spanning account structure, tracking, bidding, creative, audiences, and competitive positioning. Produc...",
+    "skills": [
+      "Paid Media",
+      "Auditor"
+    ],
+    "status": "idle"
+  },
+  "creative-strategist": {
+    "name": "Ad Creative Strategist",
+    "role": "SPC",
+    "title": "Ad Creative Strategist",
+    "icon": "fa-bullseye",
+    "bg": "#fdf8eb",
+    "color": "#EAB308",
+    "about": "Turns ad creative from guesswork into a repeatable science. Focuses on Paid media creative specialist focused on ad copywriting, RSA optimization, asset group design, and creative testing frameworks across Google, Meta, Microsoft, and programmatic platforms. Bridges the gap between performance data ...",
+    "skills": [
+      "Paid Media",
+      "Creative",
+      "Strategist"
+    ],
+    "status": "idle"
+  },
+  "paid-social-strategist": {
+    "name": "Paid Social Strategist",
+    "role": "SPC",
+    "title": "Paid Social Strategist",
+    "icon": "fa-bullseye",
+    "bg": "#fdf8eb",
+    "color": "#EAB308",
+    "about": "Makes every dollar on Meta, LinkedIn, and TikTok ads work harder. Focuses on Cross-platform paid social advertising specialist covering Meta (Facebook/Instagram), LinkedIn, TikTok, Pinterest, X, and Snapchat. Designs full-funnel social ad programs from prospecting through retargeting with platform-s...",
+    "skills": [
+      "Paid Media",
+      "Paid",
+      "Social",
+      "Strategist"
+    ],
+    "status": "idle"
+  },
+  "ppc-strategist": {
+    "name": "PPC Campaign Strategist",
+    "role": "SPC",
+    "title": "PPC Campaign Strategist",
+    "icon": "fa-bullseye",
+    "bg": "#fdf8eb",
+    "color": "#EAB308",
+    "about": "Architects PPC campaigns that scale from $10K to $10M+ monthly. Focuses on Senior paid media strategist specializing in large-scale search, shopping, and performance max campaign architecture across Google, Microsoft, and Amazon ad platforms. Designs account structures, budget allocation frameworks,...",
+    "skills": [
+      "Paid Media",
+      "Ppc",
+      "Strategist"
+    ],
+    "status": "idle"
+  },
+  "programmatic-buyer": {
+    "name": "Programmatic & Display Buyer",
+    "role": "SPC",
+    "title": "Programmatic & Display Buyer",
+    "icon": "fa-bullseye",
+    "bg": "#fdf8eb",
+    "color": "#EAB308",
+    "about": "Buys display and video inventory at scale with surgical precision. Focuses on Display advertising and programmatic media buying specialist covering managed placements, Google Display Network, DV360, trade desk platforms, partner media (newsletters, sponsored content), and ABM display strategies via ...",
+    "skills": [
+      "Paid Media",
+      "Programmatic",
+      "Buyer"
+    ],
+    "status": "idle"
+  },
+  "search-query-analyst": {
+    "name": "Search Query Analyst",
+    "role": "SPC",
+    "title": "Search Query Analyst",
+    "icon": "fa-bullseye",
+    "bg": "#fdf8eb",
+    "color": "#EAB308",
+    "about": "Mines search queries to find the gold your competitors are missing. Focuses on Specialist in search term analysis, negative keyword architecture, and query-to-intent mapping. Turns raw search query data into actionable optimizations that eliminate waste and amplify high-intent traffic across paid se...",
+    "skills": [
+      "Paid Media",
+      "Search",
+      "Query",
+      "Analyst"
+    ],
+    "status": "idle"
+  },
+  "tracking-specialist": {
+    "name": "Tracking & Measurement Specialist",
+    "role": "SPC",
+    "title": "Tracking & Measurement Specialist",
+    "icon": "fa-bullseye",
+    "bg": "#fdf8eb",
+    "color": "#EAB308",
+    "about": "If it's not tracked correctly, it didn't happen. Focuses on Expert in conversion tracking architecture, tag management, and attribution modeling across Google Tag Manager, GA4, Google Ads, Meta CAPI, LinkedIn Insight Tag, and server-side implementations. Ensures every conversion is counted correctly...",
+    "skills": [
+      "Paid Media",
+      "Tracking",
+      "Specialist"
+    ],
+    "status": "idle"
+  },
+  "behavioral-nudge-engine": {
+    "name": "Behavioral Nudge Engine",
+    "role": "SPC",
+    "title": "Behavioral Nudge Engine",
+    "icon": "fa-box",
+    "bg": "#fbf0fd",
+    "color": "#D946EF",
+    "about": "Adapts software interactions to maximize user motivation through behavioral psychology. Focuses on Behavioral psychology specialist that adapts software interaction cadences and styles to maximize user motivation and success.",
+    "skills": [
+      "Product",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "feedback-synthesizer": {
+    "name": "Feedback Synthesizer",
+    "role": "SPC",
+    "title": "Feedback Synthesizer",
+    "icon": "fa-box",
+    "bg": "#fbf0fd",
+    "color": "#D946EF",
+    "about": "Distills a thousand user voices into the five things you need to build next. Focuses on Expert in collecting, analyzing, and synthesizing user feedback from multiple channels to extract actionable product insights. Transforms qualitative feedback into quantitative priorities and strategic recommenda...",
+    "skills": [
+      "Product",
+      "Multi-Channel Collection",
+      "Sentiment Analysis",
+      "Feedback Categorization",
+      "User Research"
+    ],
+    "status": "idle"
+  },
+  "manager": {
+    "name": "Product Manager",
+    "role": "SPC",
+    "title": "Product Manager",
+    "icon": "fa-box",
+    "bg": "#fbf0fd",
+    "color": "#D946EF",
+    "about": "Ships the right thing, not just the next thing \u2014 outcome-obsessed, user-grounded, and diplomatically ruthless about focus. Focuses on Holistic product leader who owns the full product lifecycle \u2014 from discovery and strategy through roadmap, stakeholder alignment, go-to-market, and outcome measuremen...",
+    "skills": [
+      "Product",
+      "Revenue impact",
+      "Cost impact",
+      "Strategic fit",
+      "Market sizing"
+    ],
+    "status": "idle"
+  },
+  "sprint-prioritizer": {
+    "name": "Sprint Prioritizer",
+    "role": "SPC",
+    "title": "Sprint Prioritizer",
+    "icon": "fa-box",
+    "bg": "#fbf0fd",
+    "color": "#D946EF",
+    "about": "Maximizes sprint value through data-driven prioritization and ruthless focus. Focuses on Expert product manager specializing in agile sprint planning, feature prioritization, and resource allocation. Focused on maximizing team velocity and business value delivery through data-driven prioritization f...",
+    "skills": [
+      "Product",
+      "Prioritization Frameworks",
+      "Agile Methodologies",
+      "Capacity Planning",
+      "Stakeholder Management"
+    ],
+    "status": "idle"
+  },
+  "trend-researcher": {
+    "name": "Trend Researcher",
+    "role": "SPC",
+    "title": "Trend Researcher",
+    "icon": "fa-box",
+    "bg": "#fbf0fd",
+    "color": "#D946EF",
+    "about": "Spots emerging trends before they hit the mainstream. Focuses on Expert market intelligence analyst specializing in identifying emerging trends, competitive analysis, and opportunity assessment. Focused on providing actionable insights that drive product strategy and innovation decisions.",
+    "skills": [
+      "Product",
+      "Market Research",
+      "Trend Analysis",
+      "Data Sources",
+      "Research Tools"
+    ],
+    "status": "idle"
+  },
+  "experiment-tracker": {
+    "name": "Experiment Tracker",
+    "role": "SPC",
+    "title": "Experiment Tracker",
+    "icon": "fa-clipboard-list",
+    "bg": "#ebf7fd",
+    "color": "#0EA5E9",
+    "about": "Designs experiments, tracks results, and lets the data decide. Focuses on Expert project manager specializing in experiment design, execution tracking, and data-driven decision making. Focused on managing A/B tests, feature experiments, and hypothesis validation through systematic experimentation an...",
+    "skills": [
+      "Project Management",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "jira-workflow-steward": {
+    "name": "Jira Workflow Steward",
+    "role": "SPC",
+    "title": "Jira Workflow Steward",
+    "icon": "fa-clipboard-list",
+    "bg": "#ebf7fd",
+    "color": "#0EA5E9",
+    "about": "Enforces traceable commits, structured PRs, and release-safe branch strategy. Focuses on Expert delivery operations specialist who enforces Jira-linked Git workflows, traceable commits, structured pull requests, and release-safe branch strategy across software teams.",
+    "skills": [
+      "Project Management",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "meeting-notes-specialist": {
+    "name": "Meeting Notes Specialist",
+    "role": "SPC",
+    "title": "Meeting Notes Specialist",
+    "icon": "fa-clipboard-list",
+    "bg": "#ebf7fd",
+    "color": "#0EA5E9",
+    "about": "Precise extractor \u2014 finds the signal in the noise, never invents what isn't there. Focuses on Extract structured decisions, action items, and open questions from meeting transcripts or rough notes into a clean 4-section summary.",
+    "skills": [
+      "Project Management",
+      "Meeting",
+      "Notes",
+      "Specialist"
+    ],
+    "status": "idle"
+  },
+  "project-shepherd": {
+    "name": "Project Shepherd",
+    "role": "SPC",
+    "title": "Project Shepherd",
+    "icon": "fa-clipboard-list",
+    "bg": "#ebf7fd",
+    "color": "#0EA5E9",
+    "about": "Herds cross-functional chaos into on-time, on-scope delivery. Focuses on Expert project manager specializing in cross-functional project coordination, timeline management, and stakeholder alignment. Focused on shepherding projects from conception to completion while managing resources, risks, and co...",
+    "skills": [
+      "Project Management",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "studio-operations": {
+    "name": "Studio Operations",
+    "role": "SPC",
+    "title": "Studio Operations",
+    "icon": "fa-clipboard-list",
+    "bg": "#ebf7fd",
+    "color": "#0EA5E9",
+    "about": "Keeps the studio running smoothly \u2014 processes, tools, and people in sync. Focuses on Expert operations manager specializing in day-to-day studio efficiency, process optimization, and resource coordination. Focused on ensuring smooth operations, maintaining productivity standards, and supporting all ...",
+    "skills": [
+      "Project Management",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "studio-producer": {
+    "name": "Studio Producer",
+    "role": "SPC",
+    "title": "Studio Producer",
+    "icon": "fa-clipboard-list",
+    "bg": "#ebf7fd",
+    "color": "#0EA5E9",
+    "about": "Aligns creative vision with business objectives across complex initiatives. Focuses on Senior strategic leader specializing in high-level creative and technical project orchestration, resource allocation, and multi-project portfolio management. Focused on aligning creative vision with business objec...",
+    "skills": [
+      "Project Management",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "project-manager-senior": {
+    "name": "Senior Project Manager",
+    "role": "SPC",
+    "title": "Senior Project Manager",
+    "icon": "fa-clipboard-list",
+    "bg": "#ebf7fd",
+    "color": "#0EA5E9",
+    "about": "Converts specs to tasks with realistic scope \u2014 no gold-plating, no fantasy. Focuses on Converts specs to tasks and remembers previous projects. Focused on realistic scope, no background processes, exact spec requirements",
+    "skills": [
+      "Project Management",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "account-strategist": {
+    "name": "Account Strategist",
+    "role": "SPC",
+    "title": "Account Strategist",
+    "icon": "fa-chart-line",
+    "bg": "#ebf9f4",
+    "color": "#10B981",
+    "about": "Maps the org, finds the whitespace, and turns customers into platforms. Focuses on Expert post-sale account strategist specializing in land-and-expand execution, stakeholder mapping, QBR facilitation, and net revenue retention. Turns closed deals into long-term platform relationships through systema...",
+    "skills": [
+      "Sales",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "coach": {
+    "name": "Sales Coach",
+    "role": "SPC",
+    "title": "Sales Coach",
+    "icon": "fa-chart-line",
+    "bg": "#ebf9f4",
+    "color": "#10B981",
+    "about": "Asks the question that makes the rep rethink the entire deal. Focuses on Expert sales coaching specialist focused on rep development, pipeline review facilitation, call coaching, deal strategy, and forecast accuracy. Makes every rep and every deal better through structured coaching methodology and b...",
+    "skills": [
+      "Sales",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "deal-strategist": {
+    "name": "Deal Strategist",
+    "role": "SPC",
+    "title": "Deal Strategist",
+    "icon": "fa-chart-line",
+    "bg": "#ebf9f4",
+    "color": "#10B981",
+    "about": "Qualifies deals like a surgeon and kills happy ears on contact. Focuses on Senior deal strategist specializing in MEDDPICC qualification, competitive positioning, and win planning for complex B2B sales cycles. Scores opportunities, exposes pipeline risk, and builds deal strategies that survive forec...",
+    "skills": [
+      "Sales",
+      "Instructions Reference"
+    ],
+    "status": "idle"
+  },
+  "discovery-coach": {
+    "name": "Discovery Coach",
+    "role": "SPC",
+    "title": "Discovery Coach",
+    "icon": "fa-chart-line",
+    "bg": "#ebf9f4",
+    "color": "#10B981",
+    "about": "Asks one more question than everyone else \u2014 and that's the one that closes the deal. Focuses on Coaches sales teams on elite discovery methodology \u2014 question design, current-state mapping, gap quantification, and call structure that surfaces real buying motivation.",
+    "skills": [
+      "Sales",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "engineer": {
+    "name": "Sales Engineer",
+    "role": "SPC",
+    "title": "Sales Engineer",
+    "icon": "fa-chart-line",
+    "bg": "#ebf9f4",
+    "color": "#10B981",
+    "about": "Wins the technical decision before the deal even hits procurement. Focuses on Senior pre-sales engineer specializing in technical discovery, demo engineering, POC scoping, competitive battlecards, and bridging product capabilities to business outcomes. Wins the technical decision so the deal can clo...",
+    "skills": [
+      "Sales",
+      "Stack",
+      "Integration Points",
+      "Security Requirements",
+      "Scale"
+    ],
+    "status": "idle"
+  },
+  "offer-lead-gen-strategist": {
+    "name": "Offer & Lead Gen Strategist",
+    "role": "SPC",
+    "title": "Offer & Lead Gen Strategist",
+    "icon": "fa-chart-line",
+    "bg": "#ebf9f4",
+    "color": "#10B981",
+    "about": "Builds the thing buyers can't ignore \u2014 then multiplies the channels that deliver it. Focuses on Top-of-funnel architect who designs irresistible offers and lead magnets that attract qualified buyers at scale. Specializes in value-equation offer construction, lead magnet typology, multi-channel lead ...",
+    "skills": [
+      "Sales",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "outbound-strategist": {
+    "name": "Outbound Strategist",
+    "role": "SPC",
+    "title": "Outbound Strategist",
+    "icon": "fa-chart-line",
+    "bg": "#ebf9f4",
+    "color": "#10B981",
+    "about": "Turns buying signals into booked meetings before the competition even notices. Focuses on Signal-based outbound specialist who designs multi-channel prospecting sequences, defines ICPs, and builds pipeline through research-driven personalization \u2014 not volume.",
+    "skills": [
+      "Sales",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "pipeline-analyst": {
+    "name": "Pipeline Analyst",
+    "role": "SPC",
+    "title": "Pipeline Analyst",
+    "icon": "fa-chart-line",
+    "bg": "#ebf9f4",
+    "color": "#10B981",
+    "about": "Tells you your forecast is wrong before you realize it yourself. Focuses on Revenue operations analyst specializing in pipeline health diagnostics, deal velocity analysis, forecast accuracy, and data-driven sales coaching. Turns CRM data into actionable pipeline intelligence that surfaces risks befo...",
+    "skills": [
+      "Sales",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "proposal-strategist": {
+    "name": "Proposal Strategist",
+    "role": "SPC",
+    "title": "Proposal Strategist",
+    "icon": "fa-chart-line",
+    "bg": "#ebf9f4",
+    "color": "#10B981",
+    "about": "Turns RFP responses into stories buyers can't put down. Focuses on Strategic proposal architect who transforms RFPs and sales opportunities into compelling win narratives. Specializes in win theme development, competitive positioning, executive summary craft, and building proposals that persuade rat...",
+    "skills": [
+      "Sales",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "appsec-engineer": {
+    "name": "Application Security Engineer",
+    "role": "SPC",
+    "title": "Application Security Engineer",
+    "icon": "fa-shield-halved",
+    "bg": "#fdf0f0",
+    "color": "#EF4444",
+    "about": "Makes developers write secure code without even realizing it. Focuses on AppSec specialist who secures the software development lifecycle through threat modeling, secure code review, SAST/DAST integration, and developer security education that makes secure code the default.",
+    "skills": [
+      "Security",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "architect": {
+    "name": "Security Architect",
+    "role": "SPC",
+    "title": "Security Architect",
+    "icon": "fa-shield-halved",
+    "bg": "#fdf0f0",
+    "color": "#EF4444",
+    "about": "Designs the security architecture and threat models that hold under adversarial pressure \u2014 the blueprint, not the bug-fix. Focuses on Expert security architect specializing in threat modeling, secure-by-design architecture, trust-boundary analysis, defense-in-depth, and risk-based security reviews a...",
+    "skills": [
+      "Security",
+      "Role",
+      "Personality",
+      "Philosophy",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "blockchain-security-auditor": {
+    "name": "Blockchain Security Auditor",
+    "role": "SPC",
+    "title": "Blockchain Security Auditor",
+    "icon": "fa-shield-halved",
+    "bg": "#fdf0f0",
+    "color": "#EF4444",
+    "about": "Finds the exploit in your smart contract before the attacker does. Focuses on Expert smart contract security auditor specializing in vulnerability detection, formal verification, exploit analysis, and comprehensive audit report writing for DeFi protocols and blockchain applications.",
+    "skills": [
+      "Security",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "cloud-security-architect": {
+    "name": "Cloud Security Architect",
+    "role": "SPC",
+    "title": "Cloud Security Architect",
+    "icon": "fa-shield-halved",
+    "bg": "#fdf0f0",
+    "color": "#EF4444",
+    "about": "Builds cloud infrastructure where \"secure by default\" isn't just a slide title. Focuses on Cloud-native security specialist designing zero trust architectures, implementing defense-in-depth across AWS, Azure, and GCP, and securing infrastructure-as-code pipelines from day one.",
+    "skills": [
+      "Security",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "compliance-auditor": {
+    "name": "Compliance Auditor",
+    "role": "SPC",
+    "title": "Compliance Auditor",
+    "icon": "fa-shield-halved",
+    "bg": "#fdf0f0",
+    "color": "#EF4444",
+    "about": "Walks you from readiness assessment through evidence collection to SOC 2 certification. Focuses on Expert technical compliance auditor specializing in SOC 2, ISO 27001, HIPAA, and PCI-DSS audits \u2014 from readiness assessment through evidence collection to certification.",
+    "skills": [
+      "Security",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "incident-responder": {
+    "name": "Incident Responder",
+    "role": "SPC",
+    "title": "Incident Responder",
+    "icon": "fa-shield-halved",
+    "bg": "#fdf0f0",
+    "color": "#EF4444",
+    "about": "Runs toward the breach while everyone else runs away. Focuses on Digital forensics and incident response specialist who leads breach investigations, contains active threats, coordinates crisis response, and writes post-mortems that prevent recurrence.",
+    "skills": [
+      "Security",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "penetration-tester": {
+    "name": "Penetration Tester",
+    "role": "SPC",
+    "title": "Penetration Tester",
+    "icon": "fa-shield-halved",
+    "bg": "#fdf0f0",
+    "color": "#EF4444",
+    "about": "Breaks into your systems so the real attackers can't. Focuses on Offensive security specialist conducting authorized penetration tests, red team operations, and vulnerability assessments across networks, web applications, and cloud infrastructure.",
+    "skills": [
+      "Security",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "senior-secops": {
+    "name": "Senior SecOps Engineer",
+    "role": "SPC",
+    "title": "Senior SecOps Engineer",
+    "icon": "fa-shield-halved",
+    "bg": "#fdf0f0",
+    "color": "#EF4444",
+    "about": "Before I read your request, I've already scanned your code for secrets. Security isn't a phase \u2014 it's line zero. Focuses on Defensive application security specialist who scans every code submission for secrets and sensitive data exposure before anything else, then implements or audits security contr...",
+    "skills": [
+      "Security",
+      "Role",
+      "Personality",
+      "Operating standard",
+      "Memory"
+    ],
+    "status": "idle"
+  },
+  "threat-detection-engineer": {
+    "name": "Threat Detection Engineer",
+    "role": "SPC",
+    "title": "Threat Detection Engineer",
+    "icon": "fa-shield-halved",
+    "bg": "#fdf0f0",
+    "color": "#EF4444",
+    "about": "Builds the detection layer that catches attackers after they bypass prevention. Focuses on Expert detection engineer specializing in SIEM rule development, MITRE ATT&CK coverage mapping, threat hunting, alert tuning, and detection-as-code pipelines for security operations teams.",
+    "skills": [
+      "Security",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "threat-intelligence-analyst": {
+    "name": "Threat Intelligence Analyst",
+    "role": "SPC",
+    "title": "Threat Intelligence Analyst",
+    "icon": "fa-shield-halved",
+    "bg": "#fdf0f0",
+    "color": "#EF4444",
+    "about": "Knows what the adversary will do before the adversary does. Focuses on Cyber threat intelligence specialist who tracks adversary groups, maps attack campaigns to MITRE ATT&CK, produces actionable intelligence reports, and builds detection rules that catch real threats.",
+    "skills": [
+      "Security",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "macos-spatial-metal-engineer": {
+    "name": "macOS Spatial/Metal Engineer",
+    "role": "SPC",
+    "title": "macOS Spatial/Metal Engineer",
+    "icon": "fa-cubes",
+    "bg": "#ebf9fb",
+    "color": "#06B6D4",
+    "about": "Pushes Metal to its limits for 3D rendering on macOS and Vision Pro. Focuses on Native Swift and Metal specialist building high-performance 3D rendering systems and spatial computing experiences for macOS and Vision Pro",
+    "skills": [
+      "Spatial Computing",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "terminal-integration-specialist": {
+    "name": "Terminal Integration Specialist",
+    "role": "SPC",
+    "title": "Terminal Integration Specialist",
+    "icon": "fa-cubes",
+    "bg": "#ebf9fb",
+    "color": "#06B6D4",
+    "about": "Masters terminal emulation and text rendering in modern Swift applications. Focuses on Terminal emulation, text rendering optimization, and SwiftTerm integration for modern Swift applications",
+    "skills": [
+      "Spatial Computing",
+      "VT100/xterm Standards",
+      "Character Encoding",
+      "Terminal Modes",
+      "Scrollback Management"
+    ],
+    "status": "idle"
+  },
+  "visionos-spatial-engineer": {
+    "name": "visionOS Spatial Engineer",
+    "role": "SPC",
+    "title": "visionOS Spatial Engineer",
+    "icon": "fa-cubes",
+    "bg": "#ebf9fb",
+    "color": "#06B6D4",
+    "about": "Builds native volumetric interfaces and Liquid Glass experiences for visionOS. Focuses on Native visionOS spatial computing, SwiftUI volumetric interfaces, and Liquid Glass design implementation",
+    "skills": [
+      "Spatial Computing",
+      "Liquid Glass Design System",
+      "Spatial Widgets",
+      "Enhanced WindowGroups",
+      "SwiftUI Volumetric APIs"
+    ],
+    "status": "idle"
+  },
+  "xr-cockpit-interaction-specialist": {
+    "name": "XR Cockpit Interaction Specialist",
+    "role": "SPC",
+    "title": "XR Cockpit Interaction Specialist",
+    "icon": "fa-cubes",
+    "bg": "#ebf9fb",
+    "color": "#06B6D4",
+    "about": "Designs immersive cockpit control systems that feel natural in XR. Focuses on Specialist in designing and developing immersive cockpit-based control systems for XR environments",
+    "skills": [
+      "Spatial Computing",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "xr-immersive-developer": {
+    "name": "XR Immersive Developer",
+    "role": "SPC",
+    "title": "XR Immersive Developer",
+    "icon": "fa-cubes",
+    "bg": "#ebf9fb",
+    "color": "#06B6D4",
+    "about": "Builds browser-based AR/VR/XR experiences that push WebXR to its limits. Focuses on Expert WebXR and immersive technology developer with specialization in browser-based AR/VR/XR applications",
+    "skills": [
+      "Spatial Computing",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "xr-interface-architect": {
+    "name": "XR Interface Architect",
+    "role": "SPC",
+    "title": "XR Interface Architect",
+    "icon": "fa-cubes",
+    "bg": "#ebf9fb",
+    "color": "#06B6D4",
+    "about": "Designs spatial interfaces where interaction feels like instinct, not instruction. Focuses on Spatial interaction designer and interface strategist for immersive AR/VR/XR environments",
+    "skills": [
+      "Spatial Computing",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "accounts-payable-agent": {
+    "name": "Accounts Payable Agent",
+    "role": "SPC",
+    "title": "Accounts Payable Agent",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Moves money across any rail \u2014 crypto, fiat, stablecoins \u2014 so you don't have to. Focuses on Autonomous payment processing specialist that executes vendor payments, contractor invoices, and recurring bills across any payment rail \u2014 crypto, fiat, stablecoins. Integrates with AI agent workflows via tool...",
+    "skills": [
+      "Specialized",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "agentic-identity-trust": {
+    "name": "Agentic Identity & Trust Architect",
+    "role": "SPC",
+    "title": "Agentic Identity & Trust Architect",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Ensures every AI agent can prove who it is, what it's allowed to do, and what it actually did. Focuses on Designs identity, authentication, and trust verification systems for autonomous AI agents operating in multi-agent environments. Ensures agents can prove who they are, what they're authorized to...",
+    "skills": [
+      "Specialized",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "agents-orchestrator": {
+    "name": "Agents Orchestrator",
+    "role": "SPC",
+    "title": "Agents Orchestrator",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "The conductor who runs the entire dev pipeline from spec to ship. Focuses on Autonomous pipeline manager that orchestrates the entire development workflow. You are the leader of this process.",
+    "skills": [
+      "Specialized",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "automation-governance-architect": {
+    "name": "Automation Governance Architect",
+    "role": "SPC",
+    "title": "Automation Governance Architect",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Calm, skeptical, and operations-focused. Prefer reliable systems over automation hype. Focuses on Governance-first architect for business automations (n8n-first) who audits value, risk, and maintainability before implementation.",
+    "skills": [
+      "Specialized",
+      "APPROVE",
+      "APPROVE AS PILOT",
+      "PARTIAL AUTOMATION ONLY",
+      "DEFER"
+    ],
+    "status": "idle"
+  },
+  "business-strategist": {
+    "name": "Business Strategist",
+    "role": "SPC",
+    "title": "Business Strategist",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Strategy without execution is hallucination. Execution without strategy is chaos. The best strategists build the bridge between where you are and where you need to be \u2014 and make sure it holds weight. Focuses on Senior management consulting specialist for competitive analysis, market entry strategy, ...",
+    "skills": [
+      "Specialized",
+      "Competitive Analysis",
+      "Market Entry",
+      "Business Model Design",
+      "Growth Strategy"
+    ],
+    "status": "idle"
+  },
+  "change-management-consultant": {
+    "name": "Change Management Consultant",
+    "role": "SPC",
+    "title": "Change Management Consultant",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Change doesn't fail because of bad technology or bad strategy \u2014 it fails because people don't adopt it. Every transformation is ultimately a human project. Win the hearts and minds, and the rest follows. Focuses on Expert change management specialist using ADKAR, Kotter, and Prosci frameworks to gui...",
+    "skills": [
+      "Specialized",
+      "Change Assessment",
+      "Strategy Development",
+      "Sponsorship Activation",
+      "Stakeholder Engagement"
+    ],
+    "status": "idle"
+  },
+  "chief-financial-officer": {
+    "name": "Chief Financial Officer",
+    "role": "SPC",
+    "title": "Chief Financial Officer",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Thinks in trade-offs, risk-adjusted returns, and long-term value creation \u2014 turns financial complexity into a clear decision while protecting the balance sheet, the controls, and the credibility of every number presented. Focuses on Strategic finance executive who governs capital allocation, treasur...",
+    "skills": [
+      "Specialized",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "corporate-training-designer": {
+    "name": "Corporate Training Designer",
+    "role": "SPC",
+    "title": "Corporate Training Designer",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Designs training programs that drive real behavior change \u2014 from needs analysis to Kirkpatrick Level 3 evaluation \u2014 because good training is measured by what learners do, not what instructors say. Focuses on Expert in enterprise training system design and curriculum development \u2014 proficient in train...",
+    "skills": [
+      "Specialized",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "customer-service": {
+    "name": "Customer Service",
+    "role": "SPC",
+    "title": "Customer Service",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Every customer interaction is a chance to turn a problem into loyalty \u2014 handle it with care, speed, and a human touch. Focuses on Friendly, professional customer service specialist for any industry \u2014 handling inquiries, complaints, account support, FAQs, and seamless escalation with warmth, efficien...",
+    "skills": [
+      "Specialized",
+      "FAQs & General Inquiries",
+      "Account Support",
+      "Order & Transaction Support",
+      "Complaints"
+    ],
+    "status": "idle"
+  },
+  "customer-success-manager": {
+    "name": "Customer Success Manager",
+    "role": "SPC",
+    "title": "Customer Success Manager",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Customer success isn't a department that reacts to problems \u2014 it's a discipline that prevents them. The best CSMs know their customers' goals better than the customers do, and show up with answers before questions are asked. Focuses on Strategic customer success specialist for onboarding, health sco...",
+    "skills": [
+      "Specialized",
+      "Onboarding",
+      "Health Monitoring",
+      "Business Reviews",
+      "Churn Prevention"
+    ],
+    "status": "idle"
+  },
+  "data-consolidation-agent": {
+    "name": "Data Consolidation Agent",
+    "role": "SPC",
+    "title": "Data Consolidation Agent",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Consolidates scattered sales data into live reporting dashboards. Focuses on AI agent that consolidates extracted sales data into live reporting dashboards with territory, rep, and pipeline summaries",
+    "skills": [
+      "Specialized",
+      "Data",
+      "Consolidation",
+      "Agent"
+    ],
+    "status": "idle"
+  },
+  "data-privacy-officer": {
+    "name": "Data Privacy Officer",
+    "role": "SPC",
+    "title": "Data Privacy Officer",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Treats personal data as a liability to be minimized rather than an asset to be hoarded \u2014 reads the regulation precisely, designs privacy in from the start, and assumes a regulator will one day ask to see the records. Focuses on Corporate data privacy specialist and DPO who builds GDPR, CCPA, and glo...",
+    "skills": [
+      "Specialized",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "esg-sustainability-officer": {
+    "name": "ESG & Sustainability Officer",
+    "role": "SPC",
+    "title": "ESG & Sustainability Officer",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Builds sustainability programs that hold up to scrutiny \u2014 grounds every claim in audited data and recognized frameworks, because a target without a credible path or a disclosure without evidence is greenwashing waiting to be exposed. Focuses on Corporate sustainability strategist and ESG reporting s...",
+    "skills": [
+      "Specialized",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "government-digital-presales-consultant": {
+    "name": "Government Digital Presales Consultant",
+    "role": "SPC",
+    "title": "Government Digital Presales Consultant",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Navigates the Chinese government IT procurement maze \u2014 from policy signals to winning bids \u2014 so your team lands digital transformation projects. Focuses on Presales expert for China's government digital transformation market (ToG), proficient in policy interpretation, solution design, bid document p...",
+    "skills": [
+      "Specialized",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "grant-writer": {
+    "name": "Grant Writer",
+    "role": "SPC",
+    "title": "Grant Writer",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Every grant is a conversation between your mission and a funder's priorities. The best grant writers don't beg \u2014 they build a compelling case that a funder's investment in your work is the highest-leverage use of their dollars. Focuses on Expert grant writing specialist for nonprofits, research inst...",
+    "skills": [
+      "Specialized",
+      "Prospect Research",
+      "Cultivation",
+      "Letter of Inquiry (LOI)",
+      "Full Proposal"
+    ],
+    "status": "idle"
+  },
+  "healthcare-customer-service": {
+    "name": "Healthcare Customer Service",
+    "role": "SPC",
+    "title": "Healthcare Customer Service",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Every patient deserves to feel heard, respected, and supported \u2014 especially when they're scared, confused, or frustrated. Focuses on Empathetic healthcare customer service specialist for patient support, billing inquiries, appointment management, insurance questions, complaint resolution, and seamle...",
+    "skills": [
+      "Specialized",
+      "Appointment Support",
+      "Billing & Financial",
+      "Insurance",
+      "Complaints"
+    ],
+    "status": "idle"
+  },
+  "healthcare-marketing-compliance": {
+    "name": "Healthcare Marketing Compliance Specialist",
+    "role": "SPC",
+    "title": "Healthcare Marketing Compliance Specialist",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Keeps your healthcare marketing legal in China's tightly regulated landscape \u2014 reviewing content, flagging violations, and finding creative space within compliance boundaries. Focuses on Expert in healthcare marketing compliance in China, proficient in the Advertising Law, Medical Advertisement Mana...",
+    "skills": [
+      "Specialized",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "hospitality-guest-services": {
+    "name": "Hospitality Guest Services",
+    "role": "SPC",
+    "title": "Hospitality Guest Services",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Hospitality is not a transaction \u2014 it's a feeling. Every guest interaction is an opportunity to create a memory, earn a return visit, and generate a five-star review. Focuses on Comprehensive hospitality guest services specialist for hotels, resorts, restaurants, and event venues \u2014 covering reservat...",
+    "skills": [
+      "Specialized",
+      "Reservations",
+      "Pre-Arrival",
+      "Check-In",
+      "In-Stay"
+    ],
+    "status": "idle"
+  },
+  "hr-onboarding": {
+    "name": "HR Onboarding",
+    "role": "SPC",
+    "title": "HR Onboarding",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "The first 90 days determine whether a new hire becomes a long-term contributor or a regrettable turnover. Get it right from day one. Focuses on Comprehensive HR onboarding specialist for employee orientation, documentation management, compliance tracking, benefits enrollment, culture integration, an...",
+    "skills": [
+      "Specialized",
+      "Pre-boarding",
+      "Day One",
+      "First Week",
+      "30-60-90 Day Plan"
+    ],
+    "status": "idle"
+  },
+  "identity-graph-operator": {
+    "name": "Identity Graph Operator",
+    "role": "SPC",
+    "title": "Identity Graph Operator",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Ensures every agent in a multi-agent system gets the same canonical answer for \"who is this? Focuses on Operates a shared identity graph that multiple AI agents resolve against. Ensures every agent in a multi-agent system gets the same canonical answer for \"who is this entity?\" - deterministically, ...",
+    "skills": [
+      "Specialized",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "language-translator": {
+    "name": "Language Translator",
+    "role": "SPC",
+    "title": "Language Translator",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Bridges languages with precision, cultural respect, and the fluency of a native speaker who's lived in both worlds. Focuses on Real-time Spanish \u2194 English translation specialist with cultural context, regional dialect awareness, travel phrase guidance, and tone-appropriate communication for everyday...",
+    "skills": [
+      "Specialized",
+      "Travel",
+      "Medical",
+      "Business",
+      "Legal"
+    ],
+    "status": "idle"
+  },
+  "legal-billing-time-tracking": {
+    "name": "Legal Billing & Time Tracking",
+    "role": "SPC",
+    "title": "Legal Billing & Time Tracking",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Every six minutes of unbilled time is money left on the table. Every unclear billing narrative is a client dispute waiting to happen. Capture it all. Describe it clearly. Collect it professionally. Focuses on Comprehensive legal billing and time tracking specialist for accurate time capture, invoice...",
+    "skills": [
+      "Specialized",
+      "Time Capture",
+      "Billing Narratives",
+      "Invoice Generation",
+      "Collections"
+    ],
+    "status": "idle"
+  },
+  "legal-client-intake": {
+    "name": "Legal Client Intake",
+    "role": "SPC",
+    "title": "Legal Client Intake",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "The first conversation with a potential client sets the tone for the entire attorney-client relationship. Get it right \u2014 warm, professional, and thorough \u2014 from the very first touch. Focuses on Comprehensive legal client intake specialist for qualifying prospects, collecting case information, schedu...",
+    "skills": [
+      "Specialized",
+      "Initial Contact",
+      "Prospect Qualification",
+      "Conflict Screening",
+      "Case Information Collection"
+    ],
+    "status": "idle"
+  },
+  "legal-document-review": {
+    "name": "Legal Document Review",
+    "role": "SPC",
+    "title": "Legal Document Review",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Every word in a legal document matters. Every missed clause is a liability. Every risk caught early is a client protected. Focuses on Comprehensive legal document review specialist for contracts, litigation documents, and real estate agreements \u2014 summarizing documents, flagging risk clauses, compari...",
+    "skills": [
+      "Specialized",
+      "Contracts & Agreements",
+      "Litigation Documents",
+      "Real Estate Documents",
+      "Compliance Review"
+    ],
+    "status": "idle"
+  },
+  "loan-officer-assistant": {
+    "name": "Loan Officer Assistant",
+    "role": "SPC",
+    "title": "Loan Officer Assistant",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Every loan is someone's dream \u2014 a home, a business, a fresh start. Move it through the pipeline with precision, compliance, and genuine care for the person behind the application. Focuses on Comprehensive loan officer assistant for mortgage and lending professionals \u2014 covering borrower intake, pre-q...",
+    "skills": [
+      "Specialized",
+      "Borrower Intake",
+      "Pre-Qualification",
+      "Application",
+      "Processing"
+    ],
+    "status": "idle"
+  },
+  "lsp-index-engineer": {
+    "name": "LSP/Index Engineer",
+    "role": "SPC",
+    "title": "LSP/Index Engineer",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Builds unified code intelligence through LSP orchestration and semantic indexing. Focuses on Language Server Protocol specialist building unified code intelligence systems through LSP client orchestration and semantic indexing",
+    "skills": [
+      "Specialized",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "ma-integration-manager": {
+    "name": "M&A Integration Manager",
+    "role": "SPC",
+    "title": "M&A Integration Manager",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Treats the signed deal as the starting line, not the finish \u2014 runs post-merger integration like a program with a clock on it, because synergy value erodes every day Day 1 readiness slips and culture is left to chance. Focuses on Mergers and acquisitions integration specialist who designs and execute...",
+    "skills": [
+      "Specialized",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "medical-billing-coding-specialist": {
+    "name": "Medical Billing & Coding Specialist",
+    "role": "SPC",
+    "title": "Medical Billing & Coding Specialist",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Every unsubmitted claim is lost revenue. Every unchallenged denial is money left on the table. Every compliance gap is a liability waiting to surface. The revenue cycle never stops \u2014 and neither do we. Focuses on Expert medical billing and coding specialist for ICD-10-CM/PCS, CPT, and HCPCS coding, ...",
+    "skills": [
+      "Specialized",
+      "Medical Coding",
+      "Charge Capture",
+      "Claim Submission",
+      "Denial Management"
+    ],
+    "status": "idle"
+  },
+  "operations-manager": {
+    "name": "Operations Manager",
+    "role": "SPC",
+    "title": "Operations Manager",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Sees every business as a system of processes and treats waste, variation, and undocumented dependencies as defects to be measured and removed \u2014 because what isn't standardized and measured can't be scaled reliably. Focuses on Business operations specialist who applies Lean, Six Sigma, and systems th...",
+    "skills": [
+      "Specialized",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "organizational-psychologist": {
+    "name": "Organizational Psychologist",
+    "role": "SPC",
+    "title": "Organizational Psychologist",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Treats team dysfunction like a clinician reads symptoms \u2014 grounds every diagnosis and intervention in peer-reviewed evidence, names the invisible pattern leaders can't see, and never mistakes pop psychology for the real thing. Focuses on Applied organizational psychologist who diagnoses team dynamic...",
+    "skills": [
+      "Specialized",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "personal-growth-mentor": {
+    "name": "Personal Growth Mentor",
+    "role": "SPC",
+    "title": "Personal Growth Mentor",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Systems over slogans. Clarity before action. Execution over inspiration. Focuses on Cross-domain personal development mentor for goal clarity, habit design, strategic decisions, and accountability without motivational fluff.",
+    "skills": [
+      "Specialized",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "real-estate-buyer-seller": {
+    "name": "Real Estate Buyer & Seller",
+    "role": "SPC",
+    "title": "Real Estate Buyer & Seller",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Every transaction is someone's biggest financial decision. Every client deserves an agent who is organized, responsive, and genuinely invested in their outcome \u2014 not just the commission check. Focuses on Comprehensive real estate agent assistant for buyer representation, seller representation, listi...",
+    "skills": [
+      "Specialized",
+      "Buyer Representation",
+      "Seller Representation",
+      "Market Analysis",
+      "Offer Management"
+    ],
+    "status": "idle"
+  },
+  "recruitment-specialist": {
+    "name": "Recruitment Specialist",
+    "role": "SPC",
+    "title": "Recruitment Specialist",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Builds your full-cycle recruiting engine across China's hiring platforms, from sourcing to onboarding to compliance. Focuses on Expert recruitment operations and talent acquisition specialist \u2014 skilled in China's major hiring platforms, talent assessment frameworks, and labor law compliance. Helps c...",
+    "skills": [
+      "Specialized",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "report-distribution-agent": {
+    "name": "Report Distribution Agent",
+    "role": "SPC",
+    "title": "Report Distribution Agent",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Automates delivery of consolidated sales reports to the right reps. Focuses on AI agent that automates distribution of consolidated sales reports to representatives based on territorial parameters",
+    "skills": [
+      "Specialized",
+      "Report",
+      "Distribution",
+      "Agent"
+    ],
+    "status": "idle"
+  },
+  "retail-customer-returns": {
+    "name": "Retail Customer Returns",
+    "role": "SPC",
+    "title": "Retail Customer Returns",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "A return is not a failure \u2014 it's an opportunity. Handle it with speed, fairness, and genuine care, and you'll turn a disappointed customer into a loyal one. Focuses on Comprehensive retail customer returns specialist for processing returns, exchanges, and refunds across in-store, online, and omnicha...",
+    "skills": [
+      "Specialized",
+      "Return Initiation",
+      "Return Processing",
+      "Refund Management",
+      "Exchange Management"
+    ],
+    "status": "idle"
+  },
+  "sales-data-extraction-agent": {
+    "name": "Sales Data Extraction Agent",
+    "role": "SPC",
+    "title": "Sales Data Extraction Agent",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Watches your Excel files and extracts the metrics that matter. Focuses on AI agent specialized in monitoring Excel files and extracting key sales metrics (MTD, YTD, Year End) for internal live reporting",
+    "skills": [
+      "Specialized",
+      "Sales",
+      "Data",
+      "Extraction",
+      "Agent"
+    ],
+    "status": "idle"
+  },
+  "sales-outreach": {
+    "name": "Sales Outreach",
+    "role": "SPC",
+    "title": "Sales Outreach",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "The best salespeople don't sell \u2014 they help people buy. Every outreach is a conversation starter, not a pitch. Focuses on Consultative B2B sales outreach specialist for cold prospecting, lead follow-up, objection handling, proposal writing, and pipeline management \u2014 combining data-driven targeting w...",
+    "skills": [
+      "Specialized",
+      "Prospecting",
+      "Cold Outreach",
+      "Follow-Up Sequences",
+      "Objection Handling"
+    ],
+    "status": "idle"
+  },
+  "chief-of-staff": {
+    "name": "Chief of Staff",
+    "role": "SPC",
+    "title": "Chief of Staff",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "I don't own any function. I own the space between all of them. Focuses on Master coordinator for founders and executives \u2014 filters noise, owns processes, enforces consistency, routes decisions, and positions outputs for impact so the boss can think clearly.",
+    "skills": [
+      "Specialized",
+      "Direct, never performative.",
+      "Context-first.",
+      "Proactive, not reactive.",
+      "Invisible."
+    ],
+    "status": "idle"
+  },
+  "civil-engineer": {
+    "name": "Civil Engineer",
+    "role": "SPC",
+    "title": "Civil Engineer",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Designs structures that stand across borders \u2014 from seismic Tokyo to wind-swept Dubai, always code-compliant and constructible. Focuses on Expert civil and structural engineer with global standards coverage \u2014 Eurocode, DIN, ACI, AISC, ASCE, AS/NZS, CSA, GB, IS, AIJ, and more. Specializes in structur...",
+    "skills": [
+      "Specialized",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "cultural-intelligence-strategist": {
+    "name": "Cultural Intelligence Strategist",
+    "role": "SPC",
+    "title": "Cultural Intelligence Strategist",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Detects invisible exclusion and ensures your software resonates across cultures. Focuses on CQ specialist that detects invisible exclusion, researches global context, and ensures software resonates authentically across intersectional identities.",
+    "skills": [
+      "Specialized",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "developer-advocate": {
+    "name": "Developer Advocate",
+    "role": "SPC",
+    "title": "Developer Advocate",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Bridges your product team and the developer community through authentic engagement. Focuses on Expert developer advocate specializing in building developer communities, creating compelling technical content, optimizing developer experience (DX), and driving platform adoption through authentic engine...",
+    "skills": [
+      "Specialized",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "document-generator": {
+    "name": "Document Generator",
+    "role": "SPC",
+    "title": "Document Generator",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Professional documents from code \u2014 PDFs, slides, spreadsheets, and reports. Focuses on Expert document creation specialist who generates professional PDF, PPTX, DOCX, and XLSX files using code-based approaches with proper formatting, charts, and data visualization.",
+    "skills": [
+      "Specialized",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "fedramp-rmf-compliance": {
+    "name": "FedRAMP & RMF Compliance Engineer",
+    "role": "SPC",
+    "title": "FedRAMP & RMF Compliance Engineer",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "A disciplined compliance engineer who guides systems through both FedRAMP authorization pathways \u2014 traditional Rev5 and the modernized, KSI-driven 20x \u2014 and the full NIST RMF lifecycle, turning abstract control requirements into concrete, auditable, ATO-ready evidence whether that evidence is a narr...",
+    "skills": [
+      "Specialized",
+      "Pathway Selection",
+      "Categorization",
+      "Authorization Boundary",
+      "Control Selection & Tailoring"
+    ],
+    "status": "idle"
+  },
+  "french-consulting-market": {
+    "name": "French Consulting Market Navigator",
+    "role": "SPC",
+    "title": "French Consulting Market Navigator",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "The insider who decodes the opaque French consulting food chain so freelancers stop leaving money on the table Focuses on Navigate the French ESN/SI freelance ecosystem \u2014 margin models, platform mechanics (Malt, collective.work), portage salarial, rate positioning, and payment cycle realities",
+    "skills": [
+      "Specialized",
+      "Time zone reframe:",
+      "Legal structure:",
+      "Location disclosure:",
+      "Client meetings:"
+    ],
+    "status": "idle"
+  },
+  "korean-business-navigator": {
+    "name": "Korean Business Navigator",
+    "role": "SPC",
+    "title": "Korean Business Navigator",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "The bridge between Western directness and Korean relationship dynamics \u2014 reads the room so you don't torch the deal Focuses on Korean business culture for foreign professionals \u2014 \ud488\uc758 decision process, nunchi reading, KakaoTalk business etiquette, hierarchy navigation, and relationship-first deal mech...",
+    "skills": [
+      "Specialized",
+      "Korean",
+      "Business",
+      "Navigator"
+    ],
+    "status": "idle"
+  },
+  "mcp-builder": {
+    "name": "MCP Builder",
+    "role": "SPC",
+    "title": "MCP Builder",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Builds the tools that make AI agents actually useful in the real world. Focuses on Expert Model Context Protocol developer who designs, builds, and tests MCP servers that extend AI agent capabilities with custom tools, resources, and prompts.",
+    "skills": [
+      "Specialized",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "model-qa": {
+    "name": "Model QA Specialist",
+    "role": "SPC",
+    "title": "Model QA Specialist",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Audits ML models end-to-end \u2014 from data reconstruction to calibration testing. Focuses on Independent model QA expert who audits ML and statistical models end-to-end - from documentation review and data reconstruction to replication, calibration testing, interpretability analysis, performance monito...",
+    "skills": [
+      "Specialized",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "pricing-analyst": {
+    "name": "Pricing Analyst",
+    "role": "SPC",
+    "title": "Pricing Analyst",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Finds the price point where value captured meets value delivered \u2014 then proves it with data. Focuses on Specialized pricing analyst who develops optimal pricing models through market research, competitor analysis, cost structure evaluation, and margin optimization \u2014 turning pricing from guesswork in...",
+    "skills": [
+      "Specialized",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "salesforce-architect": {
+    "name": "Salesforce Architect",
+    "role": "SPC",
+    "title": "Salesforce Architect",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "The calm hand that turns a tangled Salesforce org into an architecture that scales \u2014 one governor limit at a time Focuses on Solution architecture for Salesforce platform \u2014 multi-cloud design, integration patterns, governor limits, deployment strategy, and data model governance for enterprise-scale ...",
+    "skills": [
+      "Specialized",
+      "Single source of truth:",
+      "Identity resolution:",
+      "Consent management:",
+      "API budget:"
+    ],
+    "status": "idle"
+  },
+  "strategy-duel-agent": {
+    "name": "Strategy Duel Agent",
+    "role": "SPC",
+    "title": "Strategy Duel Agent",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Orchestrates high-stakes, turn-based strategy battles with sharp analysis and memorable commentary Focuses on Conducts live strategy duels using game theory and the 36 Chinese stratagems",
+    "skills": [
+      "Specialized",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "workflow-architect": {
+    "name": "Workflow Architect",
+    "role": "SPC",
+    "title": "Workflow Architect",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Every path the system can take \u2014 mapped, named, and specified before a single line is written. Focuses on Workflow design specialist who maps complete workflow trees for every system, user journey, and agent interaction \u2014 covering happy paths, all branch conditions, failure modes, recovery paths, ha...",
+    "skills": [
+      "Specialized",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "study-abroad-advisor": {
+    "name": "Study Abroad Advisor",
+    "role": "SPC",
+    "title": "Study Abroad Advisor",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Guides Chinese students through the entire study abroad journey \u2014 from school selection and essays to visas \u2014 with data-driven advice and zero anxiety selling. Focuses on Full-spectrum study abroad planning expert covering the US, UK, Canada, Australia, Europe, Hong Kong, and Singapore \u2014 proficient ...",
+    "skills": [
+      "Specialized",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "supply-chain-strategist": {
+    "name": "Supply Chain Strategist",
+    "role": "SPC",
+    "title": "Supply Chain Strategist",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Builds your procurement engine and supply chain resilience across China's manufacturing ecosystem, from supplier sourcing to risk management. Focuses on Expert supply chain management and procurement strategy specialist \u2014 skilled in supplier development, strategic sourcing, quality control, and supp...",
+    "skills": [
+      "Specialized",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "zk-steward": {
+    "name": "ZK Steward",
+    "role": "SPC",
+    "title": "ZK Steward",
+    "icon": "fa-wand-magic-sparkles",
+    "bg": "#f2f2fd",
+    "color": "#6366F1",
+    "about": "Channels Luhmann's Zettelkasten to build connected, validated knowledge bases. Focuses on Knowledge-base steward in the spirit of Niklas Luhmann's Zettelkasten. Default perspective: Luhmann; switches to domain experts (Feynman, Munger, Ogilvy, etc.) by task. Enforces atomic notes, connectivity, and ...",
+    "skills": [
+      "Specialized",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "analytics-reporter": {
+    "name": "Analytics Reporter",
+    "role": "SPC",
+    "title": "Analytics Reporter",
+    "icon": "fa-life-ring",
+    "bg": "#f5faec",
+    "color": "#84CC16",
+    "about": "Transforms raw data into the insights that drive your next decision. Focuses on Expert data analyst transforming raw data into actionable business insights. Creates dashboards, performs statistical analysis, tracks KPIs, and provides strategic decision support through data visualization and reportin...",
+    "skills": [
+      "Support",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "executive-summary-generator": {
+    "name": "Executive Summary Generator",
+    "role": "SPC",
+    "title": "Executive Summary Generator",
+    "icon": "fa-life-ring",
+    "bg": "#f5faec",
+    "color": "#84CC16",
+    "about": "Thinks like a McKinsey consultant, writes for the C-suite. Focuses on Consultant-grade AI specialist trained to think and communicate like a senior strategy consultant. Transforms complex business inputs into concise, actionable executive summaries using McKinsey SCQA, BCG Pyramid Principle, and Bai...",
+    "skills": [
+      "Support",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "finance-tracker": {
+    "name": "Finance Tracker",
+    "role": "SPC",
+    "title": "Finance Tracker",
+    "icon": "fa-life-ring",
+    "bg": "#f5faec",
+    "color": "#84CC16",
+    "about": "Keeps the books clean, the cash flowing, and the forecasts honest. Focuses on Expert financial analyst and controller specializing in financial planning, budget management, and business performance analysis. Maintains financial health, optimizes cash flow, and provides strategic financial insights f...",
+    "skills": [
+      "Support",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "infrastructure-maintainer": {
+    "name": "Infrastructure Maintainer",
+    "role": "SPC",
+    "title": "Infrastructure Maintainer",
+    "icon": "fa-life-ring",
+    "bg": "#f5faec",
+    "color": "#84CC16",
+    "about": "Keeps the lights on, the servers humming, and the alerts quiet. Focuses on Expert infrastructure specialist focused on system reliability, performance optimization, and technical operations management. Maintains robust, scalable infrastructure supporting business operations with security, performanc...",
+    "skills": [
+      "Support",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "legal-compliance-checker": {
+    "name": "Legal Compliance Checker",
+    "role": "SPC",
+    "title": "Legal Compliance Checker",
+    "icon": "fa-life-ring",
+    "bg": "#f5faec",
+    "color": "#84CC16",
+    "about": "Ensures your operations comply with the law across every jurisdiction that matters. Focuses on Expert legal and compliance specialist ensuring business operations, data handling, and content creation comply with relevant laws, regulations, and industry standards across multiple jurisdictions.",
+    "skills": [
+      "Support",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "support-responder": {
+    "name": "Support Responder",
+    "role": "SPC",
+    "title": "Support Responder",
+    "icon": "fa-life-ring",
+    "bg": "#f5faec",
+    "color": "#84CC16",
+    "about": "Turns frustrated users into loyal advocates, one interaction at a time. Focuses on Expert customer support specialist delivering exceptional customer service, issue resolution, and user experience optimization. Specializes in multi-channel support, proactive customer care, and turning support intera...",
+    "skills": [
+      "Support",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "accessibility-auditor": {
+    "name": "Accessibility Auditor",
+    "role": "INT",
+    "title": "Accessibility Auditor",
+    "icon": "fa-flask",
+    "bg": "#fef7eb",
+    "color": "#F59E0B",
+    "about": "If it's not tested with a screen reader, it's not accessible. Focuses on Expert accessibility specialist who audits interfaces against WCAG standards, tests with assistive technologies, and ensures inclusive design. Defaults to finding barriers \u2014 if it's not tested with a screen reader, it's not acc...",
+    "skills": [
+      "Testing",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "api-tester": {
+    "name": "API Tester",
+    "role": "INT",
+    "title": "API Tester",
+    "icon": "fa-flask",
+    "bg": "#fef7eb",
+    "color": "#F59E0B",
+    "about": "Breaks your API before your users do. Focuses on Expert API testing specialist focused on comprehensive API validation, performance testing, and quality assurance across all systems and third-party integrations",
+    "skills": [
+      "Testing",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "evidence-collector": {
+    "name": "Evidence Collector",
+    "role": "INT",
+    "title": "Evidence Collector",
+    "icon": "fa-flask",
+    "bg": "#fef7eb",
+    "color": "#F59E0B",
+    "about": "Screenshot-obsessed QA who won't approve anything without visual proof. Focuses on Screenshot-obsessed, fantasy-allergic QA specialist - Default to finding 3-5 issues, requires visual proof for everything",
+    "skills": [
+      "Testing",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "performance-benchmarker": {
+    "name": "Performance Benchmarker",
+    "role": "INT",
+    "title": "Performance Benchmarker",
+    "icon": "fa-flask",
+    "bg": "#fef7eb",
+    "color": "#F59E0B",
+    "about": "Measures everything, optimizes what matters, and proves the improvement. Focuses on Expert performance testing and optimization specialist focused on measuring, analyzing, and improving system performance across all applications and infrastructure",
+    "skills": [
+      "Testing",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "reality-checker": {
+    "name": "Reality Checker",
+    "role": "INT",
+    "title": "Reality Checker",
+    "icon": "fa-flask",
+    "bg": "#fef7eb",
+    "color": "#F59E0B",
+    "about": "Defaults to \"NEEDS WORK\" \u2014 requires overwhelming proof for production readiness. Focuses on Stops fantasy approvals, evidence-based certification - Default to \"NEEDS WORK\", requires overwhelming proof for production readiness",
+    "skills": [
+      "Testing",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "test-automation-engineer": {
+    "name": "Test Automation Engineer",
+    "role": "INT",
+    "title": "Test Automation Engineer",
+    "icon": "fa-flask",
+    "bg": "#fef7eb",
+    "color": "#F59E0B",
+    "about": "A flaky test is a bug with your name on it. Deterministic, isolated, fast \u2014 you don't get to pick two. Focuses on Expert end-to-end test automation engineer for Playwright and Cypress \u2014 resilient selectors, flake elimination, isolated test data, CI parallelization, and trace-driven failure debugging...",
+    "skills": [
+      "Testing",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "test-results-analyzer": {
+    "name": "Test Results Analyzer",
+    "role": "INT",
+    "title": "Test Results Analyzer",
+    "icon": "fa-flask",
+    "bg": "#fef7eb",
+    "color": "#F59E0B",
+    "about": "Reads test results like a detective reads evidence \u2014 nothing gets past. Focuses on Expert test analysis specialist focused on comprehensive test result evaluation, quality metrics analysis, and actionable insight generation from testing activities",
+    "skills": [
+      "Testing",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "tool-evaluator": {
+    "name": "Tool Evaluator",
+    "role": "INT",
+    "title": "Tool Evaluator",
+    "icon": "fa-flask",
+    "bg": "#fef7eb",
+    "color": "#F59E0B",
+    "about": "Tests and recommends the right tools so your team doesn't waste time on the wrong ones. Focuses on Expert technology assessment specialist focused on evaluating, testing, and recommending tools, software, and platforms for business use and productivity optimization",
+    "skills": [
+      "Testing",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  },
+  "workflow-optimizer": {
+    "name": "Workflow Optimizer",
+    "role": "INT",
+    "title": "Workflow Optimizer",
+    "icon": "fa-flask",
+    "bg": "#fef7eb",
+    "color": "#F59E0B",
+    "about": "Finds the bottleneck, fixes the process, automates the rest. Focuses on Expert process improvement specialist focused on analyzing, optimizing, and automating workflows across all business functions for maximum productivity and efficiency",
+    "skills": [
+      "Testing",
+      "Role",
+      "Personality",
+      "Memory",
+      "Experience"
+    ],
+    "status": "idle"
+  }
+}

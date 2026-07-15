@@ -12,8 +12,8 @@ import react_engine
 DATA_DIR = os.path.expanduser("~/.openclaw")
 SETTINGS_FILE = os.path.join(DATA_DIR, "mc_settings.json")
 TASKS_DB_FILE = os.path.join(DATA_DIR, "mc_tasks.json")
-AGENTS_DB_FILE = os.path.join(DATA_DIR, "mc_agents.json")
 WORKSPACE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "workspace")
+AGENTS_DB_FILE = os.path.join(WORKSPACE_DIR, "mc_agents.json")
 SESSIONS_DIR = os.path.join(DATA_DIR, "sessions")
 
 os.makedirs(DATA_DIR, exist_ok=True)
@@ -40,7 +40,7 @@ init_project_crm("general")
 
 PORT = 8000
 NVIDIA_API_KEY = "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"
-NVIDIA_MODEL = "meta/llama-3.3-70b-instruct"  # massive, very smart default
+NVIDIA_MODEL = "meta/llama-3.1-70b-instruct"  # massive, very smart default
 NVIDIA_FALLBACK = "meta/llama-3.1-8b-instruct"  # ultra-fast fallback
 MAX_AGENTS = 14
 
@@ -1505,7 +1505,7 @@ class MissionControlHandler(SimpleHTTPRequestHandler):
             
             try:
                 import re
-                json_match = re.search(r'\[.*\]', reply.replace('\\n', ' '), re.DOTALL)
+                json_match = re.search(r'\[.*\]', reply.replace('\n', ' '), re.DOTALL)
                 if json_match:
                     tasks_list = json.loads(json_match.group(0))
                     
